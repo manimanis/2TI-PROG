@@ -108,7 +108,8 @@ print(27)</code></pre>
         <p>La sortie, ou l'affichage, se fait par défaut sur le périphérique de sortie standard : <storng>L'écran
           </storng>.</p>
         <p>L'opération de sortie se fait en algorithme à l'aide de la procédure <code>Écrire(...)</code>.
-          <strong>Exemples :</strong></p>
+          <strong>Exemples :</strong>
+        </p>
 
         <pre><code class="language-algorithm">// Affichage d'un message
 Ecrire("Votre message")
@@ -130,10 +131,13 @@ Ecrire("x = ", x)</code></pre>
             <pre><code class="language-python">print("Votre message")
 print('Votre message')</code></pre>
           </li>
-          <li><strong>Affichage de la valeur d'une variable :</strong> Sans guillemets Python affiche la valeur de la variable portant ce nom. Exemple :
-          <pre><code class="language-python">print(x)</code></pre></li>
-          <li><code>Affichage mixte :</code> On peut combiner l'affichage de messages et de variables dans une instruction <code>print(…)</code>. Exemple :
-          <pre><code class="language-python">      # Affichage mixte sur une seule ligne
+          <li><strong>Affichage de la valeur d'une variable :</strong> Sans guillemets Python affiche la valeur de la
+            variable portant ce nom. Exemple :
+            <pre><code class="language-python">print(x)</code></pre>
+          </li>
+          <li><code>Affichage mixte :</code> On peut combiner l'affichage de messages et de variables dans une
+            instruction <code>print(…)</code>. Exemple :
+            <pre><code class="language-python">      # Affichage mixte sur une seule ligne
 print("x =", x)
 
 # Affichage de variables séparées par des espaces
@@ -146,18 +150,19 @@ print(x, y, z, sep=":")
 # Affichage de variables sur une seule ligne séparés par le symbole " - "
 print(x, end=" - ")
 print(y, end=" - ")
-print(z, end=" - ")</code></pre></li>
+print(z, end=" - ")</code></pre>
+          </li>
         </ul>
       </section>
 
       <section>
         <h3>Affectation</h3>
 
-        <p>L'affectation permet de donner une <u>valeur</u> à une <u>variable</u>.</p>
+        <p>L'<strong>affectation</strong> permet de donner une <b><u>valeur</u></b> à une <b><u>variable</u></b>.</p>
         <p>En algorithme, on utilise le signe d'affectation &larr; comme suit : <code>variable &larr; valeur</code></p>
         <p>En Python, l'affectation se fait à l'aide de l'opérateur = comme suit : <code>variable = valeur</code></p>
 
-        <p>La valeur peut-être :</p>
+        <p>La valeur affectée à une variable peut-être :</p>
         <ol>
           <li>une constante</li>
           <li>la valeur d'une autre variable</li>
@@ -172,10 +177,10 @@ print(z, end=" - ")</code></pre></li>
         <p>Une variable possède :</p>
 
         <ul>
-          <li><strong>Un nom</strong> : qui doit commencer <u>obligatoirement</u> par une lettre alphabétique et <i>ne
+          <li>Un <strong>nom</strong> : qui doit commencer <u>obligatoirement</u> par une lettre alphabétique et <i>ne
               doit pas contenir ni des espaces, ni des symboles</i>.</li>
-          <li><strong>Un type</strong> : qui dépend de la valeur qu'on peut stocker dans la variable.</li>
-          <li><strong>Une valeur.</strong></li>
+          <li>Un <strong>type</strong> : qui dépend de la valeur qu'on peut stocker dans la variable.</li>
+          <li>Une <strong>valeur</strong>.</li>
         </ul>
 
         <figure>
@@ -193,6 +198,28 @@ print(z, end=" - ")</code></pre></li>
 
         Le QCM est accessible dans cette
         <a href="qcm01.html" target="_blank" rel="noopener noreferrer">page</a>.
+      </section>
+
+      <section>
+        <h3>Où est l'erreur ?</h3>
+
+        <figure class="d-print-none">
+          <img src="images/module01/bug_informatique.jpg" alt="Débogage d'un programme">
+          <figcaption>Débogage d'un programme</figcaption>
+        </figure>
+
+        <pre><code class="language-python">4 = haut
+7 = larg
+aire = h * l
+print Calcul d'aire d'un rectangle
+print Largeur = l, Hauteur = h
+print Aire = aire</code></pre>
+
+        <p>Corriger le programme Python pour obtenir l'affichage suivant :</p>
+
+        <pre><code class="nohighlight shell python" data-text="Résultat désiré">Calcul d'aire d'un rectangle
+Largeur = 7, Hauteur = 4
+Aire = 28</code></pre>
       </section>
 
       <section>
@@ -235,7 +262,8 @@ print(z, end=" - ")</code></pre></li>
           <li>4 pièces de 2 DT</li>
         </ul>
 
-        <p>Ecrire l'algorithme d'un programme qui déclare cinq variables contenant le nombre de pièces de chaque type, puis calcule et
+        <p>Ecrire l'algorithme d'un programme qui déclare cinq variables contenant le nombre de pièces de chaque type,
+          puis calcule et
           affiche le montant total.</p>
 
         <pre
@@ -258,7 +286,8 @@ print(z, end=" - ")</code></pre></li>
           <li>La masse du chien et du mouton est 66 kg.</li>
         </ul>
 
-        <p>Ecrire l'algorithme d'un programme qui calcule la masse totale des trois animaux, puis détermine et affiche la masse de
+        <p>Ecrire l'algorithme d'un programme qui calcule la masse totale des trois animaux, puis détermine et affiche
+          la masse de
           chaque animal.</p>
 
         <pre class="d-print-none"><code class="nohighlight shell python" data-text="Résultat du programme">La masse total est 70.0 Kg
@@ -288,28 +317,6 @@ Ma soeur a 3.0 ans
 Dans 3 ans
 J'aurai 9.0 ans
 Ma soeur ara 6.0 ans</code></pre>
-      </section>
-
-      <section>
-        <h3>Où est l'erreur ?</h3>
-
-        <figure class="d-print-none">
-          <img src="images/module01/bug_informatique.jpg" alt="Débogage d'un programme">
-          <figcaption>Débogage d'un programme</figcaption>
-        </figure>
-
-        <pre><code class="language-python">4 = haut
-7 = larg
-aire = h * l
-print Calcul d'aire d'un rectangle
-print Largeur = l, Hauteur = h
-print Aire = aire</code></pre>
-
-        <p>Corriger le programme Python pour obtenir l'affichage suivant :</p>
-
-        <pre><code class="nohighlight shell python" data-text="Résultat désiré">Calcul d'aire d'un rectangle
-Largeur = 7, Hauteur = 4
-Aire = 28</code></pre>
       </section>
     </article>
   </main>

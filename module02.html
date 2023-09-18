@@ -32,7 +32,7 @@
         <h3>Peinture du toit du salon</h3>
 
         <p>Ce mois-ci, M Fethi veut peindre le plafond du salon de sa maison. On suppose que le salon est de forme
-          rectangulaire et qu'il mesure 6m30 de longueur et 5m20 de largeur.</p>
+          rectangulaire et qu'il mesure 6.30m de longueur et 5.20m de largeur.</p>
 
         <p>Sachant que le rendement de la peinture utilisée est de 6m²/Kg, on veut calculer la quantité de peinture
           nécessaire pour peindre le salon de M Fethi 3 couches.</p>
@@ -70,15 +70,14 @@ Début
 Fin</code></pre>
 
         <p>On demande traduire l'algorithme précédent en Python, de le compléter, puis de l'exécuter et de vérifier
-          qu'il
-          affiche le bon résultat.</p>
+          qu'il affiche le bon résultat.</p>
         <p><strong>Quelle est la quantité de peinture nécessaire pour peindre le salon ?</strong></p>
       </section>
 
       <section>
         <h3>Peinture de la cuisine</h3>
 
-        <p>Maintenant M Fethi veut peindre le plafond de la cuisine qui mesure 4m50 &times; 3m90, 2 couches seulement,
+        <p>Maintenant M Fethi veut peindre le plafond de la cuisine qui mesure 4.50m &times; 3.90m, 2 couches seulement,
           avec une peinture dont le rendement est de 4.5m²/Kg.</p>
         <ol>
           <li>Quelle est la quantité de peinture nécessaire ?</li>
@@ -94,11 +93,10 @@ Fin</code></pre>
           <figcaption>Sahbi peintre professionel</figcaption>
         </figure>
 
-        <p>Sahbi, le professionnel de peinture, est intéressé par notre programme de calcul de quantité de peinture
-          puisqu'il lui permet d'estimer la quantité de peinture à acheter par ses clients.</p>
+        <p>Sahbi, le professionnel de peinture, est intéressé par notre programme de calcul de quantité de peinture.</p>
 
         <p>Cependant, Sahbi est <abbr title="ennuyé">las</abbr> de la nécessité de modifier le programme avant chaque
-          exécution, il veut un programme qui <strong>demande toutes les données nécessaires</strong>, effectue les
+          exécution. Il veut un programme qui <strong>demande toutes les données nécessaires</strong>, effectue les
           calculs et affiche le résultat.</p>
 
         <ol>
@@ -109,44 +107,46 @@ Fin</code></pre>
       </section>
 
       <section>
-        <h3>Programme version finale</h3>
+        <h3>Algorithme version finale</h3>
 
-        <p>Le programme comporte trois parties :</p>
+        <p>L'algorithme final comporte trois parties :</p>
 
         <ul>
           <li>Saisie des données</li>
           <li>Calculs</li>
           <li>Affichage des résultats</li>
         </ul>
+        <pre><code class="language-algorithm">Algorithme Peinture2
+Début
+  // -- Saisie de données --
+  // Longueur de la pièce en m
+  Ecrire("Longueur de la pièce en m ? ") ; Lire(long)
+  // Largeur de la pièce en m
+  Ecrire("Largeur de la pièce en m ? ") ; Lire(larg)
+  // Nombre de couches de peinture
+  Ecrire("Nombre de couches de peinture ? ") ; Lire(nbc)
+  // Rendement en m²/Kg
+  Ecrire("Rendement en m²/Kg ? ") ; Lire(rend)
 
-        <pre><code class="language-python"># -- Saisie de données --
-# Longueur de la pièce en m
-long = float(input("Longueur de la pièce en m ? "))
-# Largeur de la pièce en m
-larg = float(input("Largeur de la pièce en m ? "))
-# Nombre de couches de peinture
-nbc = int(input("Nombre de couches de peinture ? "))
-# Rendement en m²/Kg
-rend = float(input("Rendement en m²/Kg ? "))
+  // -- Calculs --
+  // Surface du toit m²
+  st &larr; long * larg
+  // Surface à peindre
+  sp &larr; st * nbc
+  // Quantité de peinture
+  qp &larr; sp / rend
 
-# -- Calculs --
-# Surface du toit m²
-st = long * larg
-# Surface à peindre
-sp = st * nbc
-# Quantité de peinture
-qp = sp / rend
-
-# -- Affichages des rséultats --
-print("Surface pièce =", st, "m²")
-print("Nombre de couches =", nbc)
-print("Surface totale =", sp, "m²")
-print("Rendement =", rend, "m²/Kg")
-print("La quantité de peinture =", qp, "Kg")</code></pre>
+  // -- Affichages des rséultats --
+  Ecrire("Surface pièce =", st, "m²")
+  Ecrire("Nombre de couches =", nbc)
+  Ecrire("Surface totale =", sp, "m²")
+  Ecrire("Rendement =", rend, "m²/Kg")
+  Ecrire("La quantité de peinture =", qp, "Kg")
+</code></pre>
 
         <h4>Exemples d'exécution</h4>
 
-        <p>Le nouveau programme affiche des résultats différents selon les entrées de l'utilisateur.</p>
+        <p>Le programme final affiche des résultats différents selon les entrées de l'utilisateur.</p>
 
         <div class="row">
           <div class="col-sm-6">
@@ -181,14 +181,28 @@ La quantité de peinture = 1.6666666666666667 Kg</code></pre>
       <section>
         <h3>Saisie</h3>
 
-        <p>L'entrée des données utilisateur est, principalement, effectuée à partir du clavier à l'aide de la fonction
-          <code>input(...)</code>. <strong>Cette fonction retourne toujours une chaîne de caractères (type
-            string).</strong>
+        <p>L'entrée, ou la saisie, des données utilisateur est effectuée à partir du périphérique d'entrée standard :
+          <strong>Le clavier</strong>.
         </p>
+        <p>On utilise, en algorithme, <code>Lire(nom_var)</code> pour affecter les entrées de l'utilisateur à la
+          variable <code>nom_var</code>. Exemples :</p>
+        <pre><code class="language-algorithm">// Saisie d'une chaîne de caractères
+Écrire("Votre nom ? ") ; Lire(ch)
 
+// Saisie d'un nombre entier
+Écrire("Quel âge as-tu ? ") ; Lire(age)
+
+// Saisie d'un nombre réel
+Écrire("Quelle est ta moyenne ? ") ; Lire(moy)</code></pre>
+
+        <p>En Python, l'entrée des données est effectuée à partir du clavier à l'aide de la fonction
+          <code>input(message)</code>.
+        </p>
+        <p>Cette fonction retourne toujours une <strong>chaîne de caractères</strong> (type <code>str</code>). Exemple :
+        </p>
         <figure>
           <img class="h4cm" src="images/module02/input_syntax.png" alt="Syntaxe de la fonction input">
-          <figcaption>Syntaxe de la fonction <code>input(...)</code></figcaption>
+          <figcaption>Saisie d'une chaîne de caractères</figcaption>
         </figure>
 
         <p>Souvent, on désire saisir des données numériques de type <strong>entier</strong> ou <strong>réel</strong>.
@@ -205,34 +219,14 @@ La quantité de peinture = 1.6666666666666667 Kg</code></pre>
 
         <h4>Exemple</h4>
 
-        <div class="row">
-          <div class="col-sm-6">
-            <pre><code class="language-python"># Saisie d'une chaîne de caractères
+        <pre><code class="language-python"># Saisie d'une chaîne de caractères
 ch = input("Votre nom ? ")
-
 
 # Saisie d'un nombre entier
 age = int(input("Quel âge as-tu ? "))
 
-
 # Saisie d'un nombre réel
-moy = float(input("Quelle est ta moyenne ? "))
- </code></pre>
-          </div>
-          <div class="col-sm-6">
-            <pre><code class="language-algorithm">// Saisie d'une chaîne de caractères
-Ecrire("Votre nom ? ")
-Lire(ch)
-
-// Saisie d'un nombre entier
-Ecrire("Quel âge as-tu ? ")
-Lire(age)
-
-// Saisie d'un nombre réel
-Ecrire("Quelle est ta moyenne ? ")
-Lire(moy)</code></pre>
-          </div>
-        </div>
+moy = float(input("Quelle est ta moyenne ? "))</code></pre>
       </section>
     </article>
 
@@ -244,6 +238,35 @@ Lire(moy)</code></pre>
 
         Le QCM est accessible dans cette
         <a href="qcm02.html" target="_blank" rel="noopener noreferrer">page</a>.
+      </section>
+
+      <section>
+        <h3>Corrigez-moi !</h3>
+
+        <figure class="d-print-none">
+          <img src="images/module02/bug_informatique.jpg" alt="Débogage d'un programme">
+          <figcaption>Débogage d'un programme</figcaption>
+        </figure>
+
+        <pre><code class="language-python">input("Donner un entier [10, 99] : ") = a
+b = "Donner un entier [10, 99] : "
+
+moy = a + b sur 2
+
+print La moyenne de a et b est moy</code></pre>
+
+        <div class="row">
+          <div class="col-sm-6">
+            <pre><code class="nohighlight shell python" data-text="Exemple de résultat n°1">Donner un entier [10, 99] : 15
+Donner un entier [10, 99] : 30
+La moyenne de 15 et 30 est 22</code></pre>
+          </div>
+          <div class="col-sm-6">
+            <pre><code class="nohighlight shell python" data-text="Exemple de résultat n°2">Donner un entier [10, 99] : 16
+Donner un entier [10, 99] : 80
+La moyenne de 16 et 80 est 48</code></pre>
+          </div>
+        </div>
       </section>
 
       <section>
@@ -508,35 +531,6 @@ La citerne contient 678 litres d'huile.</code></pre>
 Quelle est l'heure de fin (hh:00) ? 17
 Quelle est la durée du trajet ? 20
 Le bus fait 36 voyages de 5h à 17h.</code></pre>
-      </section>
-
-      <section>
-        <h3>Corrigez-moi !</h3>
-
-        <figure class="d-print-none">
-          <img src="images/module02/bug_informatique.jpg" alt="Débogage d'un programme">
-          <figcaption>Débogage d'un programme</figcaption>
-        </figure>
-
-        <pre><code class="language-python">input("Donner un entier [10, 99] : ") = a
-b = "Donner un entier [10, 99] : "
-
-moy = a + b sur 2
-
-print La moyenne de a et b est moy</code></pre>
-
-        <div class="row">
-          <div class="col-sm-6">
-            <pre><code class="nohighlight shell python" data-text="Exemple de résultat n°1">Donner un entier [10, 99] : 15
-Donner un entier [10, 99] : 30
-La moyenne de 15 et 30 est 22</code></pre>
-          </div>
-          <div class="col-sm-6">
-            <pre><code class="nohighlight shell python" data-text="Exemple de résultat n°2">Donner un entier [10, 99] : 16
-Donner un entier [10, 99] : 80
-La moyenne de 16 et 80 est 48</code></pre>
-          </div>
-        </div>
       </section>
     </article>
   </main>
