@@ -78,30 +78,41 @@ Fin</code></pre>
         <h3>Peinture de la cuisine</h3>
 
         <p>Maintenant M Fethi veut peindre le plafond de la cuisine qui mesure 4.50m &times; 3.90m, 2 couches seulement,
-          avec une peinture dont le rendement est de 4.5m²/Kg.</p>
+          avec une peinture dont le rendement est de 4.5m²/Kg. <strong>Quelle est la quantité de peinture nécessaire
+            ?</strong></p>
+        <p>Modifier le programme :</p>
         <ol>
-          <li>Quelle est la quantité de peinture nécessaire ?</li>
-          <li><strong>Modifier le programme pour répondre à cette question.</strong></li>
+          <li>Calculer le surface du toit :
+            <p class="text-center">surface<sub>toit</sub> = longueur * largeur</p>
+          </li>
+          <li>Calculer la surface à peindre :
+            <p class="text-center">surface<sub>peinte</sub> = surface<sub>toit</sub> * nbre_couches</p>
+          </li>
+          <li>Calculer la quantité de peinture :
+            <p class="text-center">quantité<sub>peinture</sub> = surface<sub>peinte</sub> / rendement</p>
+          </li>
         </ol>
       </section>
 
       <section>
-        <h3>Peintre professionnel</h3>
+        <h3>Amélioration de l'algorithme</h3>
 
         <figure class="d-print-none">
-          <img src="images/module02/peintre_professionnel.jpg" alt="Sahbi peintre professionel">
-          <figcaption>Sahbi peintre professionel</figcaption>
+          <img src="images/module02/peintre_professionnel.jpg" alt="Fethi peintre professionel">
+          <figcaption>Fethi peintre professionel</figcaption>
         </figure>
 
-        <p>Sahbi, le professionnel de peinture, est intéressé par notre programme de calcul de quantité de peinture.</p>
-
-        <p>Cependant, Sahbi est <abbr title="ennuyé">las</abbr> de la nécessité de modifier le programme avant chaque
-          exécution. Il veut un programme qui <strong>demande toutes les données nécessaires</strong>, effectue les
-          calculs et affiche le résultat.</p>
-
+        <p>M Fethi souhaite que nous améliorons notre programme. Il veut :</p>
         <ol>
-          <li>Effectuer les changements requis sur l'algorithme du programme pour qu'il réponde aux exigences de Sahbi.
-          </li>
+          <li>Saisir les dimensions du toit qu'il veut peindre : <code>long</code> &times; <code>larg</code></li>
+          <li>Saisir le nombre de couches de peinture qu'il veut appliquer : <code>nbc</code></li>
+          <li>Saisir le rendement du peinture par m² : <code>rend</code></li>
+          <li>Que le programme effectue ses calculs, puis affiche le résultat.</li>
+        </ol>
+
+        <p><strong>Travail demandé</strong></p>
+        <ol>
+          <li>Effectuer les changements requis sur l'algorithme.</li>
           <li>Traduire l'algorithme en Python.</li>
         </ol>
       </section>
@@ -116,7 +127,8 @@ Fin</code></pre>
           <li>Calculs</li>
           <li>Affichage des résultats</li>
         </ul>
-        <pre><code class="language-algorithm">Algorithme Peinture2
+        <div class="row">
+          <div class="col-9"><pre><code class="language-algorithm">Algorithme Peinture2
 Début
   // -- Saisie de données --
   // Longueur de la pièce en m
@@ -142,7 +154,30 @@ Début
   Ecrire("Surface totale =", sp, "m²")
   Ecrire("Rendement =", rend, "m²/Kg")
   Ecrire("La quantité de peinture =", qp, "Kg")
-</code></pre>
+</code></pre></div>
+          <div class="col-3">
+            <p class="text-center"><strong>TDO</strong></p>
+            <table class="table table-sm table-striped table-bordered table-hover border-dark">
+              <thead>
+                <tr>
+                  <th class="w-50">Objet</th>
+                  <th>Type</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>long, larg, rend, st, sp, qp</td>
+                  <td>réel</td>
+                </tr>
+                <tr>
+                  <td>nbc</td>
+                  <td>entier</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        
 
         <h4>Exemples d'exécution</h4>
 
