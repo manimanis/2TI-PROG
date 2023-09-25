@@ -231,7 +231,7 @@ Fin</code></pre>
         <p>On demande de compléter l'algorithme précédent. Puis, de le traduire en Python.</p>
       </section>
 
-      <section class="p-break">
+      <section>
         <h3>Le Halloween & les Bonbons</h3>
 
         <figure class="d-print-none">
@@ -281,7 +281,7 @@ Fin</code></pre>
           <figcaption>Résistance équivalente de deux résistances montés en parallèle</figcaption>
         </figure>
 
-        <p>On demande de :</p>
+        <p class="p-break">On demande de :</p>
         <ol>
           <li>Calculer la résistance équivalente de deux résistances dans les cas suivants :
             <div class="row justify-content-center">
@@ -314,7 +314,7 @@ Fin</code></pre>
         </ol>
       </section>
 
-      <section class="p-break">
+      <section>
         <h3>Logic gates</h3>
 
         <figure>
@@ -389,7 +389,7 @@ Fin</code></pre>
               </table>
             </div>
           </li>
-          <li>On donne l'algorithme incomplet suivant qui permet de simuler ce circuit :
+          <li class="p-break">On donne l'algorithme incomplet suivant qui permet de simuler ce circuit :
             <pre><code class="language-python">Algorithme Logic_gates
 Début
   // etat est une chaîne contenant trois lettres
@@ -406,15 +406,15 @@ Début
   Ecrire(a, ",", b, ",", c, "=>", L)
 Fin</code></pre>
           </li>
-          <li class="p-break">Dresser le <abbr title="tableau de déclaration des objets">TDO</abbr> du programme.</li>
+          <li>Dresser le <abbr title="tableau de déclaration des objets">TDO</abbr> du programme.</li>
           <li>Compléter l'algorithme, le traduire en Python, puis le tester.</li>
           <li>Améliorer l'algorithme et le programme pour qu'ils acceptent des lettres majuscules ou minuscules.</li>
         </ol>
       </section>
     </article>
 
-    <article class="p-break">
-      <h2>Résumé</h2>
+    <article>
+      <h2 class="p-break">Résumé</h2>
 
       <section>
         <h3>Type Caractère</h3>
@@ -783,96 +783,6 @@ car = chr(num) # car = "@"</code></pre>
           Si on veut écrire <code>not ((a or b) and c)</code> ou <code>(not (a or b)) and c</code> , il faudra utiliser
           impérativement les parenthèses.</p>
 
-        <div class="row justify-content-center">
-          <table class="table table-sm table-striped table-hover" style="width: 90%;">
-            <thead>
-              <tr>
-                <th>a</th>
-                <th>b</th>
-                <th>c</th>
-                <th>not a or b and c</th>
-                <th>(not a) or (b and c)</th>
-                <th>not ((a or b) and c)</th>
-                <th>(not (a or b)) and c</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td><span class="text-danger">False</span></td>
-                <td><span class="text-danger">False</span></td>
-                <td><span class="text-danger">False</span></td>
-                <td><span class="text-success">True</span></td>
-                <td><span class="text-success">True</span></td>
-                <td><span class="text-success">True</span></td>
-                <td><span class="text-danger">False</span></td>
-              </tr>
-              <tr>
-                <td><span class="text-danger">False</span></td>
-                <td><span class="text-danger">False</span></td>
-                <td><span class="text-success">True</span></td>
-                <td><span class="text-success">True</span></td>
-                <td><span class="text-success">True</span></td>
-                <td><span class="text-success">True</span></td>
-                <td><span class="text-success">True</span></td>
-              </tr>
-              <tr>
-                <td><span class="text-danger">False</span></td>
-                <td><span class="text-success">True</span></td>
-                <td><span class="text-danger">False</span></td>
-                <td><span class="text-success">True</span></td>
-                <td><span class="text-success">True</span></td>
-                <td><span class="text-success">True</span></td>
-                <td><span class="text-danger">False</span></td>
-              </tr>
-              <tr>
-                <td><span class="text-danger">False</span></td>
-                <td><span class="text-success">True</span></td>
-                <td><span class="text-success">True</span></td>
-                <td><span class="text-success">True</span></td>
-                <td><span class="text-success">True</span></td>
-                <td><span class="text-danger">False</span></td>
-                <td><span class="text-danger">False</span></td>
-              </tr>
-              <tr>
-                <td><span class="text-success">True</span></td>
-                <td><span class="text-danger">False</span></td>
-                <td><span class="text-danger">False</span></td>
-                <td><span class="text-danger">False</span></td>
-                <td><span class="text-danger">False</span></td>
-                <td><span class="text-success">True</span></td>
-                <td><span class="text-danger">False</span></td>
-              </tr>
-              <tr>
-                <td><span class="text-success">True</span></td>
-                <td><span class="text-danger">False</span></td>
-                <td><span class="text-success">True</span></td>
-                <td><span class="text-danger">False</span></td>
-                <td><span class="text-danger">False</span></td>
-                <td><span class="text-danger">False</span></td>
-                <td><span class="text-danger">False</span></td>
-              </tr>
-              <tr>
-                <td><span class="text-success">True</span></td>
-                <td><span class="text-success">True</span></td>
-                <td><span class="text-danger">False</span></td>
-                <td><span class="text-danger">False</span></td>
-                <td><span class="text-danger">False</span></td>
-                <td><span class="text-success">True</span></td>
-                <td><span class="text-danger">False</span></td>
-              </tr>
-              <tr>
-                <td><span class="text-success">True</span></td>
-                <td><span class="text-success">True</span></td>
-                <td><span class="text-success">True</span></td>
-                <td><span class="text-success">True</span></td>
-                <td><span class="text-success">True</span></td>
-                <td><span class="text-danger">False</span></td>
-                <td><span class="text-danger">False</span></td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-
         <h4>Comparaison des variables de type de numérique</h4>
 
         <p>Pour les entiers et les réels <code>a &gt; b</code> si et seulement si <code>a - b &gt; 0</code>,
@@ -892,7 +802,6 @@ car = chr(num) # car = "@"</code></pre>
           <code>"e" &lt; "s"</code>
         </p>
         </p>
-
       </section>
 
     </article>
