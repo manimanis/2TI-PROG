@@ -1,0 +1,17 @@
+a = 7
+b = 8
+c = 9
+d = str(a + b) + str(b + c) + str(a + c)
+e = d[1] + d[5] + d[3] + d[0]
+f = e[3] + e[2] + e[1] + e[0]
+g = int(e) + int(f)
+h = int(e[0:2]+f[2:4])
+i = str(g) + str(h + 2002)
+j = i.find("6")
+k = i.find("66")
+l = i[j:k + 2]
+m = chr(int(l[0:2])) + chr(int(l[2:4]))
+o = ord(m[0]) + 32
+fd = f+d
+p = int(fd[:1] + fd[8:])
+print(d, e, f, g, h, i, j, k, l, m, o, p, sep="\n")
