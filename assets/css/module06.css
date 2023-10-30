@@ -13,12 +13,12 @@
 }
 
 .tortue {
-  background: url(../../images/module06/tortue.jpg) center center no-repeat;
+  background: url(../../images/module05/tortue.jpg) center center no-repeat;
   background-size: cover;
 }
 
 .lievre {
-  background: url(../../images/module06/lievre.jpg) center center no-repeat;
+  background: url(../../images/module05/lievre.jpg) center center no-repeat;
   background-size: cover;
 }
 
@@ -98,29 +98,29 @@
 .de6 {
   width: 70px;
   height: 70px;
-  background: url(../../images/module06/de_1.jpg) center center no-repeat;
+  background: url(../../images/module05/de_1.jpg) center center no-repeat;
   background-size: contain;
   border-radius: 5px;
 }
 
 .de2 {
-  background-image: url(../../images/module06/de_2.jpg);
+  background-image: url(../../images/module05/de_2.jpg);
 }
 
 .de3 {
-  background-image: url(../../images/module06/de_3.jpg);
+  background-image: url(../../images/module05/de_3.jpg);
 }
 
 .de4 {
-  background-image: url(../../images/module06/de_4.jpg);
+  background-image: url(../../images/module05/de_4.jpg);
 }
 
 .de5 {
-  background-image: url(../../images/module06/de_5.jpg);
+  background-image: url(../../images/module05/de_5.jpg);
 }
 
 .de6 {
-  background-image: url(../../images/module06/de_6.jpg);
+  background-image: url(../../images/module05/de_6.jpg);
 }
 
 .message {
@@ -183,7 +183,7 @@
   width: 700px;
   border-collapse: separate;
   border-spacing: 4px;
-  background: transparent url(../../images/module06/jeu-oie-piste.png);
+  background: transparent url(../../images/module05/jeu-oie-piste.png);
 }
 
 #jeu-oie table td {
