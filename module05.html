@@ -35,7 +35,7 @@
         <p>Lancer un dé 🎲 dix fois et compter le nomrbe de 6 obtenus.</p>
         <p>Ecrire l'algorithme d'un programme qui simule cette situation.</p>
 
-        <p style="font-size: 60pt;" class="text-center">🎲</p>
+        <p style="font-size: 60pt;" class="d-print-none text-center">🎲</p>
 
         <div class="row">
           <div class="col-9">
@@ -116,7 +116,7 @@ Fin</code></pre>
           </div>
         </div>
 
-        <h4>Version 2</h4>
+        <h4 class="p-break">Version 2</h4>
 
         <div class="row">
           <div class="col-9">
@@ -173,7 +173,12 @@ Fin</code></pre>
 Fin Pour</code></pre>
           </div>
           <div class="col-6">
-            <pre><code class="language-python">for cpt in range(Vi, Vf+1, Vp):
+            <pre><code class="language-python"># Si Vp > 0
+for cpt in range(Vi, Vf+1, Vp):
+  # Traitements
+  </code></pre>
+            <pre><code class="language-python"># Si Vp &lt; 0
+for cpt in range(Vi, Vf-1, Vp):
   # Traitements
   </code></pre>
           </div>
@@ -211,7 +216,7 @@ Fin TantQue</code></pre>
     </article>
 
     <article>
-      <h2>Renforcement</h2>
+      <h2 class="p-break">Renforcement</h2>
       <section>
         <h3>Entiers suivants ★</h3>
 
@@ -503,43 +508,7 @@ b ? 9999
         </div>
 
         <h4>Travail demandé</h4>
-        <p>On demande de :</p>
-        <ol>
-          <li>Copier/coller le code suivant.</li>
-          <li>Tester ce code, puis dire qu'est ce qu'il fait ?<p class="d-none d-print-block text-danger fw-bold">Permet
-              de lancer un dé et puis de modifier la position de l'un des deux joueurs en fonction de la valeur obtenue.
-            </p>
-          </li>
-          <li>Combien faut-t-il jouer de fois pour que l'un des joueurs gagne ?<p
-              class="d-none d-print-block text-danger fw-bold">Tout dépend de la valeur du dé. Normalement, dès que l'un
-              des joueurs atteint la position d'arrivée le jeu se termine.</p>
-          </li>
-          <li>Est-ce qu'on peut utiliser la boucle <strong>for</strong> pour compléter ce programme ?<p
-              class="d-none d-print-block text-danger fw-bold">La boucle <em>for</em> est utilisable dans les cas où le
-              nombre de répétitions est connu à l'avance. Dans ce jeu on ne sait pas combien de fois il faudra rejouer
-              avant que l'un des deux joueurs gagne.</p>
-          </li>
-          <li>Quelle est la structure itérative à utiliser dans ce jeu ?<p
-              class="d-none d-print-block text-danger fw-bold">Il convient d'utiliser la boucle <em>while</em> dans ce
-              jeu.</p>
-          </li>
-        </ol>
-
-        <h4 class="p-break">Code Python</h4>
-        <pre><code class="language-python">from random import randint
-# (1) Placer les joueurs en position de départ
-pos_lievre = 0
-pos_tortue = 0
-# (2) Lancer un dé
-de = randint(1, 6)
-print("Dé =", de)
-# (3) Déplacer les joueurs
-if de != 6:
-    pos_tortue = pos_tortue + 1
-    print("La tortue avance à la case", pos_tortue)
-else:
-    pos_lievre = 6
-    print("Le lièvre avance à la position", pos_lievre)</code></pre>
+        <p>Ecrire l'algorithme du programme permettant de simuler ce jeu.</p>
       </section>
 
       <section>
@@ -590,48 +559,8 @@ else:
           </div>
         </div>
 
-        <div class="d-none d-print-block">
-          <figure>
-            <img src="images/module05/simulation-jeu-oie.png" alt="Simulation du jeu de l'oie" class="h9cm">
-            <figcaption>Simulation du jeu de l'oie</figcaption>
-          </figure>
-        </div>
-
-        <h4>Code départ</h4>
-        <pre><code class="language-python">from random import randint
-case_finale = 32 # 1. ?
-pos_j = 0        # 2. ?
-gagne = False    # 3. ?
-nbre_tours = 0   # 4. ?
-# 4. ?
-nbre_tours = nbre_tours + 1
-# 5. ?
-de = randint(1, 6)
-# 6. ?
-nouv_pos = pos_j + de
-# 7. ?
-action = "Av"
-# 8. ?
-print(f"Tour {nbre_tours:2} - Dé : {de} - {action} {pos_j:2} → {nouv_pos:2}")
-# 9. ?
-pos_j = nouv_pos
-# 10. ?
-gagne = pos_j == case_finale</code></pre>
         <p><strong>Travail demandé</strong></p>
-        <ul>
-          <li>Copier/Coller le code précédent.</li>
-          <li>Commenter ce code pour expliquer la fonction de chaque partie du code.</li>
-          <li>Est-ce que le jeu est complet ?<p class="d-none d-print-block text-danger fw-bold">Le jeu est
-              incomplet.<br>
-              Le joueur effectue uniquement une seule lancée de dé. Il est impossible qu'il atteigne la position
-              d'arrivée avec une seule lancée.</p>
-          </li>
-          <li>Quelles sont les étapes qui devront être répétées ? Combien de fois ?<p
-              class="d-none d-print-block text-danger fw-bold">Les <u>étapes 4 à 10</u> devront être répétées <u>tant
-                que le joueur n'a pas encore gagné</u>.</p>
-          </li>
-          <li>Compléter le code pour que le joueur continue de jouer jusqu'à ce qu'il gagne.</li>
-        </ul>
+        <p>Ecrire l'algorithme du programme permettant de simuler ce jeu.</p>
       </section>
     </article>
   </main>
