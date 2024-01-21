@@ -1,9 +1,9 @@
 from random import randint
 
-n = 10
-x = [randint(1, 100) for _ in range(n)]
+n = 3
+x = [int(v) for v in input(f"Entrer {n} entier ? ").split()]
 
-v = randint(1, 100)
+v = int(input("Entrer v ? "))
 
 vpp = x[0]
 for i in range(1, n):
