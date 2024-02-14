@@ -1,46 +1,46 @@
 from numpy import array
 from random import randint
 
-nf = int(input("Nombre d'oranges ? "))
-while nf < 10 and nf > 200000:
-    nf = int(input("Nombre d'oranges ? "))
+no = int(input("Nombre d'oranges ? "))
+while no < 10 or no > 100000:
+    no = int(input("Nombre d'oranges ? "))
 
-ttai = array([int()]*nf)
-for i in range(nf):
+td = array([int()]*no)
+for i in range(no):
     p = randint(0, 1000)
     if p < 5:
-        ttai[i] = randint(30, 52)
+        td[i] = randint(30, 52)
     elif p < 750:    
-        ttai[i] = randint(53, 72)
+        td[i] = randint(53, 72)
     elif p < 950:
-        ttai[i] = randint(73, 92)
+        td[i] = randint(73, 92)
     else:
-        ttai[i] = randint(93, 110)
+        td[i] = randint(93, 110)
 
 nca, ncb, nccd = 0, 0, 0
-tcla = array([int()]*nf)
+toca = array([int()]*no)
 
-for i in range(nf):
-    if ttai[i] < 73:
+for i in range(no):
+    if td[i] < 73:
         nccd += 1
-    elif ttai[i] < 93:
+    elif td[i] < 93:
         ncb += 1
     else:
-        tcla[nca] = ttai[i]
+        toca[nca] = td[i]
         nca += 1
 
-print("Nombre de fruits")
+print("Nombre d'oranges")
 print("Calibre a :", nca)
 print("Calibre b :", ncb)
 print("Calibre c+d :", nccd)
 
-fpp, fpg = tcla[0], tcla[0]
+opp, opg = toca[0], toca[0]
 for i in range(nca):
-    if tcla[i] > fpg:
-        fpg = tcla[i]
-    if tcla[i] < fpp:
-        fpp = tcla[i]
-print("Fruit le plus petit ", fpp, "mm")
-print("Fruit le plus grand ", fpg, "mm")
+    if toca[i] > opg:
+        opg = toca[i]
+    if toca[i] < opp:
+        opp = toca[i]
+print("Fruit le plus petit", opp, "mm")
+print("Fruit le plus grand", opg, "mm")
 
 
