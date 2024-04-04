@@ -1,0 +1,1947 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/css/default.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/module07.css">
+  <title>Module 7 : Les sous-programmes</title>
+</head>
+
+<body>
+  <aside>
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#aside_navbar"
+        aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span> Menu
+      </button>
+      <div class="collapse navbar-collapse" id="aside_navbar"></div>
+    </nav>
+  </aside>
+
+  <main class="container my-3">
+    <h1>Module 7 : Les sous-programmes</h1>
+
+    <article>
+      <h2>Situations</h2>
+
+      <section>
+        <h3>Distance entre deux points</h3>
+
+        <figure>
+          <img src="images/module07/maths-numbers-times-divide.png" alt="Calcul d'une somme" class="h4cm">
+          <figcaption>Distance entre deux points</figcaption>
+        </figure>
+
+        <p>Comparer les deux programmes suivants :</p>
+        <div class="row">
+          <div class="col-6">
+            <h5>Version 1</h5>
+            <pre><code class="python"># Saisie des coordonnées des points*
+x1 = int(input("x1 > 0 ? "))
+while x1 &lt;= 0:
+    x1 = int(input("x1 > 0 ? ")) 
+
+y1 = int(input("y1 > 0 ? "))
+while y1 &lt;= 0:
+    y1 = int(input("y1 > 0 ? "))
+
+x2 = int(input("x2 > 0 ? "))
+while x2 &lt;= 0:
+    x2 = int(input("x2 > 0 ? ")) 
+
+y2 = int(input("y2 > 0 ? "))
+while y2 &lt;= 0:
+    y2 = int(input("y2 > 0 ? ")) 
+
+# calcul des distances
+d1 = (x1 * x1 + y1 * y1)**0.5
+d2 = (x2 * x2 + y2 * y2)**0.5
+
+# affichage
+if d1 &lt; d2:
+    print("P1 est plus proche de l'origine")
+elif d1 &gt; d2:
+    print("P2 est plus proche de l'origine")
+else:
+    print("P1 et P2 sont équidistants")</code></pre>
+          </div>
+          <div class="col-6">
+            <h5>Version 2</h5>
+            <pre><code class="python">def saisie(msg):
+    n = int(input(msg))
+    while n &lt;= 0:
+        n = int(input(msg)) 
+    return n
+
+def dist(x, y):
+    return (x * x + y * y)**0.5
+
+def afficher(d1, d2):
+    if d1 &lt; d2:
+        print("P1 est plus proche de l'origine")
+    elif d1 &gt; d2:
+        print("P2 est plus proche de l'origine")
+    else:
+        print("P1 et P2 sont équidistants")
+
+
+# PP
+x1 = saisie("x1 ? ")
+y1 = saisie("y1 ? ")
+x2 = saisie("x2 ? ")
+y2 = saisie("y2 ? ")
+
+d1 = dist(x1, y1)
+d2 = dist(x2, y2)
+
+afficher(d1,d2)</code></pre>
+          </div>
+        </div>
+
+        <h5 class="p-break">Fonction des programmes</h5>
+        <p>Les deux programmes permettent à l'utilisateur de saisir les coordonnées de deux points du plan, puis
+          d'afficher le point le plus proche de l'origine.</p>
+        <h5>Différences dans la structure du programme</h5>
+        <table class="table table-sm table-bordered border-dark table-striped table-hover col-2">
+          <thead>
+            <tr>
+              <th>Version 1</th>
+              <th>Version 2</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <p><strong>Saisie</strong></p>
+                <p>Chaque saisie est effectuée à l'intérieur d'une boucle <code>while</code>, qui se répète tant que
+                  l'utilisateur ne saisit pas un nombre positif.</p>
+                <p>Le même est répété 4 fois poru saisir les coordonnées des deux points.</p>
+              </td>
+              <td>
+                <p><strong>Saisie</strong></p>
+                <p>La fonction <code>saisie()</code> gère la saisie d'un nombre positif.</p>
+                <p>Les coordonnées des points sont saisies en appelant la fonction <code>saisie()</code>.</p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p><strong>Calcul de la distance</strong></p>
+                <p>La distance <code>d1</code> et <code>d2</code> sont calculées en utilisant la formule de distance.
+                </p>
+              </td>
+              <td>
+                <p><strong>Calcul de la distance</strong></p>
+                <p>La fonction <code>dist()</code> est chargée de calculer la distance.</p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p><strong>َAffichage du point le plus proche</strong></p>
+                <p>Le point proche est déterminée à l'aide de la structure <code>if</code>.</p>
+              </td>
+              <td>
+                <p><strong>َAffichage du point le plus proche</strong></p>
+                <p>La fonction <code>afficher()</code> est chargée de déterminer le point le plus proche.</p>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <h4>Résumé</h4>
+        <p>La deuxième version est dite <b><u>modulaire</u></b>, car elle utilise des fonctions pour séparer les tâches
+          de <u>saisie</u>, de <u>calcul</u> et d'<u>affichage</u>. Cela rend le code plus facile à comprendre et à
+          maintenir.
+          En outre, cette version :</p>
+        <ul>
+          <li>évite la répétition de code, car la saisie de chaque nombre est effectuée en appelant la même fonction.
+          </li>
+          <li>est plus élégante, car elle est mieux structurée que la première.</li>
+          <li>peut sembler un peu plus complexe pour les débutants en programmation.</li>
+        </ul>
+
+        <h4>Algorithmes</h4>
+        <div class="row">
+          <div class="col-6">
+            <h5>Version 1</h5>
+            <pre><code class="algorithm">Algorithme Plus_Proche
+Début
+  Répéter
+    Ecrire("x1 > 0 ? ") ; Lire(x1)
+  Jusqu'à x1 > 0
+  Répéter
+    Ecrire("y1 > 0 ? ") ; Lire(y1)
+  Jusqu'à y1 > 0
+  Répéter
+    Ecrire("x2 > 0 ? ") ; Lire(x2)
+  Jusqu'à x2 > 0
+  Répéter
+    Ecrire("y2 > 0 ? ") ; Lire(y2)
+  Jusqu'à y2 > 0
+
+  d1 &larr; racine(x1 * x1 + y1 * y1)
+  d2 &larr; racine(x2 * x2 + y2 * y2)
+
+  Si d1 &lt; d2 Alors
+    Ecrire("P1 est plus proche de l'origine")
+  Sinon Si d2 &lt; d1 Alors
+    Ecrire("P1 est plus proche de l'origine")
+  Sinon
+    Ecrire("P1 et P2 sont équidistants")
+  Fin Si
+Fin</code></pre>
+            <p class="text-center">TDO</p>
+            <table class="table table-sm table-bordered border-dark table-striped table-hover col-2 w-50 m-auto">
+              <thead>
+                <tr>
+                  <th>Objet</th>
+                  <th>Type/Nature</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>x1, x2, y1, y2, d1, d2</td>
+                  <td>réel</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="col-6">
+            <h5>Version 2</h5>
+            <p><strong>Programme Principal</strong></p>
+            <div class="row">
+              <div class="col-8">
+                <pre><code class="algorithm">Algorithme Plus_Proche_V2
+Début
+  saisie("x1 ? ", x1)
+  saisie("y1 ? ", y1)
+  saisie("x2 ? ", x2)
+  saisie("y2 ? ", y2)
+
+  d1 &larr; dist(x1, y1)
+  d2 &larr; dist(x2, y2)
+
+  afficher(d1, d2)
+Fin</code></pre>
+              </div>
+              <div class="col-4">
+                <p class="text-center">TDOG</p>
+                <table class="table table-sm table-bordered border-dark table-striped table-hover col-2 w-100 m-auto">
+                  <thead>
+                    <tr>
+                      <th>Objet</th>
+                      <th>Type</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>x1, y1,<br> x2, y2,<br> d1, d2</td>
+                      <td>réel</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <p class="d-none d-print-block">&nbsp;</p>
+            <p class="d-none d-print-block">&nbsp;</p>
+
+            <p><strong>Procédure Saisie()</strong></p>
+            <pre><code class="algorithm">Procédure Saisie(msg: chaine; @n: réel)
+Début
+  Répéter
+    Ecrire(msg) ; Lire(n)
+  Jusqu'à n > 0
+Fin</code></pre>
+
+            <p class="d-none d-print-block">&nbsp;</p>
+            <p class="d-none d-print-block">&nbsp;</p>
+            <p><strong>Fonction dist()</strong></p>
+            <pre><code class="algorithm">Fonction dist(x, y: réel):réel
+Début  
+  retourner racine(x * x + y * y)
+Fin</code></pre>
+            <p class="d-none d-print-block">&nbsp;</p>
+            <p class="d-none d-print-block">&nbsp;</p>
+
+            <p><strong>Procédure afficher()</strong></p>
+            <pre><code class="algorithm">Procédure afficher(d1, d2: réel)
+Début
+  Si d1 &lt; d2 Alors
+    Ecrire("P1 est plus proche de l'origine")
+  Sinon Si d2 &lt; d1 Alors
+    Ecrire("P1 est plus proche de l'origine")
+  Sinon
+    Ecrire("P1 et P2 sont équidistants")
+  Fin Si
+Fin</code></pre>
+
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h3>Problème de lessive</h3>
+
+        <p>Najla, Douja et Zohra ont fait leurs lessives aujourd’hui. Or, <strong>Najla</strong> fait sa lessive
+          <ins>tous les 3 jours</ins>, <strong>Douja</strong> <ins>tous les 4 jours</ins> et <strong>Zohra</strong>
+          <ins>tous les 6 jours</ins>.
+        </p>
+
+        <figure>
+          <img src="images/module07/lessive.webp" alt="Lessive" class="h5cm">
+          <figcaption>Lessive</figcaption>
+        </figure>
+
+        <h4>Questions</h4>
+        <ol>
+          <li>Combien passera-t-il de temps avant que les trois femmes ne refassent leurs lessives le même jour ?</li>
+          <li>En supposant que :
+            <ul>
+              <li><strong>Najla</strong> fait la lessive tous les <code>lf1</code> jours. Avec <code>lf1 &gt; 0</code>
+              </li>
+              <li><strong>Douja</strong> fait la lessive tous les <code>lf2</code> jours. Avec <code>lf2 &gt; 0</code>
+              </li>
+              <li><strong>Zohra</strong> fait la lessive tous les <code>lf3</code> jours. Avec <code>lf3 &gt; 0</code>
+              </li>
+            </ul>
+            Déterminer quand les trois femmes referons leurs lessives le même jour ?
+          </li>
+          <li>Ecrire l'algorithme d'un programme pour résoudre ce problème.</li>
+        </ol>
+      </section>
+
+      <section>
+        <h3 class="p-break">Solution</h3>
+        <ol>
+          <li>On pourra déterminer graphiquement le temps requis pour voir les trois femmes faire leurs lessives le même
+            jour. Et ce en utilisant l'échelle temporelle suivante :
+            <figure>
+              <img src="images/module07/jours-lessive.png" alt="Jours de lessive">
+              <figcaption>Jours de lessive</figcaption>
+            </figure>
+            On en déduit qu'il faudra attendre <strong>12 jours</strong>.
+          </li>
+          <li>On remarque que le temps requis pour voir les trois femmes faire leurs lessives dans une même journée peut
+            être calculé en utilisant la formule suivante :
+            <p class="text-center"><strong>ppcm(3, 4, 6) = ppcm(3, ppcm(4, 6)) = ppcm(ppcm(3, 4), 6)= 12</strong></p>
+            <p>Plus généralement le <strong>temps requis pour voir les femmes faire leurs lessives la même
+                journée</strong> est :</p>
+            <p class="text-center"><strong>ltf = ppcm(lf1, lf2, lf3) = ppcm(ppcm(lf1, lf2), lf3) = ppcm(lf1, ppcm(lf2,
+                lf3))</strong>
+            </p>
+            <p>PPCM = Plus Petit Commun Multiple, c'est le plus petit nombre qui est multiple des trois nombres</p>
+          </li>
+          <li>L'algorithme de cette situation peut être écrit de deux façons :
+            <h5>1<sup>ère</sup> façon : méthode classique</h5>
+            <div class="row">
+              <div class="col-9">
+                <pre><code class="algorithm">Algorithme Lessive
+Début
+  // Saisie du jour de lessive de chaque femme
+  Répéter
+    Ecrire("Lessive femme 1 ? ") ; Lire(lf1)
+  Jusqu'à (lf1 > 0)
+  Répéter
+    Ecrire("Lessive femme 2 ? ") ; Lire(lf2)
+  Jusqu'à (lf2 > 0)
+  Répéter
+    Ecrire("Lessive femme 3 ? ") ; Lire(lf3)
+  Jusqu'à (lf3 > 0)
+  // Après combien de jours la 2ème et la 3ème femme font leurs lessives
+  p1 &larr; lf2
+  TantQue p1 mod lf3 &ne; 0 Faire
+    p1 &larr; p1 + lf2
+  Fin TantQue
+  // Après combien de jours les 3 femmes font leurs lessives
+  p2 &larr; lf1
+  TantQue p2 mod p1 &ne; 0 Faire
+    p2 &larr; p2 + lf1
+  Fin TantQue
+  ltf &larr; p2
+  // Affichage du résultat
+  Ecrire("Toutes les femmes feront leurs lessives après", ltf, "jours")
+Fin</code></pre>
+              </div>
+              <div class="col-3">
+                <table class="table table-sm table-bordered border-dark table-striped table-hover col-2 col-2">
+                  <thead>
+                    <tr>
+                      <th>Objet</th>
+                      <th>Type/Nature</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>lf1, lf2, lf3, ltf, p1, p2</td>
+                      <td>entier</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div class="d-print-none">
+              <p>Implémentation en <a href="codes/module08/lessive0.py" target="_blank" rel="noopener noreferrer"
+                  download="lessive0.py">Python</a>.</p>
+            </div>
+            <h5 class="p-break">2<sup>ème</sup> façon : méthode modulaire</h5>
+            <p><strong>Programme Principal</strong></p>
+            <div class="row">
+              <div class="col-9">
+                <pre><code class="algorithm">Algorithme Lessive2
+Début
+  // Saisie du jour de lessive de chaque femme
+  saisie("Lessive femme 1 ? ", lf1)
+  saisie("Lessive femme 2 ? ", lf2)
+  saisie("Lessive femme 3 ? ", lf3)
+  // Après combien de jours les 3 femmes font leurs lessives
+  ltf &larr; ppcm(lf1, ppcm(lf2, lf3))
+  // Affichage du résultat
+  Ecrire("Toutes les femmes feront leurs lessives après", ltf, "jours")
+Fin</code></pre>
+              </div>
+              <div class="col-3">
+                <p><strong>TDOG</strong></p>
+                <table class="table table-sm table-bordered border-dark table-striped table-hover col-2">
+                  <thead>
+                    <tr>
+                      <th>Objet</th>
+                      <th>Type/Nature</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>lf1, lf2, lf3, ltf</td>
+                      <td>entier</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <p><strong>Procédure saisie</strong></p>
+            <div class="row">
+              <div class="col-9">
+                <pre><code class="algorithm">procédure saisie(msg: chaîne, @nj: entier)
+Début
+  Répéter
+    Ecrire(msg)
+    Lire(nj)
+  Jusqu'à (nj > 0)
+Fin</code></pre>
+              </div>
+              <div class="col-3">
+                <p><strong>TDOL</strong></p>
+                <table class="table table-sm table-bordered border-dark table-striped table-hover col-2">
+                  <thead>
+                    <tr>
+                      <th>Objet</th>
+                      <th>Type/Nature</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>-</td>
+                      <td>-</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <p><strong>Fonction ppcm</strong></p>
+            <div class="row">
+              <div class="col-9">
+                <pre><code class="algorithm">fonction ppcm(a, b: entier):entier
+Début
+  p &larr; a
+  TantQue (p mod b &ne; 0) Faire
+    p &larr; p + a
+  Fin TantQue
+  retourner p
+Fin</code></pre>
+              </div>
+              <div class="col-3">
+                <p><strong>TDOL</strong></p>
+                <table class="table table-sm table-bordered border-dark table-striped table-hover col-2">
+                  <thead>
+                    <tr>
+                      <th>Objet</th>
+                      <th>Type/Nature</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>p</td>
+                      <td>entier</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div class="d-print-none">
+              <p>Implémentation en <a href="codes/module08/lessive.py" target="_blank" rel="noopener noreferrer"
+                  download="lessive.py">Python</a>.</p>
+            </div>
+          </li>
+        </ol>
+
+      </section>
+
+      <section>
+        <h3>Fraction irréductible</h3>
+
+        <p>En mathématiques, une <strong>fraction est irréductible</strong> s'il n'existe pas de fraction égale ayant
+          des termes plus petits. Autrement dit, une fraction irréductible <strong><u>ne peut pas être
+              simplifiée</u></strong>.</p>
+
+        <h4>Théorème</h4>
+        <p>Soient <strong>a</strong> un entier et <strong>b</strong> un entier naturel non nul. Alors <img
+            src="images/module07/fraction-a-b.svg" alt="a/b" class="h1cm"> est irréductible si et
+          seulement si
+          <strong>a</strong> et <strong>b</strong> sont premiers entre eux.
+        </p>
+
+        <h5>Exemple</h5>
+        <p>La fraction <img src="images/module07/fraction-12-20.svg" alt="12/20" class="h1cm"> n'est pas
+          irréductible
+          car 12 et 20 sont des multiples de 4 : <img src="images/module07/fraction-12-20-01.svg" alt="12/20"
+            class="h1cm"> (simplification par 4).
+          On peut aussi écrire <img src="images/module07/fraction-12-20-02.svg" alt="12/20" class="h1cm">.
+        </p>
+
+        <p>La fraction <img src="images/module07/fraction-3-5.svg" alt="3/5" class="h1cm"> est
+          irréductible car 1 est le seul entier positif qui divise à la fois 3 et 5.</p>
+
+        <h4>Méthode de simplification</h4>
+
+        <p>Pour réduire directement une fraction, il suffit de <strong>diviser le numérateur et le dénominateur par leur
+            plus grand commun diviseur</strong>. D'après le lemme de Gauss, cette forme réduite est unique.</p>
+
+        <h5>Exemple</h5>
+        <p>Pour réduire la fraction <img src="images/module07/fraction-42-390.svg" alt="42/390" class="h1cm">, on
+          calcule <img src="images/module07/pgcd-42-390.svg" alt="PGCD(42, 390)=6" class="h1cm"> puis on
+          simplifie par 6
+          : <img src="images/module07/fraction-42-390-01.svg" alt="42/390=7/65" class="h1cm">.</p>
+
+        <h4 class="p-break">Problème</h4>
+
+        <p>On souhaite écrire l'algorithme d'un <strong>programme modulaire</strong> qui calcule la somme de deux
+          fractions :</p>
+        <figure>
+          <img src="images/module07/fraction-somme.png" alt="p1/q1+p2/q2=ps/qs" class="h1_5cm">
+          <figcaption>Somme de deux fractions avec : p1, p2, ps ∈ 𝕫 et q1, q2, qs ∈ 𝕫<sup>*</sup>
+          </figcaption>
+        </figure>
+      </section>
+
+      <section>
+        <h3>Solution</h3>
+        <h5>Solution non modulaire</h5>
+        <div class="row">
+          <div class="col-9">
+            <pre><code class="algorithm">Algorithme Somme_Fraction
+Début
+  // Saisie de p1 et q1
+  Ecrire("Fraction : p1 / q1")
+  Ecrire("Numérateur ? ") ; Lire(p1)
+  Répéter
+    Ecrire("Dénominateur ? ") ; Lire(q1)  
+  Jusqu'à q1 &ne; 0
+  // Saisie de p2 et q2
+  Ecrire("Fraction : p2 / q2")
+  Ecrire("Numérateur ? ") ; Lire(p2)
+  Répéter
+    Ecrire("Dénominateur ? ") ; Lire(q2)  
+  Jusqu'à q2 &ne; 0
+  // Calcul de la somme des deux fractions
+  ps &larr; p1 * q2 + p2 * q1
+  qs &larr; q1 * q2
+  // Calcul du PGCD(ps, qs)
+  a &larr; ps
+  b &larr; qs
+  TantQue b &ne; 0 Faire
+    r &larr; a mod b
+    a &larr; b
+    b &larr; r
+  Fin TantQue
+  // Simplification
+  ps &larr; ps div a
+  qs &larr; qs div a
+  // Affichage
+  Ecrire(p1, "/", q1, "+", p2, "/", q2, "=", ps, "/", qs)
+Fin</code></pre>
+          </div>
+          <div class="col-3">
+            <p><strong>TDO</strong></p>
+            <table class="table table-sm table-bordered border-dark table-striped table-hover col-2">
+              <thead>
+                <tr>
+                  <th>Objet</th>
+                  <th>Type/Nature</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>p1, q1, p2, q2, ps, qs, a, b, r</td>
+                  <td>entier</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="d-print-none">
+          <p>Implémentation en <a href="codes/module08/frac0.py" target="_blank" rel="noopener noreferrer"
+              download="frac0.py">Python</a>.</p>
+        </div>
+
+        <h5>Solution modulaire</h5>
+        <p><strong>Programme Principal</strong></p>
+        <div class="row">
+          <div class="col-9">
+            <pre><code class="algorithm">Algorithme Somme_Fraction1
+Début
+  // Saisie de p1 et q1 / p2 et q2
+  saisie_frac("Fraction : p1 / q1", p1, q1)
+  saisie_frac("Fraction : p2 / q2", p2, q2)
+  // Calcul de la somme des deux fractions
+  somme_frac(p1, q1, p2, q2, ps, qs)    
+  // Simplification
+  simp_frac(ps, qs)
+  // Affichage
+  Ecrire(p1, "/", q1, "+", p2, "/", q2, "=", ps, "/", qs)
+Fin</code></pre>
+          </div>
+          <div class="col-3">
+            <p><strong>TDOG</strong></p>
+            <table class="table table-sm table-bordered border-dark table-striped table-hover col-2">
+              <thead>
+                <tr>
+                  <th>Objet</th>
+                  <th>Type/Nature</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>p1, q1, p2, q2, ps, qs</td>
+                  <td>entier</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <p><strong>Procédure saisie_frac</strong></p>
+        <div class="row">
+          <div class="col-9">
+            <pre><code class="algorithm">Procédure saisie_frac(msg: chaîne, @p, @q: entier)
+Début
+  Ecrire(msg)
+  Ecrire("Numérateur ? ") ; Lire(p)
+  Répéter
+    Ecrire("Dénominateur ? ") ; Lire(q)  
+  Jusqu'à q ≠ 0  
+Fin</code></pre>
+          </div>
+          <div class="col-3">
+            <p><strong>TDOL</strong></p>
+            <table class="table table-sm table-bordered border-dark table-striped table-hover col-2">
+              <thead>
+                <tr>
+                  <th>Objet</th>
+                  <th>Type/Nature</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>-</td>
+                  <td>-</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <p><strong>Procédure somme_frac</strong></p>
+        <div class="row">
+          <div class="col-9">
+            <pre><code class="algorithm">Procédure somme_frac(a1, b1, a2, b2, @a3, @b3: entier)
+Début
+  a3 &larr; a1 * b2 + a2 * b1
+  b3 &larr; b1 * b2
+Fin</code></pre>
+          </div>
+          <div class="col-3">
+            <p><strong>TDOL</strong></p>
+            <table class="table table-sm table-bordered border-dark table-striped table-hover col-2">
+              <thead>
+                <tr>
+                  <th>Objet</th>
+                  <th>Type/Nature</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>-</td>
+                  <td>-</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <p><strong>Procédure simp_frac</strong></p>
+        <div class="row">
+          <div class="col-9">
+            <pre><code class="algorithm">Procédure simp_frac(@a, @b: entier)
+Début
+  p &larr; pgcd(a, b)
+  a &larr; a div p
+  b &larr; b div p
+Fin</code></pre>
+          </div>
+          <div class="col-3">
+            <p><strong>TDOL</strong></p>
+            <table class="table table-sm table-bordered border-dark table-striped table-hover col-2">
+              <thead>
+                <tr>
+                  <th>Objet</th>
+                  <th>Type/Nature</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>p</td>
+                  <td>entier</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <p><strong>Fonction pgcd</strong></p>
+        <div class="row">
+          <div class="col-9">
+            <pre><code class="algorithm">Fonction pgcd(a, b: entier):entier
+Début
+  TantQue b ≠ 0 Faire
+    r ← a mod b
+    a ← b
+    b ← r
+  Fin TantQue
+  retourner a
+Fin</code></pre>
+          </div>
+          <div class="col-3">
+            <p><strong>TDOL</strong></p>
+            <table class="table table-sm table-bordered border-dark table-striped table-hover col-2">
+              <thead>
+                <tr>
+                  <th>Objet</th>
+                  <th>Type/Nature</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>r</td>
+                  <td>entier</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="d-print-none">
+          <p>Implémentation en <a href="codes/module08/frac.py" target="_blank" rel="noopener noreferrer"
+              download="frac.py">Python</a>.</p>
+        </div>
+      </section>
+
+      <section>
+        <h3>Nombres amicaux</h3>
+
+        <p>Deux nombres entiers naturels distincts sont dits «&nbsp;amicaux&nbsp;» (ou «&nbsp;amiables&nbsp;») si la
+          somme des diviseurs stricts de l'un est égale à l'autre et réciproquement.</p>
+        <p>Les diviseurs de 10 sont 1, 2, 5, 10. Les diviseurs stricts de 10 sont 1, 2, 5.</p>
+
+        <h4>Travail demandé</h4>
+        <ol>
+          <li>Chercher la liste des diviseurs stricts de 220 et de 284.</li>
+          <li>Vérifier que 220 et 284 sont deux nombres amicaux.</li>
+          <li>Ecrire l'algorithme d'un programme qui vérifie si deux nombres données sont amicaux.</li>
+        </ol>
+      </section>
+
+      <section>
+        <h3>Solution</h3>
+
+        <ol>
+          <li>
+            <p>diviseurs(220) = {1, 2, 4, 5, 10, 11, 20, 22, 44, 55, 110}</p>
+            <p>diviseurs(284) = {1, 2, 4, 71, 142}</p>
+          </li>
+          <li>
+            <p>som_div(220) = 1 + 2 + 4 + 5 + 10 + 11 + 20 + 22 + 44 + 55 + 110 = 284</p>
+            <p>som_div(284) = 1 + 2 + 4 + 71 + 142 = 220</p>
+            <p><strong>&rArr; 220 et 284 sont des nombres amicaux.</strong></p>
+          </li>
+          <li class="p-break">
+            <h5>Solution non modulaire</h5>
+            <div class="row">
+              <div class="col-9">
+                <pre><code class="algorithm">Algorithme amicaux
+Début
+  // Saisie de deux nombres strictement positifs
+  Répéter
+    Ecrire("Donner n ? ") ; Lire(n)
+  Jusqu'à (n > 0)
+  Répéter
+    Ecrire("Donner m ? ") ; Lire(m)
+  Jusqu'à (m > 0)
+  // calcul de la somme diviseurs de n
+  sn &larr; 0
+  Pour i de 1 à n div 2 Faire
+    Si n mod i = 0 Alors
+      sn &larr; sn + i
+    Fin Si
+  Fin Pour
+  // calcul de la somme diviseurs de m
+  sm &larr; 0
+  Pour i de 1 à m div 2 Faire
+    Si m mod i = 0 Alors
+      sm &larr; sm + i
+    Fin Si
+  Fin Pour
+  // Affichage du résultat
+  Si (n = sm) et (m = sn) Alors
+    Ecrire(n, "et", m, "sont amicaux.")
+  Sinon
+    Ecrire(n, "et", m, "ne sont pas amicaux.")
+  Fin Si
+Fin</code></pre>
+              </div>
+              <div class="col-3">
+                <p><strong>TDO</strong></p>
+                <table class="table table-sm table-bordered border-dark table-striped table-hover col-2">
+                  <thead>
+                    <tr>
+                      <th>Objet</th>
+                      <th>Type/Nature</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>n, m, i, sn, sm</td>
+                      <td>entier</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div class="d-print-none">
+              <p>Implémentation en <a href="codes/module08/amicaux0.py" target="_blank" rel="noopener noreferrer"
+                  download="amicaux0.py">Python</a>.</p>
+            </div>
+          </li>
+        </ol>
+
+        <h4>Travail demandé</h4>
+        <p>Transformer la solution précédente en une solution modulaire.</p>
+        <div class="d-none d-print-block">
+          <h4 class="p-break">Solution</h4>
+          <p><strong>Programme Principal</strong></p>
+          <div class="row">
+            <div class="col-9">
+              <pre><code class="algorithm">Algorithme amicaux
+Début
+  // Saisie de deux nombres strictement positifs
+  saisie("Donner n ? ", n)
+  saisie("Donner m ? ", m)
+  // calcul de la somme diviseurs de n
+  sn &larr; som_div(n)
+  // calcul de la somme diviseurs de m
+  sm &larr; som_div(m)
+  // Affichage du résultat
+  Si (n = sm) et (m = sn) Alors
+    Ecrire(n, "et", m, "sont amicaux.")
+  Sinon
+    Ecrire(n, "et", m, "ne sont pas amicaux.")
+  Fin Si
+Fin</code></pre>
+            </div>
+            <div class="col-3">
+              <p><strong>TDOG</strong></p>
+              <table class="table table-sm table-bordered border-dark table-striped table-hover col-2">
+                <thead>
+                  <tr>
+                    <th>Objet</th>
+                    <th>Type/Nature</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>n, m, i, sn, sm</td>
+                    <td>entier</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <p><strong>Procédure saisie</strong></p>
+          <div class="row">
+            <div class="col-9">
+              <pre><code class="algorithm">Procédure saisie(msg: chaîne, @n: entier)
+Début
+  Répéter
+    Ecrire("Donner n ? ") ; Lire(n)
+  Jusqu'à (n > 0)
+Fin</code></pre>
+            </div>
+            <div class="col-3">
+              <p><strong>TDOL</strong></p>
+              <table class="table table-sm table-bordered border-dark table-striped table-hover col-2">
+                <thead>
+                  <tr>
+                    <th>Objet</th>
+                    <th>Type/Nature</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>-</td>
+                    <td>-</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <p><strong>Fonction som_div</strong></p>
+          <div class="row">
+            <div class="col-9">
+              <pre><code class="algorithm">Fonction som_div(n: entier):entier
+Début
+  sn ← 0
+  Pour i de 1 à n div 2 Faire
+    Si n mod i = 0 Alors
+      sn ← sn + i
+    Fin Si
+  Fin Pour
+  retourner sn
+Fin</code></pre>
+            </div>
+            <div class="col-3">
+              <p><strong>TDOL</strong></p>
+              <table class="table table-sm table-bordered border-dark table-striped table-hover col-2">
+                <thead>
+                  <tr>
+                    <th>Objet</th>
+                    <th>Type/Nature</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>sn, i</td>
+                    <td>entier</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+        <div class="d-print-none">
+          <p>Implémentation en <a href="codes/module08/amicaux.py" target="_blank" rel="noopener noreferrer"
+              download="amicaux.py">Python</a>.</p>
+        </div>
+      </section>
+
+      <section>
+        <h3 class="p-break">Problème Inconnu</h3>
+        <p>Soit l'algorithme suivant :</p>
+        <pre><code class="algorithm">Algorithme Inconnu
+Début
+  // Séquence 1
+  Répéter
+    Ecrire("Donner la taille du tableau ? ") ; Lire(n)
+  Jusqu'à (5 &le; n &le; 20)
+  // Séquence 2
+  Pour i de 0 à n-1 Faire
+    Répéter
+      Ecrire("Donner l'élément n°", i, " ? ") ; Lire(t[i])
+    Jusqu'à ((i = 0) et (-10 &le; t[i] &le; 10)) ou ((i > 0) et (t[i] > t[i-1]))
+  Fin Pour
+  // Séquence 3
+  Ecrire("Donner un entier ? ") ; Lire(a)
+  // Séquence 4
+  i &larr; -1
+  Répéter
+    i &larr; i + 1
+  Jusqu'à (i = n) ou (t[i] > a)
+  p &larr; i
+  // Séquence 5
+  Ecrire("p =", p)
+Fin</code></pre>
+        <p class="d-print-none">Implémentation en python : <a href="codes/module08/inconnu0.py" target="_blank"
+            rel="noopener noreferrer">inconnu0.py</a></p>
+        <p><strong>Questions</strong></p>
+        <ol>
+          <li>Remplir le tableau de déclaration des objets (TDO) et le tableau de déclaration de nouveaux types (TDNT)
+            relatifs à l'algorithme Inconnu.
+            <div class="d-none d-print-block">
+              <div class="row">
+                <div class="col">
+                  <p><strong>TDO</strong></p>
+                  <table class="table table-sm text-center border-dark table-bordered col-2">
+                    <tr>
+                      <th>Objet</th>
+                      <th>Type</th>
+                    </tr>
+                    <tr>
+                      <td>n, i, a, p</td>
+                      <td>entier</td>
+                    </tr>
+                    <tr>
+                      <td>t</td>
+                      <td>tab</td>
+                    </tr>
+                  </table>
+                </div>
+                <div class="col">
+                  <p><strong>TDNT</strong></p>
+                  <table class="table table-sm text-center border-dark table-bordered">
+                    <tr>
+                      <td>tab = tableau de 20 entier</td>
+                    </tr>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li>Donner le rôle des séquences 1, 2.
+            <div class="d-none d-print-block">
+              <p><strong>Séquence 1 :</strong> permet de saisir la taille du tableau <code>n</code>.</p>
+              <p><strong>Séquence 2 :</strong> permet de remplir le tableau <code>t</code> par des valeurs strictement
+                croissantes, le premier élément est dans l'intervalle [-10, 10].</p>
+            </div>
+          </li>
+          <li>Soit le tableau T suivant:
+            <table class="m-auto col-7 text-center">
+              <tr>
+                <th>T</th>
+                <td class="border border-dark">-2</td>
+                <td class="border border-dark">1</td>
+                <td class="border border-dark">5</td>
+                <td class="border border-dark">7</td>
+                <td class="border border-dark">12</td>
+                <td class="border border-dark">26</td>
+              </tr>
+              <tr>
+                <th>&nbsp;</th>
+                <th>0</th>
+                <th>1</th>
+                <th>2</th>
+                <th>3</th>
+                <th>4</th>
+                <th>5</th>
+              </tr>
+            </table>
+            <ol type="a">
+              <li>Pour chaque valeur de <code>a</code>, donner la valeur de <code>p</code> correspondante après
+                l'exécution des séquences 4 et 5 de l'algorithme.
+                <table class="table table-sm col-2 text-center border-dark table-bordered">
+                  <tr>
+                    <th>Valeur de a</th>
+                    <th>Valeur de p</th>
+                  </tr>
+                  <tr>
+                    <td>-5</td>
+                    <td>
+                      <span class="d-print-none">&nbsp;</span>
+                      <span class="d-none d-print-inline">0</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>7</td>
+                    <td><span class="d-print-none">&nbsp;</span>
+                      <span class="d-none d-print-inline">4</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>10</td>
+                    <td><span class="d-print-none">&nbsp;</span>
+                      <span class="d-none d-print-inline">4</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>30</td>
+                    <td><span class="d-print-none">&nbsp;</span>
+                      <span class="d-none d-print-inline">6</span>
+                    </td>
+                  </tr>
+                </table>
+              </li>
+              <li>Quel est le rôle de la variable <code>p</code> utilisée dans l'algorithme Inconnu ?
+                <div class="d-none d-print-block">La valeur de <code>p</code> indique l'indice de l'élément du tableau
+                  <code>t</code> dont la valeur est supérieure à <code>a</code>. Elle affiche <code>n</code> si a &ge;
+                  t[n-1].
+                </div>
+              </li>
+            </ol>
+          </li>
+          <li class="p-break">Transformer cet algorithme en un algorithme modulaire, composé de procédures et de
+            fonctions.
+            <div class="d-none d-print-block">
+              <p><strong>Programme Principal</strong></p>
+              <div class="row">
+                <div class="col-9">
+                  <pre><code class="algorithm">Algorithme Inconnu_v2
+Début
+  Saisie(n)
+  Remplir(n, t)
+  Ecrire("Donner un entier ? ") ; Lire(a)
+  p &larr; Position(a, n, t)
+  Ecrire("p =", p)
+Fin</code></pre>
+                </div>
+                <div class="col-3">
+                  <p><strong>TDOG</strong></p>
+                  <table class="table table-sm text-center border-dark table-bordered col-2">
+                    <tr>
+                      <th>Objet</th>
+                      <th>Type</th>
+                    </tr>
+                    <tr>
+                      <td>n, a, p</td>
+                      <td>entier</td>
+                    </tr>
+                    <tr>
+                      <td>t</td>
+                      <td>tab</td>
+                    </tr>
+                  </table>
+                </div>
+              </div>
+              <p><strong>Procédure Saisie</strong></p>
+              <div class="row">
+                <div class="col-9">
+                  <pre><code class="algorithm">Procédure Saisie(@n: entier)
+Début
+  Répéter
+    Ecrire("Donner la taille du tableau ? ") ; Lire(n)
+  Jusqu'à (5 ≤ n ≤ 20)
+Fin</code></pre>
+                </div>
+                <div class="col-3">
+                  <p><strong>TDOL</strong></p>
+                  <table class="table table-sm text-center border-dark table-bordered col-2">
+                    <tr>
+                      <th>Objet</th>
+                      <th>Type</th>
+                    </tr>
+                    <tr>
+                      <td>-</td>
+                      <td>-</td>
+                    </tr>
+                  </table>
+                </div>
+              </div>
+              <p><strong>Fonction Position</strong></p>
+              <div class="row">
+                <div class="col-9">
+                  <pre><code class="algorithm">Fonction position(a, n:entier, t:tab):entier
+Début
+  i ← -1
+  Répéter
+    i ← i + 1
+  Jusqu'à (i = n) ou (t[i] > a)
+  retourner i
+Fin</code></pre>
+                </div>
+                <div class="col-3">
+                  <p><strong>TDOL</strong></p>
+                  <table class="table table-sm text-center border-dark table-bordered col-2">
+                    <tr>
+                      <th>Objet</th>
+                      <th>Type</th>
+                    </tr>
+                    <tr>
+                      <td>i</td>
+                      <td>entier</td>
+                    </tr>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li>Proposer l'Implémentation de votre algorithme en Python.
+            <div class="d-none d-print-block">
+              <pre><code class="python">from numpy import array
+
+def saisie():
+    n = 4
+    while not (5 <= n <= 20):
+        n = int(input("Donner la taille du tableau ? "))
+    return n
+
+def remplir(n):
+    t = array([int()]*n)
+    for i in range(n):
+        t[i] = -11
+        while not ((i == 0 and -10 <= t[i] <= 10) or (i > 0 and t[i] > t[i-1])):
+            t[i] = int(input((f"Donner l'élément n°{i} ? ")))
+    return t
+
+def position(a, n, t):
+    i = -1
+    while True:
+        i = i + 1
+        if (i == n) or (t[i] > a):
+            break
+    return i
+# PP
+n = saisie()
+t = remplir(n)
+a = int(input("Donner un entier ? "))
+p = position(a, n, t)
+print("p =", p)</code></pre>
+            </div>
+          </li>
+        </ol>
+      </section>
+    </article>
+
+    <article>
+      <h2 class="p-break">Notes de cours</h2>
+
+      <section>
+        <h3>Décomposition modulaire</h3>
+
+        <p>L'<strong>analyse modulaire</strong>, appelée également <strong>décomposition modulaire</strong>, consiste à
+          <ins>diviser un problème en sous problèmes de difficultés moindres</ins>.
+        </p>
+        <p>En algorithmique, les <strong>sous problèmes</strong> correspondent à des <strong>sous-programmes</strong>.
+        </p>
+
+        <h4>Sous-programme</h4>
+        <p>Un <strong>sous-programme</strong> est une <ins>section de code nommée</ins> <strong><em>qui peut être
+              appelée</em></strong> en écrivant son nom dans une instruction du programme.</p>
+
+        <p>L'écriture de <strong>sous-programmes</strong> <ins>rend le code plus lisible et réutilisable</ins>, car le
+          code est subdivisé en des sections plus petites.</p>
+        <figure>
+          <img src="images/module07/decomposition-modulaire-lessives.png" class="h3cm" alt="Décomposition modulaire">
+          <figcaption>Décomposition modulaire du problème de lessive des trois femmes</figcaption>
+        </figure>
+
+        <p>En algorithmique on distingue deux catégories de <strong>sous-progrmmes</strong> : les
+          <strong>procédures</strong> et les <strong>fonctions</strong>.
+        </p>
+        <p>Une <strong>procédure</strong> exécute simplement un ensemble d'instructions, tandis qu'une
+          <strong>fonction</strong> renvoie une valeur une fois son exécution est terminée.
+        </p>
+
+        <figure>
+          <img src="images/module07/fonction-procedure.png" class="h4cm"
+            alt="Différence entre une procédure et une fonction">
+          <figcaption>Différence entre une procédure et une fonction</figcaption>
+        </figure>
+
+        <p>La plupart des langages de programmation sont livrés avec un ensemble de sous-programmes intégrés (fonctions
+          prédéfinies). Ils permettent, aussi, au programmeur d'écrire leurs propres sous-programmes personnalisés.</p>
+      </section>
+
+      <section>
+        <h3>Fonction</h3>
+
+        <h4>Définition</h4>
+        <p>Une <strong>fonction</strong> est un sous-programme <strong>qui retourne <ins>à son appelant</ins> un seul
+            résultat</strong> <em>en fonction de ses paramètres</em>.</p>
+        <p>Une <strong>fonction</strong> peut avoir zéro ou plusieurs paramètres. Ces <strong>paramètres</strong> sont
+          <strong><em>souvent transmis par valeur</em></strong>.
+        </p>
+
+        <h4>Appel</h4>
+        <p>Comme une <strong>fonction renvoie toujours une valeur</strong>, son appel peut se faire de différentes
+          manières :</p>
+        <ul>
+          <li>Dans une affectation :
+            <pre><code class="algorithm">// pgcd(a, b) renvoie le PGCD des deux valeurs
+dc ← pgcd(a, b)</code></pre>
+          </li>
+          <li>Dans une structure conditionnelle :
+            <pre><code class="algorithm">// Afficher si un nombre est premier
+// premier(n) retourne vrai si n est un nombre premier
+Si premier(n) Alors
+  Ecrire(n, "est premier")
+Sinon
+  Ecrire(n, "n'est pas premier")
+Fin Si</code></pre>
+          </li>
+          <li class="p-break">Dans une structure itérative :
+
+            <pre><code class="algorithm">// f(x) est une fonction qui admet un extrémum
+// en x0 ∈ [0, +∞[
+// Recherche de l'extrémum de f(x)
+x0 ← 0
+TantQue (f(x0+pas) > f(x0)) Faire
+  x0 ← x0 + pas
+Fin TantQue</code></pre>
+
+            <pre><code class="algorithm">// Saisir une chaine alphabétique
+// est_alphabetique(ch) : retrourne Vrai
+// Si ch[i] ∈ ["A", "Z"] ⋃ ["a", "z"] 
+Répéter
+  Ecrire("Une chaine alphabétique ? ")
+  Lire(ch)
+Jusqu'à est_alphabetique(ch)</code></pre>
+          </li>
+          <li>Comme paramètre d'un autre sous-programme :
+            <pre><code class="algorithm">// somme_carre(a, b) renvoie a² + b²
+Ecrire(somme_carre(a, b))</code></pre>
+            <pre><code class="algorithm">// calculer PGCD de a, b et c
+dc ← pgcd(a, pgcd(b, c))</code></pre>
+          </li>
+        </ul>
+
+        <h4>Vocabulaire et Syntaxe</h4>
+
+        <p>Une fonction s'écrit comme suit en algorithmique :</p>
+        <pre><code class="algorithm">Fonction NomFonction(p1: type1, p2: type2, ..., 
+                     pn: typen):typerésultat
+  //
+  // Traitements
+  //
+  Retourner résultat
+Fin</code></pre>
+      </section>
+
+      <section>
+        <h3>Procédure</h3>
+
+        <h4>Définition</h4>
+        <p>Une <strong>procédure</strong> est un sous-programme <strong>qui ne retourne pas, directement, de résultats
+            <ins>à son appelant</ins></strong>.</p>
+        <p>Une <strong>procédure</strong> peut avoir zéro ou plusieurs paramètres. Ces <strong>paramètres</strong>
+          peuvent être, selon le besoin, <strong><em>transmis par <ins>valeur</ins></em></strong> ou
+          <strong><em>transmis par <ins>variable</ins></em></strong>.
+        </p>
+        <p>En algorithmique, le <strong>mode de passage par variable</strong> <em>est utilisé pour renvoyer,
+            indirectement, un ou plusieurs résultats à l'appelant</em>. Lorsqu'une procédure renvoie des résultats à
+          travers ses paramètres, on dit qu'<strong>elle possède un effet de bord</strong>.</p>
+
+        <h4>Appel</h4>
+        <p>Comme une <strong>procédure ne renvoie aucune valeur</strong>, son appel se fait toujours de la même
+          façon :</p>
+        <pre><code class="algorithm">// Saisir une valeur dans n
+saisir(n)
+// Remplir le tableau t par n valeurs distinctes
+remplir_tab(t, n)
+// Echanger le contenu de deux variables
+permuter(a, b)</code></pre>
+        <p>Une <strong>procédure</strong> utilise les paramètres passés par valeur pour réaliser ses traitements. Elle
+          peut, aussi, <ins>modifier la valeur des paramètres transmis par variable</ins>, directement, chez l'appelant.
+        </p>
+
+        <h4 class="p-break">Vocabulaire &amp; Syntaxe</h4>
+        <p>Une procédure s'écrit comme suit en algorithmique :</p>
+        <pre><code class="algorithm">Procédure NomProcédure(p1: type1, p2: type2, ..., pn: typen)
+  //
+  // Traitements
+  //
+Fin</code></pre>
+      </section>
+
+      <section>
+        <h3>Paramètres et Mode de passage</h3>
+
+        <p>Un <strong>sous-programme</strong> défini réellement un <strong><ins>ensemble de traitements effectués sur
+              des données</ins></strong>. Ces <strong>données</strong> doivent être <ins>passées au sous-programme</ins>
+          dans <em><strong>ses paramètres</strong></em>.</p>
+
+        <h4>Types de paramètres</h4>
+
+        <p>On distingue deux types de paramètres :</p>
+        <ul>
+          <li><b>Les paramètres formels&nbsp;:</b> utilisés lors de <u>la définition</u> d'un sous-programme.</li>
+          <li><b>Les paramètres effectifs&nbsp;:</b> utilisés lors de l'utilisation (<u>l'appel</u>) d'un
+            sous-programme.</li>
+        </ul>
+
+        <p>Dans la figure ci-dessous, les paramètres <strong>a</strong>, <strong>b</strong> et <strong>c</strong> qui
+          figurent dans la <span class="bg-dark text-light">définition du sous-programme</span> <strong>somme</strong>
+          sont appelés des paramètres <strong><ins>formels</ins></strong>
+        </p>
+
+        <p>Les paramètres <strong>x</strong>, <strong>y</strong> et <strong>z</strong> utilisés dans le programme
+          principal qui <span class="bg-dark text-light">appelle le sous-programme</span> <strong>somme</strong>
+          sont dits <strong><ins>effectifs</ins></strong> ou <strong><ins>réels</ins></strong>.</p>
+
+        <figure>
+          <img src="images/module07/types-parametres.png" alt="Types de paramètres">
+          <figcaption>Les types de paramètres</figcaption>
+        </figure>
+
+        <h4>Modes de passage des paramètres</h4>
+
+        <p>Il existent deux modes de passage des paramètres&nbsp;: <u>par variable</u> ou <u>par valeur</u>.</p>
+
+        <h5>Passage par valeur</h5>
+
+        <p>Lors d'un <b>passage par valeur</b>, <u>la valeur de l'expression passée en paramètre est copiée dans une
+            variable locale</u>. C'est cette variable qui est utilisée pour faire les traitements dans le sous-programme
+          appelé.
+        </p>
+
+        <p>Dans la figure suivante, la valeur de <strong>y</strong> est copiée dans le paramètre <strong>x</strong> de
+          la fonction lors de l'appel de cette dernière.</p>
+
+        <figure>
+          <img src="images/module07/passage-par-valeur.png" alt="Passage par valeur">
+          <figcaption>Passage par valeur</figcaption>
+        </figure>
+
+        <h5 class="p-break">Passage par variable</h5>
+
+        <p>Dans la figure suivante, l'adresse de la variable <strong>y</strong> est transmise à la procédure
+          <strong>saisie</strong> sous le nom de <strong>x</strong>. Tout changement de la valeur de <strong>x</strong>
+          dans la procédure à pour effet le changement de la valeur de <strong>y</strong>.
+        </p>
+        <p><strong>x</strong> et <strong>y</strong> sont deux noms différents de la même variable. La variable
+          <strong>y</strong> dans le sous-programme est appelée <strong>x</strong>.
+        </p>
+        <figure>
+          <img src="images/module07/passage-par-variable.png" alt="Passage par variable">
+          <figcaption>Passage par variable</figcaption>
+        </figure>
+      </section>
+
+      <section>
+        <h3>Portée des variables</h3>
+
+        <p>Toute <strong>variable</strong> a <ins>une durée de vie bornée</ins> <strong>au bloc</strong> où elle est
+          déclarée. Ce bloc définit <strong>la portée</strong> de la variable.</p>
+
+        <p>Les <strong>variables globales</strong> sont déclarées dans le <u>programme principal</u>. Elles sont
+          utilisables dans tout le programme.</p>
+        <p>Les <strong>variables locales</strong> sont déclarées dans un <u>sous-programme</u>. Elles ont une portée
+          limitée et elles ne sont utilisables qu'à l'intérieur de celui-ci.</p>
+
+        <p>La fonction <strong>existe</strong> dans l'exemple suivant utilise les <u>variables globales</u>
+          <strong>t</strong> et <strong>n</strong> qui sont déclarées dans le programme principal.
+          <strong>trouve</strong> et <strong>i</strong> sont des <u>variables locales</u> car elles sont visibles
+          uniquement à l'intérieur du sous-programme.
+        </p>
+        <figure>
+          <img src="images/module07/variables-globales-locales.png" alt="Variables globales et Variables locales">
+          <figcaption>Variables globales et Variables locales</figcaption>
+        </figure>
+        <p>L'exemple précédent est <span class="text-danger"><strong><ins>à éviter</ins></strong></span> car il
+          contre-dit l'esprit de la modularité. <strong>Il est conseillé <u>vivement</u> d'éviter les variables
+            globales</strong>.</p>
+        <div class="row">
+          <div class="col-6">
+            <pre><code class="algorithm">// A éviter
+// Dépend des variables du PP
+Fonction existe(v:entier):booléen</code></pre>
+          </div>
+          <div class="col-sm-6">
+            <pre><code class="algorithm">// Meilleure écriture
+// Indépendant du PP
+Fonction existe(v:entier;t:tab;n:entier):booléen</code></pre>
+          </div>
+        </div>
+      </section>
+    </article>
+
+    <article>
+      <h2 class="p-break">Applications</h2>
+
+      <section>
+        <h3>Nombre heureux</h3>
+
+        <p>Un nombre heureux est un entier strictement positif, qui lorsqu'on additionne les carrés de chacun de ses
+          chiffres, puis on additionne les carrés des chiffres de la somme obtenue et ainsi de suite, on obtient un
+          entier à un seul chiffre égal à 9.</p>
+        <p>Ecrire l'algorithme d'un programme qui permet de chercher et afficher tous les nombres heureux de
+          <code>p</code> (2 &le; p &le; 5) chiffres.
+        </p>
+        <p><strong>Exemples</strong></p>
+        <div class="row">
+          <div class="col-6">
+            <pre><code  class="nohighlight shell python" data-text="Exemple 1">Nombre de chiffres ? 3
+122 est heureux.
+125 est heureux.
+...
+954 est heureux.
+28 nombres heureux dans l'intervalle [100, 999].</code></pre>
+          </div>
+          <div class="col-6">
+            <pre><code  class="nohighlight shell python" data-text="Exemple 2">Nombre de chiffres ? 4
+1022 est heureux.
+1025 est heureux.
+...
+9985 est heureux.
+274 nombres heureux dans l'intervalle [1000, 9999].</code></pre>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h3>Nombres frères</h3>
+
+        <p>Deux entiers <code>n1</code> et <code>n2</code> sont dits frères ssi chaque chiffre de <code>n1</code>
+          apparaît au moins une fois dans <code>n2</code> et inversement (avec n1 > 0 et n2 > 0).</p>
+        <p>Ecrire l'algorithme d'un programme qui saisit deux entiers <code>n1</code> et <code>n2</code> puis vérifie
+          s'ils sont frères ou non.</p>
+
+        <p><strong>Exemples</strong></p>
+        <div class="row">
+          <div class="col-6">
+            <pre><code  class="nohighlight shell python" data-text="Exemple 1">Donner n1 > 0 ? 1234
+Donner n2 > 0 ? 434212 
+1234 et 434212 sont frères</code></pre>
+          </div>
+          <div class="col-6">
+            <pre><code  class="nohighlight shell python" data-text="Exemple 2">Donner n1 > 0 ? 154
+Donner n2 > 0 ? 341
+154 et 341 ne sont pas frères</code></pre>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h3>Nombres super premiers</h3>
+
+        <p>Un nombre est dit super premier ssi il est premier et si en supprimant des chiffres à partir de sa droite, le
+          nombre restant est toujours premier.</p>
+        <p>Ecrire l'algorithme d'un programme qui cherche tous les nombres super premiers dans un intervalle [a, b]
+          donné (100 &lt; a &lt; b &lt; 100000).</p>
+        <p><strong>Exemples</strong></p>
+        <div class="row">
+          <div class="col-6">
+            <pre><code  class="nohighlight shell python" data-text="Exemple 1">a > 100 ? 101
+101 < b < 100000 ? 1000
+233 est super premier.
+239 est super premier.
+...
+739 est super premier.
+797 est super premier.
+14 nombres super premiers dans [101, 1000]</code></pre>
+          </div>
+          <div class="col-6">
+            <pre><code  class="nohighlight shell python" data-text="Exemple 2">a > 100 ? 1000 
+1000 < b < 100000 ? 10000
+2333 est super premier.
+2339 est super premier.
+...
+7333 est super premier.
+7393 est super premier.
+16 nombres super premiers dans [1000, 10000]</code></pre>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h3>Billet</h3>
+
+        <p>Sur les billets d'avion d'une companie aérienne figure un code de 11 lettres alphanumériques (chiffres et
+          lettres majuscules).</p>
+        <p>Pour vérifier l'authenticité d'un billet, on remplace la lettre du code par son rang alphabétique pour
+          obtenir un nombre de 12 ou de 13 chiffres.</p>
+        <p>Si le reste de la division par 9 de la somme des chiffres de ce nombre est égale à 8, ce billet est
+          authentique, sinon c'est un faux billet.</p>
+        <p>Ecrire l'algorithme d'un programme qui permet de vérifier l'authenticité d'un billet à partir de son code.
+        </p>
+        <p><strong>Exemples</strong></p>
+        <div class="row">
+          <div class="col-6">
+            <pre><code  class="nohighlight shell python" data-text="Exemple 1">Numéro de billet ? AR798NKV789
+Somme de contrôle : 6
+Billet non authentique.</code></pre>
+          </div>
+          <div class="col-6">
+            <pre><code  class="nohighlight shell python" data-text="Exemple 2">Numéro de billet ? AR798NKV989  
+Somme de contrôle : 8
+Billet authentique.</code></pre>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h3>EAN13</h3>
+        <p>Le code EAN13 (European Article Numbering à 13 chiffres) est un code à barres utilisé sur l'ensemble des
+          produits de grande consommation. Ce code est composé de 13 chiffres.</p>
+        <figure>
+          <img src="images/module07/bar_code1.gif" alt="Code à barre">
+          <img src="images/module07/bar_code2.gif" alt="Code à barre">
+          <figcaption>Exemples de codes à barres</figcaption>
+        </figure>
+        <p>Un code EAN13 est formé par :</p>
+        <ul>
+          <li>Un identifiant du produit <code>q</code> formé par les 12 premiers chiffres à gauche.</li>
+          <li>La clé de contrôle <code>cc</code> formé par le dernier chiffre à droite.</li>
+        </ul>
+        <p>Pour vérifier qu'un nombre de 13 chiffres est un code EAN13 valide on applique le principe suivant :</p>
+        <ol>
+          <li>On calcule la somme <code>s</code> des chiffres de <code>q</code> en commençant par le chiffre le plus à
+            gauche et en multipliant les chiffres de rang pair par 3. Le rang du premier chiffre le plus à gauche est 1,
+            celui du deuxième chiffre le plus à gauche est 2, etc.</li>
+          <li>On calcule le reste <code>r</code> de la division euclidienne de <code>s</code> par 10.</li>
+          <li>On calcule <code>p</code> qui est égal à <code>(10-r)</code></li>
+          <li>Si <code>p</code> est égal à <code>cc</code> alors le code est valide.</li>
+        </ol>
+        <p>Ecrire l'algorithme d'un programme qui permet de saisir un nombre <code>n</code> de 13 chiffres et vérifie
+          s'il est un code EAN13 ou non.</p>
+        <p><strong>Exemples</strong></p>
+        <p><strong>Vérification du code à barre : 1234567890128</strong></p>
+        <p>q = "123456789012" et cc = "8"</p>
+        <table class="table table-sm table-bordered border-dark">
+          <tr>
+            <th>q</th>
+            <td>1</td>
+            <td>2</td>
+            <td>3</td>
+            <td>4</td>
+            <td>5</td>
+            <td>6</td>
+            <td>7</td>
+            <td>8</td>
+            <td>9</td>
+            <td>0</td>
+            <td>1</td>
+            <td>2</td>
+            <td>8<br>= 10-2</td>
+          </tr>
+          <tr>
+            <th>s</th>
+            <td>1</td>
+            <td>2 &times; 3</td>
+            <td>3</td>
+            <td>4 &times; 3</td>
+            <td>5</td>
+            <td>6 &times; 3</td>
+            <td>7</td>
+            <td>8 &times; 3</td>
+            <td>9</td>
+            <td>0 &times; 3</td>
+            <td>1</td>
+            <td>2 &times; 3</td>
+            <td>=92</td>
+          </tr>
+        </table>
+
+        <p><strong>Vérification du code à barre : 9780201379624</strong></p>
+        <p>q = "978020137962" et cc = "4"</p>
+        <table class="table table-sm table-bordered border-dark">
+          <tr>
+            <th>q</th>
+            <td>9</td>
+            <td>7</td>
+            <td>8</td>
+            <td>0</td>
+            <td>2</td>
+            <td>0</td>
+            <td>1</td>
+            <td>3</td>
+            <td>7</td>
+            <td>9</td>
+            <td>6</td>
+            <td>2</td>
+            <td>4<br>= 10-6</td>
+          </tr>
+          <tr>
+            <th>s</th>
+            <td>9</td>
+            <td>7 &times; 3</td>
+            <td>8</td>
+            <td>0 &times; 3</td>
+            <td>2</td>
+            <td>0 &times; 3</td>
+            <td>1</td>
+            <td>3 &times; 3</td>
+            <td>7</td>
+            <td>9 &times; 3</td>
+            <td>6</td>
+            <td>2 &times; 3</td>
+            <td>=96</td>
+          </tr>
+        </table>
+
+        <div class="row">
+          <div class="col-6">
+            <pre><code  class="nohighlight shell python" data-text="Exemple 1">Code EAN13 ? 9780201379624
+Code EAN13 valide.</code></pre>
+          </div>
+          <div class="col-6">
+            <pre><code  class="nohighlight shell python" data-text="Exemple 2">Code EAN13 ? 9780201379625
+Code EAN13 invalide.</code></pre>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h3 class="p-break">Game of Thrones shop</h3>
+
+        <p>Les statistiques montrent qu’en 2022 environ 2,46 milliards de personnes ont joué à des jeux vidéo sur
+          une console, un ordinateur ou un mobile. Vu le nombre important des "gamers" on trouve des centaines
+          de boutiques en ligne qui vendent des répliques des articles rencontrés dans les jeux vidéos.
+        </p>
+        <p>Un "gamer" adepte du jeu Games of Thrones se rend sur l’une de ces boutiques, voir figure 1.</p>
+        <p>Le "gamer" dispose d’un budget limité. Et il veut faire un programme qui :</p>
+        <ul>
+          <li>Saisit le nombre d’articles n disponibles dans la boutique. (2 ≤ n ≤ 50)</li>
+          <li>Remplit trois tableaux :
+            <ul>
+              <li>items : contient les noms des articles qui sont des chaînes d’au moins 3 caractères. Les articles
+                doivent être distincts.</li>
+              <li>categories : contient les catégories des articles, les catégories acceptées sont :
+                <table class="table table-sm table-bordered border-dark table-striped table-hover col-5">
+                  <tbody>
+                    <tr>
+                      <th>Catégorie</td>
+                      <td>"SW"</td>
+                      <td>"AR"</td>
+                      <td>"SH"</td>
+                      <td>"WE"</td>
+                    </tr>
+                    <tr>
+                      <th>Signification</th>
+                      <td>Sword (épée)</td>
+                      <td>Armor (Armure)</td>
+                      <td>Shield (Bouclier)</td>
+                      <td>Weapon (Arme)</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </li>
+              <li>prices : contient les prix des articles (des entiers ≥ 0)</li>
+            </ul>
+          </li>
+          <li>Saisit son budget (20 ≤ budget ≤ 300)</li>
+          <li>Saisit une catégories parmi les catégories mentionnées dans le tableau précédent.</li>
+          <li>Affiche la liste des articles de cette catégorie, dont le prix est inférieur ou égal à son budget.</li>
+        </ul>
+        <p><strong>Exemples :</strong> Pour <strong>n = 8</strong> et les articles suivants :</p>
+        <table>
+          <tr>
+            <th>items</th>
+            <td>
+              <table class="table table-sm table-bordered border-dark table-striped table-hover col-8">
+                <tbody>
+                  <tr>
+                    <td>The Sword of Jon Snow</td>
+                    <td>Sword of Arya Stark</td>
+                    <td>Widow’s Wail Sword</td>
+                    <td>Dragon Leather Bracers Set</td>
+                    <td>The Helm of Loras Tyrell</td>
+                    <td>Stark Infantry Shield</td>
+                    <td>Lannister Shield</td>
+                    <td>The Red Viper’s Spear</td>
+                  </tr>
+                </tbody>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <th>categories</th>
+            <td>
+              <table class="table table-sm table-bordered border-dark table-striped table-hover col-8">
+                <tr>
+                  <td>SW</td>
+                  <td>SW</td>
+                  <td>SW</td>
+                  <td>AR</td>
+                  <td>AR</td>
+                  <td>SH</td>
+                  <td>SH</td>
+                  <td>WE</td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <th>prices</th>
+            <td>
+              <table class="table table-sm table-bordered border-dark table-striped table-hover col-8">
+                <tr>
+                  <td>239</td>
+                  <td>179</td>
+                  <td>649</td>
+                  <td>38</td>
+                  <td>249</td>
+                  <td>257</td>
+                  <td>275</td>
+                  <td>299</td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table>
+        <div class="row">
+          <div class="col-4">
+            <p><strong>Exemple 1</strong></p>
+            <pre><code class="nohighlight">Your budget? 202
+Select a category? SW
+Affordable items:
+Sword of Arya Stark - Price: 179</code></pre>
+          </div>
+          <div class="col-4">
+            <p><strong>Exemple 2</strong></p>
+            <pre><code class="nohighlight">Your budget? 182
+Select a category? SH
+Affordable items:
+No items</code></pre>
+          </div>
+          <div class="col-4">
+            <p><strong>Exemple 3</strong></p>
+            <pre><code class="nohighlight">Your budget? 54
+Select a category? AR
+Affordable items:
+Dragon Leather Bracers Set - Price: 38</code></pre>
+          </div>
+        </div>
+        <p>Écrire l'algorithme de ce programme. <strong>Ne pas oublier le TDNT et le TDO.</strong></p>
+      </section>
+
+      <section>
+        <h3 class="p-break">Solution non modulaire</h3>
+        <p>On donne la solution non modulaire de ce problème et on demande de le décomposer en modules et d'écrire
+          l'algorithme de chaque module.</p>
+        <div class="row">
+          <div class="col-9">
+            <pre><code class="algorithm">Algorithme Boutique
+Début
+  Répéter
+    Ecrire("Number of items [2, 50] ? ") ; Lire(n)
+  Jusqu'à (2 &le; n &le; 50)
+
+  Pour i de 0 à n-1 Faire
+    Ecrire("Item n°", i)
+    Répéter
+      Ecrire("Name ? ") ; Lire(items[i])
+      existe &larr; Faux
+      j &larr; 0
+      TantQue (non existe) et (j &lt; i) Faire
+        existe &larr; items[j] = items[i]
+        j &larr; j + 1
+      Fin TantQue
+    Jusqu'à (Long(items[i]) &ge; 3) et (non existe)
+
+    Répéter
+      Ecrire("Category ? ") ; Lire(categories[i])
+    Jusqu'à categories[i] &in; ["SW", "AR", "SH", "WE"]
+
+    Répéter
+      Ecrire("Price ? ") ; Lire(prices[i])
+    Jusqu'à prices[i] &ge; 0
+  Fin Pour
+
+  Répéter
+    Ecrire("Your budget ? ") ; Lire(budget)
+  Jusqu'à 20 &le; budget &le; 300
+
+  Répéter
+    Ecrire("Select a category ? ") ; Lire(catsel)
+  Jusqu'à catsel &in; ["SW", "AR", "SH", "WE"]
+
+  ic &larr; 0
+  Ecrire("Affordable items:")
+  Pour i de 0 à n-1 Faire
+    Si (categories[i] = catsel) et (budget &ge; prices[i]) Alors
+      Ecrire("Item:", items[i], " - Price:", prices[i])
+      ic &larr; ic + 1
+    Fin Si
+  Fin Pour
+  
+  Si ic = 0 Alors
+    Ecrire("N items.")
+  Fin Si
+Fin</code></pre>
+          </div>
+          <div class="col-3">
+            <table class="table table-sm table-bordered border-dark table-striped table-hover">
+              <tr>
+                <th>TDNT</th>
+              </tr>
+              <tr>
+                <td>tabe = tableau de 50 entier</td>
+              </tr>
+              <tr>
+                <td>tabch = tableau de 50 chaîne</td>
+              </tr>
+            </table>
+            <p><strong>TDO</strong></p>
+            <table class="table table-sm table-bordered border-dark table-striped table-hover col-2">
+              <thead>
+                <tr>
+                  <th>Objet</th>
+                  <th>Type/Nature</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>n, i, j, ic, budget</td>
+                  <td>entier</td>
+                </tr>
+                <tr>
+                  <td>catsel</td>
+                  <td>chaîne</td>
+                </tr>
+                <tr>
+                  <td>existe</td>
+                  <td>booléen</td>
+                </tr>
+                <tr>
+                  <td>items, categories</td>
+                  <td>tabch</td>
+                </tr>
+                <tr>
+                  <td>prices</td>
+                  <td>tabe</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+      </section>
+    </article>
+  </main>
+  <footer class="d-print-none bg-dark text-white p-2">
+    <div class="text-center">Page créée avec ♥ par Mohamed Anis MANI</div>
+    <div class="text-center small">Année scolaire : 2022/2023</div>
+  </footer>
+
+  <script src="assets/js/jquery.min.js"></script>
+  <script src="assets/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/highlight.pack.js"></script>
+  <script src="assets/js/hljs.algorithm.js"></script>
+  <script src="assets/js/clipboard.min.js"></script>
+  <script src="assets/js/pages.js"></script>
+  <script src="assets/js/vue.min.js"></script>
+  <script src="assets/apps/module07.js"></script>
+  <script>
+    hljs.initHighlightingOnLoad();
+
+    document.querySelectorAll('.language-algorithm,.language-python')
+      .forEach(item => {
+        const div = document.createElement('div');
+        div.className = 'bd-clipboard d-print-none';
+        const btn = document.createElement('button');
+        btn.className = 'btn-clipboard';
+        btn.textContent = "📋";
+        btn.title = "Copier";
+        div.appendChild(btn);
+        item.parentElement.insertBefore(div, item);
+      });
+    new ClipboardJS('.btn-clipboard', {
+      target: (trigger) => {
+        return trigger.parentElement.nextElementSibling;
+      }
+    });
+  </script>
+</body>
+
+</html>
