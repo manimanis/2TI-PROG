@@ -1,6 +1,6 @@
 from algo import *
 
-ch1 = "Google Walland"
+ch1 = "Google Wallet"
 ch2 = "My friend"
 ch3 = "You are a nice guy"
 ch4 = "nice"
