@@ -964,6 +964,164 @@ Match nul</code></pre>
         </ol>
       </section>
     </article>
+
+    <article class="p-break">
+      <h2>Exercices</h2>
+
+      <section>
+        <h3>Catégorie d'un transformateur ★</h3>
+
+        <p>Un transformateur est un composant électrique utiliser pour isoler deux circuits électriques opérant sous
+          deux tensions différentes.</p>
+        <p>Il possède deux enroulements :</p>
+        <ul>
+          <li>Le primaire avec une tension d'entrée U<sub>1</sub></li>
+          <li>Le secondaire avec une tension de sortie U<sub>2</sub></li>
+        </ul>
+
+        <figure>
+          <img class="h4cm" src="images/module04/transformateurmonophase.png" alt="Transformateur">
+          <figcaption>Schéma d'un transformateur</figcaption>
+        </figure>
+
+        <p>La tension du sortie du transformateur est calculée à l'aide de la formule :</p>
+        <p class="text-center">U<sub>2</sub> = U<sub>1</sub> &times; r<sub>21</sub></p>
+
+        <p>Il existe trois catégories de transformateurs dépedant du rapport de transformation r<sub>21</sub> :</p>
+        <ul>
+          <li>Si r<sub>21</sub> &gt; 1.03, le transformateur est élévateur</li>
+          <li>Si r<sub>21</sub> &lt; 0.97, le transformateur est abaisseur</li>
+          <li>Si 0.97 &le; r<sub>21</sub> &le; 1.03, le transformateur est isolateur</li>
+        </ul>
+
+        <h4>Travail demandé</h4>
+        <p>Ecrire l'algorithme d'un programme qui saisit les tensions d'entrée U<sub>1</sub> et de sortie U<sub>2</sub>
+          d'un transformateur puis affiche sa catégorie.</p>
+
+        <div class="row d-print-none">
+          <div class="col-sm-4">
+            <pre><code class="nohighlight shell python" data-text="Exemple 1">Tension d'entrée ? 220
+Tension de sortie ? 12
+Transformateur abaisseur</code></pre>
+          </div>
+          <div class="col-sm-4">
+            <pre><code class="nohighlight shell python" data-text="Exemple 2">Tension d'entrée ? 24
+Tension de sortie ? 110
+Transformateur élévateur</code></pre>
+          </div>
+          <div class="col-sm-4">
+            <pre><code class="nohighlight shell python" data-text="Exemple 3">Tension d'entrée ? 220
+Tension de sortie ? 225
+Transformateur isolateur</code></pre>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h3>Carrelage ★</h3>
+        <p>Un professionnel souhaite couvrir une chambre rectangulaire de parterre carré.</p>
+        <p>On demande d'écrire l'algorithme d'un programme qui saisit les dimensions de la chambre (longueur &times
+          largeur) ainsi que les dimensions du carrelage, puis détermine le nombre de pièces nécessaires pour carreler
+          la pièce.</p>
+
+        <figure>
+          <img src="images/module04/carrelage.webp" alt="Carrelage">
+          <figcaption>Carrelage d'une chambre</figcaption>
+        </figure>
+
+        <p><strong>NB :</strong> On ajoute un carreau lorsque l'espace restant est supérieur ou égal à 5 cm.</p>
+        <figure>
+          <img src="images/module04/carrelage_chambre.webp" alt="Carrelage chambre">
+          <figcaption>Calcul de nombre de carreaux pour carreler une chambre</figcaption>
+        </figure>
+
+        <div class="row d-print-none">
+          <div class="col-sm-4">
+            <pre><code class="nohighlight shell python" data-text="Exemple 1">Longueur (m) ? 4
+Largeur (m) ? 3
+Carrelage (cm) ? 25
+La pièce nécessite 192 carreaux.</code></pre>
+          </div>
+          <div class="col-sm-4">
+            <pre><code class="nohighlight shell python" data-text="Exemple 2">Longueur (m) ? 4
+Largeur (m) ? 3
+Carrelage (cm) ? 40
+La pièce nécessite 80 carreaux.</code></pre>
+          </div>
+          <div class="col-sm-4">
+            <pre><code class="nohighlight shell python" data-text="Exemple 3">Longueur (m) ? 2
+Largeur (m) ? 2
+Carrelage (cm) ? 33
+La pièce nécessite 36 carreaux.</code></pre>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h3>Heure après une tâche ★★</h3>
+
+        <p>On veut calculer l'heure après l'exécution d'une tâche qui commence à une heure donnée au format
+          <code>hh:mm</code> et qui dure <code>n</code> minutes (n est un entier positif).
+        </p>
+        <p>Ecrire l'algorithme d'un programme qui réalise ce calcul.</p>
+
+        <div class="row d-print-none">
+          <div class="col-sm-4">
+            <pre><code class="nohighlight shell python" data-text="Exemple 1">Heure début (hh:mm) ? 23:59
+Durée (minutes) ? 2000
+La tâche prend fin à 09:19, 2 jour(s) après</code></pre>
+          </div>
+          <div class="col-sm-4">
+            <pre><code class="nohighlight shell python" data-text="Exemple 2">Heure début (hh:mm) ? 15:00
+Durée (minutes) ? -20
+Données incorrectes</code></pre>
+          </div>
+          <div class="col-sm-4">
+            <pre><code class="nohighlight shell python" data-text="Exemple 3">Heure début (hh:mm) ? 15:00
+Durée (minutes) ? 30
+La tâche prend fin à 15:30</code></pre>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h3>Jeu d'échecs ★★★</h3>
+        <p>Ecrire l'algorithme d'un programme qui saisit la position initiale d'un fou, sa direction de déplacement, et
+          le nombre de pas effectués, puis calcule et affiche la nouvelle position de la pièce sur l'échiquier.</p>
+        <figure>
+          <img src="images/module04/deplacement-fou.jpg" alt="Déplacement du fou">
+          <figcaption>Déplacement du fou</figcaption>
+        </figure>
+        <p>Le programme affiche :</p>
+        <ul>
+          <li>"Position incorrecte", si la position choisie n'appartient pas à l'échiquier,</li>
+          <li>"Direction incorrecte", si la direction choisie est invalide,</li>
+          <li>"La pièce sort de l'échiquier", si le nombre de pas est trop grand,</li>
+          <li>La nouvelle position du fou, sinon.</li>
+        </ul>
+
+        <div class="row d-print-none">
+          <div class="col-sm-4">
+            <pre><code class="nohighlight shell python" data-text="Exemple 1">Position fou ? e4
+Direction (U:Up,D:Down,R:Right,L:Left) ? UL
+Nombre pas ? 3
+Nouvelle position : b7</code></pre>
+          </div>
+          <div class="col-sm-4">
+            <pre><code class="nohighlight shell python" data-text="Exemple 2">Position fou ? x5
+Direction (U:Up,D:Down,R:Right,L:Left) ? UR
+Nombre pas ? 2
+Position incorrecte</code></pre>
+          </div>
+          <div class="col-sm-4">
+            <pre><code class="nohighlight shell python" data-text="Exemple 3">Position fou ? e4
+Direction (U:Up,D:Down,R:Right,L:Left) ? DR
+Nombre pas ? 5
+La pièce sort de l'échiquier</code></pre>
+          </div>
+        </div>
+      </section>
+    </article>
   </main>
   <footer class="d-print-none bg-dark text-white p-2">
     <div class="text-center">Page créée avec ♥ par Mohamed Anis MANI</div>
