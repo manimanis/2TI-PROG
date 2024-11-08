@@ -11,3 +11,4 @@ for i in range(len(ph)):
 print("Consonnes =", cons)
 print("Voyelles =", voy)
 # La confiance est le ciment invisible qui conduit une équipe à l'excellence et une relation à la profondeur.
+# La confiance est le ciment invisible qui conduit une équipe à l'excellence.
