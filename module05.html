@@ -1,0 +1,747 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/css/default.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/module06.css">
+  <title>Structures itératives</title>
+</head>
+
+<body>
+  <aside>
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#aside_navbar"
+        aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span> Menu
+      </button>
+      <div class="collapse navbar-collapse" id="aside_navbar"></div>
+    </nav>
+  </aside>
+
+  <main class="container my-3">
+    <h1>Module 5 : Structures itératives</h1>
+
+    <article>
+      <h2>Situations</h2>
+
+      <section>
+        <h3>Nombre de 6</h3>
+
+        <p>Lancer un dé 🎲 dix fois et compter le nomrbe de 6 obtenus.</p>
+        <p>Ecrire l'algorithme d'un programme qui simule cette situation.</p>
+
+        <p style="font-size: 60pt;" class="d-print-none text-center">🎲</p>
+
+        <div class="row">
+          <div class="col-9">
+            <pre><code class="language-algorithm">Algorithme Nombre_Six
+Début
+  nb6 &larr; 0
+  Pour i de 1 à 10 faire
+    de &larr; aléa(1, 6)
+    Ecrire("Lancée", i, ":", de)
+    Si de = 6 Alors
+      nb6 &larr; nb6 + 1
+    Fin Si
+  Fin Pour
+  Ecrire("Nombre de 6 :", nb6)
+Fin</code></pre>
+          </div>
+          <div class="col-3">
+            <p class="text-center"><strong>TDO</strong></p>
+            <table class="table table-sm table-hover table-bordered table-striped border-dark">
+              <thead>
+                <tr>
+                  <th width="50%">Objet</th>
+                  <th width="50%">Type</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>nb6, i, de</td>
+                  <td>entier</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+
+      </section>
+
+      <section>
+        <h3>Nombre de lancées de dé</h3>
+
+        <p>Choisir un nombre de 1 à 6. Lancer un dé 🎲 autant de fois qu'il faut pour obtenir ce nombre. Enfin, afficher
+          le nombre de lancée nécessaires.</p>
+        <p>Ecrire l'algorithme d'un programme qui simule cette situation.</p>
+
+        <h4>Version 1</h4>
+
+        <div class="row">
+          <div class="col-9">
+            <pre><code class="language-algorithm">Algorithme Nombre_Lancées
+Début
+  Ecrire("Un nombre [1, 6] ? ") ; Lire (nb)
+  nbl &larr; 0
+  Répéter
+    nbl &larr; nbl + 1
+    de &larr; aléa(1, 6)
+    Ecrire("Lancée", nbl, ":", de)
+  Jusqu'à de = nb
+  Ecrire("Nombre de lancée :", nbl)
+Fin</code></pre>
+          </div>
+          <div class="col-3">
+            <p class="text-center"><strong>TDO</strong></p>
+            <table class="table table-sm table-hover table-bordered table-striped border-dark">
+              <thead>
+                <tr>
+                  <th width="50%">Objet</th>
+                  <th width="50%">Type</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>nb, nbl, de</td>
+                  <td>entier</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <h4 class="p-break">Version 2</h4>
+
+        <div class="row">
+          <div class="col-9">
+            <pre><code class="language-algorithm">Algorithme Nombre_Lancées2
+Début
+  Ecrire("Un nombre [1, 6] ? ") ; Lire (nb)
+  nbl &larr; 1
+  de &larr; aléa(1, 6)
+  Ecrire("Lancée", nbl, ":", de)
+  TantQue de &ne; nb Faire
+    nbl &larr; nbl + 1
+    de &larr; aléa(1, 6)
+    Ecrire("Lancée", nbl, ":", de)
+  Fin TantQue
+  Ecrire("Nombre de lancée :", nbl)
+Fin</code></pre>
+          </div>
+          <div class="col-3">
+            <p class="text-center"><strong>TDO</strong></p>
+            <table class="table table-sm table-hover table-bordered table-striped border-dark">
+              <thead>
+                <tr>
+                  <th width="50%">Objet</th>
+                  <th width="50%">Type</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>nb, nbl, de</td>
+                  <td>entier</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+    </article>
+
+    <article>
+      <h2>Résumé</h2>
+
+      <section>
+        <h3>Structure itératives</h3>
+
+        <h4>Structure itérative complète</h4>
+
+        <p><code>cpt</code> est la variable compteur / <code>V<sub>i</sub></code> est la valeur initiale /
+          <code>V<sub>f</sub></code> est la valeur finale / <code>V<sub>p</sub></code> est la valeur du pas.
+        </p>
+        <div class="row">
+          <div class="col-6">
+            <pre><code class="language-algorithm">Pour cpt de Vi à Vf Faire [Pas=Vp]
+  // Traitements
+Fin Pour</code></pre>
+          </div>
+          <div class="col-6">
+            <pre><code class="language-python"># Si Vp > 0
+for cpt in range(Vi, Vf+1, Vp):
+  # Traitements
+  </code></pre>
+            <pre><code class="language-python"># Si Vp &lt; 0
+for cpt in range(Vi, Vf-1, Vp):
+  # Traitements
+  </code></pre>
+          </div>
+        </div>
+
+        <h4>Structures itératives à condition d'arrêt</h4>
+        <div class="row">
+          <div class="col-6">
+            <pre><code class="language-algorithm">
+Répéter
+  // Traitements
+Jusqu'à condition</code></pre>
+          </div>
+          <div class="col-6">
+            <pre><code class="language-python">flag = False
+while not flag:
+  # Traitements
+  flag = condition</code></pre>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-6">
+            <pre><code class="language-algorithm">TantQue condition Faire
+  // Traitements
+Fin TantQue</code></pre>
+          </div>
+          <div class="col-6">
+            <pre><code class="language-python">while condition:
+  # Traitements
+  </code></pre>
+          </div>
+        </div>
+      </section>
+    </article>
+
+    <article>
+      <h2 class="p-break">Renforcement</h2>
+      <section>
+        <h3>Entiers suivants ★</h3>
+
+        <p>Ecrire un programme qui permet de saisir un entier n et d'afficher les sept entiers suivants.</p>
+        <pre><code class="nohighlight shell python" data-text="Exemple 1">Donner n ? 10
+11 12 13 14 15 16 17</code></pre>
+      </section>
+
+      <section>
+        <h3>FizzBuzz ★</h3>
+
+        <p>Écrire l'algorithme d'un programme qui affiche les nombres de 1 à 100. Mais pour les multiples de trois,
+          afficher « Fizz » au lieu du nombre et pour les multiples de cinq, afficher « Buzz ». Pour les nombres qui
+          sont des multiples de trois et de cinq, afficher « FizzBuzz ». </p>
+        <div class="d-print-none">
+          <p class="explication">Exemple</p>
+          <pre><code class="hljs nohighlight">1, 2, Fizz, 4, Buzz, Fizz, 7, 8, Fizz, Buzz, 11, Fizz, 13, 14, FizzBuzz, ...</code></pre>
+        </div>
+      </section>
+
+      <section>
+        <h3>Produit de deux nombres ★</h3>
+
+        <p>Ecrire un programme qui calcule le produit de deux entiers a et b donnés <strong>sans utiliser l'opérateur
+            *</strong>.</p>
+        <p>On rappelle que : </p>
+        <ul>
+          <li>2 × 5 = 2 + 2 + 2 + 2 + 2 = 10</li>
+          <li>6 × 3 = 6 + 6 + 6 = 18</li>
+        </ul>
+      </section>
+
+      <section>
+        <h3>Générateur de nombres ★</h3>
+        <p>Ecrire un programme qui génère une séquence de <strong>n</strong> chiffres aléatoires.</p>
+      </section>
+
+      <section>
+        <h3>Générateur de lettres ★</h3>
+        <p>Ecrire un programme qui génère une séquence de <strong>n</strong> lettres majuscules d'une façon aléatoire.
+        </p>
+      </section>
+
+      <section>
+        <h3>Supprimer les chiffres ★</h3>
+        <p>Ecrire un programme qui supprime les chiffres dans une chaîne.</p>
+      </section>
+
+      <section>
+        <h3>Conserver les chiffres ★</h3>
+        <p>Ecrire un programme qui laisse uniquement les chiffres dans une chaîne.</p>
+      </section>
+
+      <section>
+        <h3>Nombre de chiffres ★</h3>
+        <p>Ecrire un programme qui calcule le nombre de chiffres dans une chaîne.</p>
+      </section>
+
+      <section>
+        <h3>Somme des chiffres ★</h3>
+        <p>Ecrire un programme qui calcule la somme des chiffres dans une chaîne.</p>
+      </section>
+
+      <section>
+        <h3>Pagination ★★</h3>
+
+        <p>On retrouve souvent le composant de navigation suivant dans les pages Web :</p>
+        <figure>
+          <img src="images/module05/pagination.png" alt="Composant de pagination">
+          <figcaption>Composant de pagination</figcaption>
+        </figure>
+        <p>En cliquant sur les nombre de ce composant l'utilisateur peut afficher un contenu qui s'étend sur plusieurs
+          pages écran.</p>
+        <p>On demande d'écrire un programme qui saisit le numéro de la page actuelle visualisée par l'utilisateur et
+          affiche les numéros des deux pages qui précèdent et des deux pages qui succèdent sachant qu'il y a 20 pages
+          en tout à consulter.</p>
+        <div class="row">
+          <div class="col-3">
+            <pre><code class="nohighlight shell python" data-text="Exemple 1">Numéro de page ? 1
+[1] 2 3 4 5</code></pre>
+          </div>
+          <div class="col-3">
+            <pre><code class="nohighlight shell python" data-text="Exemple 2">Numéro de page ? 11
+9 10 [11] 12 13</code></pre>
+          </div>
+          <div class="col-3">
+            <pre><code class="nohighlight shell python" data-text="Exemple 3">Numéro de page ? 17
+15 16 [17] 18 19</code></pre>
+          </div>
+          <div class="col-3">
+            <pre><code class="nohighlight shell python" data-text="Exemple 4">Numéro de page ? 19
+16 17 18 [19] 20</code></pre>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h3>Nombre de 8 ★★</h3>
+
+        <p>Le chiffre 8 figure dans l'intervalle [1, 10] une seule fois. Il se trouve 20 fois dans l'intervalle [1, 99].
+          Il se trouve 300 fois dans l'intervalle [1, 999].</p>
+        <p>Ecrire un programme qui affiche le nombre d'apparition du chiffre 8 dans un intervalle [a, b] donné avec 1
+          ≤ a &lt; b ≤ 9999.</p>
+
+        <div class="row">
+          <div class="col-3">
+            <pre><code class="nohighlight shell python" data-text="Exemple 1">a ? 19
+b ? 95
+17</code></pre>
+          </div>
+          <div class="col-3">
+            <pre><code class="nohighlight shell python" data-text="Exemple 2">a ? 58
+b ? 88
+13</code></pre>
+          </div>
+          <div class="col-3">
+            <pre><code class="nohighlight shell python" data-text="Exemple 3">a ? 801
+b ? 809
+10</code></pre>
+          </div>
+          <div class="col-3">
+            <pre><code class="nohighlight shell python" data-text="Exemple 4">a ? 9090
+b ? 9999
+281</code></pre>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h3>Mot de passe de 4 chiffres ★★</h3>
+
+        <p>Pour empêcher mon petit frère de jouer trop à l'ordinateur mon père a défini comme mot de passe un nombre
+          composé de 4 chiffres.</p>
+        <p>Le nombre est un multiple de 5, son chiffre de milliers est plus grand que son chiffre de centaines, et le
+          chiffre de dizaines est le double du chiffre de centaines.</p>
+        <p>Le chiffre de centaines est non nul. Et la somme des chiffres du nombre est supérieure ou égale à 22.</p>
+        <p>En essayant de retrouver le mot de passe vous avez écrit un programme qui affiche tous les nombres de quatre
+          chiffres qui vérifient les propriétés indiquées :</p>
+        <p class="text-center">i = u + d * 10 + c * 100 + m * 1000</p>
+        <ul>
+          <li>i mod 5 = 0, Nombre multiple de 5 (i est un nombre de 4 chiffres)</li>
+          <li>m &gt; c, chiffre de milliers supérieur au chiffre de centaines</li>
+          <li>d = 2 * c, chiffre de dizaines double du chiffre de centaines</li>
+          <li>c ≠ 0, chiffre de centaines non nul</li>
+          <li>u+d+c+m ≥ 22, somme des chiffres supérieure ou égale à 22</li>
+        </ul>
+      </section>
+
+      <section>
+        <h3>Remplacer des lettres par des chiffres ★★</h3>
+        <p>Ecrire un programme qui remplace les lettres suivantes par les chiffres indiqués dans une chaîne.</p>
+        <ul class="row">
+          <li class="col-2">a → 6</li>
+          <li class="col-2">e → 3</li>
+          <li class="col-2">g → 9</li>
+          <li class="col-2">i → 1</li>
+          <li class="col-2">o → 0</li>
+          <li class="col-2">s → 5</li>
+        </ul>
+      </section>
+
+      <section>
+        <h3>Remplacer des chiffres par des lettres ★★</h3>
+        <p>Ecrire un programme qui remplace les chiffres indiqués par les lettres suivantes dans une chaîne.</p>
+        <ul class="row">
+          <li class="col-2">a ← 6</li>
+          <li class="col-2">e ← 3</li>
+          <li class="col-2">g ← 9</li>
+          <li class="col-2">i ← 1</li>
+          <li class="col-2">o ← 0</li>
+          <li class="col-2">s ← 5</li>
+        </ul>
+      </section>
+
+      <section>
+        <h3>Nombres Palintiples ★★</h3>
+        <p>Un nombre <strong>palintiple</strong> est un nombre multiple de son retourné.</p>
+        <p class="explication">Exemples : Pour les nombres de quatre chiffres les palintiples sont : 1089 x 9 = 9801 et
+          2178 x 4 = 8712</p>
+        <p>Ecrire l'algorithme d'un programme qui cherche tous les nombres palintiples de 5 chiffres.</p>
+      </section>
+
+      <section>
+        <h3>Nombre Parfait ★★</h3>
+
+        <p>Les nombres parfaits sont des entiers égaux à la somme de leurs diviseurs. Ainsi, 6 se divise par 2, 3 et
+          1. En additionnant 2, 3 et 1, on arrive à 6 ! </p>
+        <p>Ecrire l'algorithme d'un programme qui saisit un nombre puis affiche s'il est parfait ou non.</p>
+      </section>
+
+      <section>
+        <h3>Nombre de mots dans une phrase ★★</h3>
+
+        <p>La phrase suivante :</p>
+        <p class="text-center">Ikram est allée au supermarché.</p>
+        <p>est composée de 5 mots.</p>
+
+        <p>Ecrire l'algorithme d'un programme qui calcule le nombre de mots dans une phrase saisie par
+          l'utilisateur.
+        </p>
+      </section>
+
+      <section>
+        <h3>Le lièvre et la tortue ★★</h3>
+
+        <h4>Règles du jeu</h4>
+        <ul>
+          <li>On lance un dé :
+            <ul>
+              <li>Si on obtient 6, le lièvre gagne</li>
+              <li>Si on obtient une autre valeur, la tortue avance d'un pas</li>
+            </ul>
+          </li>
+          <li>Si la tortue a avancé de six cases elle gagne, sinon on rejoue une autre fois.</li>
+        </ul>
+        <div class="row">
+          <div class="col-4">
+            <figure>
+              <img src="images/module05/lievre.jpg" alt="Le lièvre" class="h2cm">
+              <figcaption>Lièvre</figcaption>
+            </figure>
+          </div>
+          <div class="col-4">
+            <figure>
+              <img src="images/module05/tortue.jpg" alt="La tortue" class="h2cm">
+              <figcaption>Tortue</figcaption>
+            </figure>
+          </div>
+          <div class="col-4">
+            <figure>
+              <img src="images/module05/de.jpg" alt="Un dé" class="h2cm">
+              <figcaption>Dé</figcaption>
+            </figure>
+          </div>
+        </div>
+
+        <h4>Simulation</h4>
+        <div id="turtle_rabbit_game" class="d-print-none">
+          <div class="chemin">
+            <div class="case-depart" v-bind:class="{'lievre': rabbit_pos === 0}"></div>
+            <div class="case" v-bind:class="{'lievre': rabbit_pos === 1}"></div>
+            <div class="case" v-bind:class="{'lievre': rabbit_pos === 2}"></div>
+            <div class="case" v-bind:class="{'lievre': rabbit_pos === 3}"></div>
+            <div class="case" v-bind:class="{'lievre': rabbit_pos === 4}"></div>
+            <div class="case" v-bind:class="{'lievre': rabbit_pos === 5}"></div>
+            <div class="case-arrivee" v-bind:class="{'lievre': rabbit_pos === 6}"></div>
+          </div>
+          <div class="chemin">
+            <div class="case-depart" v-bind:class="{'tortue': turtle_pos === 0}"></div>
+            <div class="case" v-bind:class="{'tortue': turtle_pos === 1}"></div>
+            <div class="case" v-bind:class="{'tortue': turtle_pos === 2}"></div>
+            <div class="case" v-bind:class="{'tortue': turtle_pos === 3}"></div>
+            <div class="case" v-bind:class="{'tortue': turtle_pos === 4}"></div>
+            <div class="case" v-bind:class="{'tortue': turtle_pos === 5}"></div>
+            <div class="case-arrivee" v-bind:class="{'tortue': turtle_pos === 6}"></div>
+          </div>
+          <div class="dice-roll">
+            <div class="de" v-on:click="clicked()">
+              <div v-bind:class="current_dice"></div>
+            </div>
+            <div class="text-center text-white">Cliquer &uArr;</div>
+          </div>
+          <div v-if="game_ended()" class="game-control">
+            <div class="message">
+              <div class="text">
+                <p>{{winner_message}}</p>
+                <button v-on:click="reset()">Rejouer</button>
+              </div>
+            </div>
+          </div>
+          <table class="dice-table">
+            <tbody>
+              <tr>
+                <td v-for="de in dice_arr" width="16.67%">
+                  <div class="de">
+                    <div v-bind:class="{[`de${de}`]: true}"></div>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="d-none d-print-block">
+          <figure>
+            <img src="images/module05/simulation-jeu.png" alt="Simulation jeu lièvre et tortue" class="h5cm">
+            <figcaption>Simulation du jeu lièvre et tortue</figcaption>
+          </figure>
+        </div>
+
+        <h4>Travail demandé</h4>
+        <p>Ecrire l'algorithme du programme permettant de simuler ce jeu.</p>
+      </section>
+
+      <section>
+        <h3>Jeu de l'oie ★★</h3>
+
+        <h4>Principe de jeu</h4>
+        <p>Le jeu de l'oie est un jeu classique qui se joue à 2, 3 ou 4 joueurs.</p>
+        <p>Chaque joueur, à son tour, lance un dé à six faces et avance son pion du nombre tiré.</p>
+        <p>Le gagnant est celui qui atteint la case d'arrivée (case 63).</p>
+        <p>On désire implémenter une version simplifiée, sans pièges, de ce jeu où un joueur humain joue tout seul.
+          <strong>La case d'arrivée est la case 32.</strong>
+        </p>
+        <p><strong>Remarque :</strong> Si la nouvelle position du joueur dépasse la case finale il recule au lieu
+          d'avancer.</p>
+        <p><strong>Exemple :</strong> Je suis dans la position 27 et j'obtiens 6, je recule à la position 21.</p>
+
+        <div id="jeu-oie" class="d-print-none">
+          <div v-if="gameEnded()" class="game-control">
+            <div class="message">
+              <div class="text">
+                <p>{{winner_message}}</p>
+                <button v-on:click="reset()">Rejouer</button>
+              </div>
+            </div>
+          </div>
+          <div class="game">
+            <table>
+              <tr v-for="line in positions">
+                <td v-for="pos in line"
+                  v-bind:class="{'start-cell': pos==0, 'end-cell': pos==32, 'game-cell': pos > 0 && pos < 32}">
+                  <div v-if="pos >= 0 && pos <= 32" class="cell">
+                    <img v-if="pos_oie == pos" src="images/module05/oie.png" alt="">
+                  </div>
+                  <div v-if="pos == 33" class="de" v-on:click="clicked()">
+                    <div v-bind:class="first_dice"></div>
+                  </div>
+                  <div v-if="pos == 34" class="text-drak fs-3">
+                    &lArr; Click
+                  </div>
+                </td>
+              </tr>
+            </table>
+            <div class="movements">
+              <ol>
+                <li v-for="movement in movements">{{movement}}</li>
+              </ol>
+            </div>
+          </div>
+        </div>
+
+        <p><strong>Travail demandé</strong></p>
+        <p>Ecrire l'algorithme du programme permettant de simuler ce jeu.</p>
+      </section>
+    </article>
+  </main>
+  <footer class="d-print-none bg-dark text-white p-2">
+    <div class="text-center">Page créée avec ♥ par Mohamed Anis MANI</div>
+    <div class="text-center small">Année scolaire : 2021/2022</div>
+  </footer>
+
+  <script src="assets/js/jquery.min.js"></script>
+  <script src="assets/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/highlight.pack.js"></script>
+  <script src="assets/js/hljs.algorithm.js"></script>
+  <script src="assets/js/clipboard.min.js"></script>
+  <script src="assets/js/pages.js"></script>
+  <script src="assets/js/vue.min.js"></script>
+  <script src="assets/apps/algorithme02.js"></script>
+  <script>
+    hljs.initHighlightingOnLoad();
+
+    document.querySelectorAll('.language-algorithm,.language-python')
+      .forEach(item => {
+        const div = document.createElement('div');
+        div.className = 'bd-clipboard d-print-none';
+        const btn = document.createElement('button');
+        btn.className = 'btn-clipboard';
+        btn.textContent = "📋";
+        btn.title = "Copier";
+        div.appendChild(btn);
+        item.parentElement.insertBefore(div, item);
+      });
+    new ClipboardJS('.btn-clipboard', {
+      target: (trigger) => {
+        return trigger.parentElement.nextElementSibling;
+      }
+    });
+
+    $(() => {
+      new Vue({
+        el: '#turtle_rabbit_game',
+        data: {
+          turtle_winner: false,
+          rabbit_winner: false,
+          dice_face: 3,
+          rabbit_pos: 0,
+          turtle_pos: 0,
+          winner_message: '',
+          dice_arr: new Array(6).fill(0)
+        },
+        computed: {
+          current_dice: function () {
+            return { [`de${this.dice_face}`]: true };
+          }
+        },
+        mounted: function () {
+          this.reset();
+          do {
+            this.clicked();
+          } while (!this.game_ended());
+          this.$forceUpdate();
+        },
+        methods: {
+          reset: function () {
+            this.turtle_winner = false;
+            this.rabbit_winner = false;
+            this.dice_face = 1 + Math.floor(Math.random() * 6);
+            this.rabbit_pos = 0;
+            this.turtle_pos = 0;
+            this.winner_message = '';
+            this.dice_arr = new Array(6).fill(0);
+          },
+          game_ended: function () {
+            return this.turtle_winner || this.rabbit_winner;
+          },
+          clicked: function () {
+            if (this.game_ended()) {
+              return;
+            }
+
+            this.dice_face = 1 + Math.floor(Math.random() * 6);
+            this.dice_arr[this.turtle_pos] = this.dice_face;
+            if (this.dice_face == 6) {
+              this.rabbit_pos = 6;
+              this.rabbit_winner = true;
+              this.winner_message = 'Lièvre gagne';
+            } else {
+              this.turtle_pos += 1;
+              if (this.turtle_pos == 6) {
+                this.turtle_winner = true;
+                this.winner_message = 'Tortue gagne';
+              }
+            }
+            this.$forceUpdate();
+          }
+        }
+      });
+    });
+
+    const positions = [
+      [0, 1, 2, 3, 4, 5, 6],
+      [19, 20, 21, 22, 23, 24, 7],
+      [18, 31, 32, 33, 34, 25, 8],
+      [17, 30, 29, 28, 27, 26, 9],
+      [16, 15, 14, 13, 12, 11, 10],
+    ];
+
+    const app2 = new Vue({
+      el: "#jeu-oie",
+      data: {
+        target_pos: 32,
+        pos_oie: 0,
+        dice1_face: 3,
+        dice2_face: 3,
+        movements: [],
+        canClicDice: true,
+        winner_message: "Gagné"
+      },
+      computed: {
+        first_dice: function () {
+          return {
+            [`de${this.dice1_face}`]: true
+          };
+        },
+        second_dice: function () {
+          return {
+            [`de${this.dice2_face}`]: true
+          };
+        }
+      },
+      mounted: function () {
+        this.reset();
+        this.$forceUpdate();
+      },
+      methods: {
+        reset: function () {
+          this.pos_oie = 0;
+          this.canClicDice = true;
+          this.movements = [];
+          this.rollDices();
+        },
+        rollDices: function () {
+          this.dice1_face = 1 + Math.floor(Math.random() * 6);
+          this.dice2_face = 1 + Math.floor(Math.random() * 6);
+        },
+        gameEnded: function () {
+          return this.pos_oie == this.target_pos;
+        },
+        clicked: function () {
+          if (!this.canClicDice || this.gameEnded()) {
+            return;
+          }
+
+          this.rollDices();
+          const sum_dices = this.dice1_face; // + this.dice2_face;
+          let new_pos;
+          if (this.pos_oie + sum_dices > this.target_pos) {
+            new_pos = this.pos_oie - sum_dices;
+            this.movements.push(`Dé ${sum_dices} : Reculer de ${this.pos_oie} à ${new_pos}`);
+          } else {
+            new_pos = this.pos_oie + sum_dices;
+            this.movements.push(`Dé ${sum_dices} : Avancer de ${this.pos_oie} à ${new_pos}`);
+          }
+          this.canClicDice = false;
+          const timerDuration = 300;
+          const moveOie = () => {
+            if (this.pos_oie > new_pos) {
+              this.pos_oie--;
+            } else if (this.pos_oie < new_pos) {
+              this.pos_oie++;
+            }
+            this.canClicDice = this.pos_oie == new_pos;
+            if (this.gameEnded()) {
+              this.movements.push("Gagné");
+            }
+            if (!this.canClicDice) setTimeout(moveOie, timerDuration);
+          };
+          moveOie();
+          // this.pos_oie = new_pos;
+        }
+      }
+    });
+  </script>
+</body>
+
+</html>

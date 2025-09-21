@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/css/default.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <title>Sorties</title>
+</head>
+
+<body>
+  <aside>
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#aside_navbar"
+        aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span> Menu
+      </button>
+      <div class="collapse navbar-collapse" id="aside_navbar"></div>
+    </nav>
+  </aside>
+
+  <main class="container my-3">
+    <h1>Module 1 : Sorties</h1>
+
+    <article>
+      <h2>Situations</h2>
+
+      <section>
+        <h3>Fiche de renseignements - Version 1</h3>
+
+        <p>En s'inspirant de l'<strong>Algorithme</strong> suivant, écris ta fiche de renseignements. Les élèves âgés
+          de 18 ans et plus sont considérés comme majeurs.</p>
+
+        <pre><code class="language-algorithm">Algorithme renseignements
+Début
+  Ecrire("Nom & Prénom : Ahmed BEN HASSINE")
+  Ecrire("Âge : 17 ans")
+  Ecrire("Moyenne Info : 16.5")
+  Ecrire("Majeur : Non")
+Fin</code></pre>
+
+        <ol>
+          <li>Quel est le rôle de la fonction <strong>Ecrire</strong> ?</li>
+          <li>Traduire cet algorithme en <strong>Python</strong> ?</li>
+        </ol>
+      </section>
+
+      <section>
+        <h3>Fiche de renseignements - Version 2</h3>
+
+        <p>En comparant les programmes des élèves nous remarquons que nous avons écrit des programmes différents pour
+          faire la même chose.</p>
+
+        <p>On pourra améliorer cet algorithme en utilisant des variables. L'algorithme précédent devient alors :</p>
+
+        <pre><code class="language-algorithm">Algorithme renseignements
+Début
+  np &larr; "Ahmed BEN HASSINE"
+  age &larr; 17
+  moy &larr; 16.5
+  majeur &larr; age &ge; 18
+  Ecrire("Nom & Prénom :", np)
+  Ecrire("Âge :", age, "ans")
+  Ecrire("Moyenne Info :", moy)
+  Ecrire("Majeur :", majeur)
+Fin</code></pre>
+
+        <ol>
+          <li>Modifier ce nouveau programme. Remplacer les données existantes par vos informations.</li>
+          <li>Combien de parties y a-t'il dans le programme ?</li>
+          <li>Quel est l'apport de l'ajout des variables ?</li>
+          <li>Traduire l'algorithme en <strong>Python</strong> ?</li>
+        </ol>
+      </section>
+
+      <section>
+        <h3>Lotterie d'Italie</h3>
+
+        <p>Soit le programme suivant qui affiche le nombre gagnant dans la lotteria d'Italia :</p>
+
+        <pre><code class="language-python">print("Lotteria d'Italia")
+print("Nombre Gagnant")
+print(47)
+print(49)
+print(69)
+print(32)
+print(40)
+print(27)</code></pre>
+
+        <ol class="p-break">
+          <li>Utiliser des variables pour le réécrire.</li>
+          <li>Faire de sorte que l'affichage du programme soit sur une seule ligne, comme suit :
+            <pre><code class="nohighlight shell python" data-text="Résultat du programme">Nombre gagnant : 47-49-69-32-40-27</code></pre>
+          </li>
+        </ol>
+      </section>
+    </article>
+
+    <article>
+      <h2>Résumé</h2>
+
+      <section>
+        <h3>Affichage</h3>
+
+        <p>La sortie, ou l'affichage, se fait par défaut sur le périphérique de sortie standard : <storng>L'écran
+          </storng>.</p>
+        <p>L'opération de sortie se fait en algorithme à l'aide de la procédure <code>Écrire(...)</code>.
+          <strong>Exemples :</strong>
+        </p>
+
+        <pre><code class="language-algorithm">// Affichage d'un message
+Ecrire("Votre message")
+
+x ← 4
+y ← 7
+// Affichage de la valeur d'une variable
+Ecrire(x)
+
+// Affichage mixte
+Ecrire(x, y)
+Ecrire("x = ", x)</code></pre>
+
+        <p>En Python, elle se fait à l'aide de la fonction <code>print(...)</code>. Cette fonction offre plusieurs
+          possibilités d'affichage :</p>
+        <ul>
+          <li><strong>Affichage d'un message :</strong> Le message doit être entre guillemets doubles
+            <code>"message"</code> ou entre guillemets simples <code>'message'</code>. Exemple :
+            <pre><code class="language-python">print("Votre message")
+print('Votre message')</code></pre>
+          </li>
+          <li><strong>Affichage de la valeur d'une variable :</strong> Sans guillemets Python affiche la valeur de la
+            variable portant ce nom. Exemple :
+            <pre><code class="language-python">print(x)</code></pre>
+          </li>
+          <li><code>Affichage mixte :</code> On peut combiner l'affichage de messages et de variables dans une
+            instruction <code>print(…)</code>. Exemple :
+            <pre><code class="language-python">      # Affichage mixte sur une seule ligne
+print("x =", x)
+
+# Affichage de variables séparées par des espaces
+x, y, z = 4, 7, 9
+print(x, y, z)
+
+# Affichage de variables séparées par le symbole ":"
+print(x, y, z, sep=":")
+
+# Affichage de variables sur une seule ligne séparés par le symbole " - "
+print(x, end=" - ")
+print(y, end=" - ")
+print(z, end=" - ")</code></pre>
+          </li>
+        </ul>
+      </section>
+
+      <section>
+        <h3 class="p-break">Affectation</h3>
+
+        <p>L'<strong>affectation</strong> permet de donner une <b><u>valeur</u></b> à une <b><u>variable</u></b>.</p>
+        <p>En algorithme, on utilise le signe d'affectation &larr; comme suit : <code>variable &larr; valeur</code></p>
+        <p>En Python, l'affectation se fait à l'aide de l'opérateur = comme suit : <code>variable = valeur</code></p>
+
+        <p>La valeur affectée à une variable peut-être :</p>
+        <ol>
+          <li>une constante</li>
+          <li>la valeur d'une autre variable</li>
+          <li>le résultat d'une expression</li>
+        </ol>
+
+        <figure>
+          <img src="images/module01/affectation01.png" alt="Les types d'affectations">
+          <figcaption>Les types d'affectations</figcaption>
+        </figure>
+
+        <p>Une variable possède :</p>
+
+        <ul>
+          <li>Un <strong>nom</strong> : qui doit commencer <u>obligatoirement</u> par une lettre alphabétique et <i>ne
+              doit pas contenir ni des espaces, ni des symboles</i>.</li>
+          <li>Un <strong>type</strong> : qui dépend de la valeur qu'on peut stocker dans la variable.</li>
+          <li>Une <strong>valeur</strong>.</li>
+        </ul>
+
+        <figure>
+          <img src="images/module01/affectation02.png" alt="Les types de variables">
+          <figcaption>Les types de variables</figcaption>
+        </figure>
+      </section>
+    </article>
+
+    <article class="p-break">
+      <h2>Renforcement</h2>
+
+      <section class="d-print-none">
+        <h3>QCM</h3>
+
+        Le QCM est accessible dans cette
+        <a href="qcm01.html" target="_blank" rel="noopener noreferrer">page</a>.
+      </section>
+
+      <section>
+        <h3>Où est l'erreur ?</h3>
+
+        <figure class="d-print-none">
+          <img src="images/module01/bug_informatique.jpg" alt="Débogage d'un programme">
+          <figcaption>Débogage d'un programme</figcaption>
+        </figure>
+
+        <pre><code class="language-python">4 = haut
+7 = larg
+aire = h * l
+print Calcul d'aire d'un rectangle
+print Largeur = l, Hauteur = h
+print Aire = aire</code></pre>
+
+        <p>Corriger le programme Python pour obtenir l'affichage suivant :</p>
+
+        <pre><code class="nohighlight shell python" data-text="Résultat désiré">Calcul d'aire d'un rectangle
+Largeur = 7, Hauteur = 4
+Aire = 28</code></pre>
+      </section>
+
+      <section>
+        <h3>Le vétérénaire</h3>
+
+        <figure class="d-print-none">
+          <img src="images/module01/veterenaire.jpg" alt="Vétérénaire">
+          <figcaption>Chez le vétérénaire</figcaption>
+        </figure>
+
+        <p>Un vétérénaire a soigné pendant la journée :</p>
+        <ul>
+          <li>4 chats</li>
+          <li>2 chiens</li>
+          <li>une vache</li>
+        </ul>
+        <p>Ecrire l'algorithme d'un programme qui déclare trois variables : <code>chats</code>, <code>chiens</code> et
+          <code>vaches</code>, puis affiche le message suivant : <br>
+          <b>Nous avons soigné 7 animaux : 4 chat(s), 2 chien(s) et 1 vache(s).</b>
+        </p>
+
+        <pre
+          class="d-print-none"><code class="nohighlight shell python" data-text="Résultat du programme">Nous avons soigné 7 animaux : 4 chat(s), 2 chien(s) et 1 vache(s).</code></pre>
+      </section>
+
+      <section>
+        <h3>Le porte monnaie</h3>
+
+        <figure class="d-print-none">
+          <img src="images/module01/porte_monnaie.jpg" alt="Le porte monnaie de grand-mère">
+          <figcaption>Le porte monnaie de grand-mère</figcaption>
+        </figure>
+
+        <p>Le porte monnaie de grand-mère contient les pièces de monnaie suivantes :</p>
+        <ul>
+          <li>5 pièces de 50 millimes</li>
+          <li>2 pièces de 100 millimes</li>
+          <li>4 pièces de 200 millimes</li>
+          <li>3 pièces de 500 millimes</li>
+          <li>4 pièces de 2 DT</li>
+        </ul>
+
+        <p>Ecrire l'algorithme d'un programme qui déclare cinq variables contenant le nombre de pièces de chaque type,
+          puis calcule et
+          affiche le montant total.</p>
+
+        <pre
+          class="d-print-none"><code class="nohighlight shell python" data-text="Résultat du programme">Il y'a 10750 millimes dans le porte monnaie de grand-mère.</code></pre>
+      </section>
+
+      <section>
+        <h3>La masse des animaux</h3>
+
+        <figure class="d-print-none">
+          <img src="images/module01/animaux.gif" alt="La masse des animaux">
+          <figcaption>La masse des animaux</figcaption>
+        </figure>
+
+        <p>Dans notre ferme il y a un chat, un chien et un mouton.</p>
+
+        <ul>
+          <li>La masse du chat et du mouton est 54 kg.</li>
+          <li>La masse du chat et du chien est 20 kg.</li>
+          <li>La masse du chien et du mouton est 66 kg.</li>
+        </ul>
+
+        <p>Ecrire l'algorithme d'un programme qui calcule la masse totale des trois animaux, puis détermine et affiche
+          la masse de
+          chaque animal.</p>
+
+        <pre class="d-print-none"><code class="nohighlight shell python" data-text="Résultat du programme">La masse total est 70.0 Kg
+Chat = 4.0
+Chien = 16.0
+Mouton = 50.0</code></pre>
+      </section>
+
+      <section>
+        <h3>Mon âge</h3>
+
+        <figure class="d-print-none">
+          <img src="images/module01/ages.png" alt="Mon âge">
+          <figcaption>Mon âge</figcaption>
+        </figure>
+
+        <p>Aujourd'hui mon age est le double de celui de ma soeur. Après trois ans, mon âge sera 1.5 fois l'âge de ma
+          soeur.</p>
+
+        <p>Déterminer mon age et celui de ma soeur.</p>
+
+        <p>Ecrire l'algorithme d'un programme qui affiche mon âge est celui de ma soeur, aujourd'hui et après 3 ans.</p>
+
+        <pre class="d-print-none"><code class="nohighlight shell python" data-text="Résultat du programme">Aujourd'hui
+J'ai 6.0 ans
+Ma soeur a 3.0 ans
+Dans 3 ans
+J'aurai 9.0 ans
+Ma soeur ara 6.0 ans</code></pre>
+      </section>
+    </article>
+  </main>
+  <footer class="d-print-none bg-dark text-white p-2">
+    <div class="text-center">Page créée avec ♥ par Mohamed Anis MANI</div>
+    <div class="text-center small">Année scolaire : 2023/2024</div>
+  </footer>
+
+  <script src="assets/js/jquery.min.js"></script>
+  <script src="assets/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/highlight.pack.js"></script>
+  <script src="assets/js/hljs.algorithm.js"></script>
+  <script src="assets/js/clipboard.min.js"></script>
+  <script src="assets/js/pages.js"></script>
+  <script>
+    hljs.initHighlightingOnLoad();
+
+    document.querySelectorAll('.language-algorithm,.language-python')
+      .forEach(item => {
+        const div = document.createElement('div');
+        div.className = 'bd-clipboard d-print-none';
+        const btn = document.createElement('button');
+        btn.className = 'btn-clipboard';
+        btn.textContent = "📋";
+        btn.title = "Copier";
+        div.appendChild(btn);
+        item.parentElement.insertBefore(div, item);
+      });
+    new ClipboardJS('.btn-clipboard', {
+      target: (trigger) => {
+        return trigger.parentElement.nextElementSibling;
+      }
+    });
+  </script>
+</body>
+
+</html>

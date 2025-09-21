@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/css/default.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <title>Entrées</title>
+</head>
+
+<body>
+  <aside>
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#aside_navbar"
+        aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span> Menu
+      </button>
+      <div class="collapse navbar-collapse" id="aside_navbar"></div>
+    </nav>
+  </aside>
+
+  <main class="container my-3">
+    <h1>Module 2 : Entrées</h1>
+
+    <article>
+      <h2>Situations</h2>
+
+      <section>
+        <h3>Peinture du toit du salon</h3>
+
+        <p>Ce mois-ci, M Fethi veut peindre le plafond du salon de sa maison. On suppose que le salon est de forme
+          rectangulaire et qu'il mesure 6.30m de longueur et 5.20m de largeur.</p>
+
+        <p>Sachant que le rendement de la peinture utilisée est de 6m²/Kg, on veut calculer la quantité de peinture
+          nécessaire pour peindre le salon de M Fethi 3 couches.</p>
+
+        <figure>
+          <img class="h4cm" src="images/module02/peinture.jpg" alt="Peinture">
+          <figcaption>Peinture & Décor</figcaption>
+        </figure>
+
+        <p>Nous avons écrit l'algorithme suivant pour résoudre le problème :</p>
+
+        <pre><code class="language-algorithm">Algorithme peinture1
+Début
+  // Longueur de la pièce en m
+  long &larr; 6.30 
+  // Largeur de la pièce en m
+  larg &larr; 5.20
+  // Nombre de couches de peinture
+  nbc &larr; 3
+  // Rendement en m²/Kg
+  rend &larr; 6
+
+  // Surface du toit m²
+  st &larr; 32.76 // todo : indiquer la formule
+  // Surface à peindre
+  sp &larr; 98.28 // todo : indiquer la formule
+  // Quantité de peinture
+  qp &larr; 16.38 // todo : indiquer la formule
+
+  print("Surface pièce =", st, "m²")
+  print("Nombre de couches =", nbc)
+  print("Surface totale =", sp, "m²")
+  print("Rendement =", rend, "m²/Kg")
+  print("La quantité de peinture =", qp, "Kg")
+Fin</code></pre>
+
+        <p>On demande traduire l'algorithme précédent en Python, de le compléter, puis de l'exécuter et de vérifier
+          qu'il affiche le bon résultat.</p>
+        <p><strong>Quelle est la quantité de peinture nécessaire pour peindre le salon ?</strong></p>
+      </section>
+
+      <section>
+        <h3>Peinture de la cuisine</h3>
+
+        <p>Maintenant M Fethi veut peindre le plafond de la cuisine qui mesure 4.50m &times; 3.90m, 2 couches seulement,
+          avec une peinture dont le rendement est de 4.5m²/Kg. <strong>Quelle est la quantité de peinture nécessaire
+            ?</strong></p>
+        <p class="p-break">Modifier le programme :</p>
+        <ol>
+          <li>Calculer le surface du toit :
+            <p class="text-center">surface<sub>toit</sub> = longueur * largeur</p>
+          </li>
+          <li>Calculer la surface à peindre :
+            <p class="text-center">surface<sub>peinte</sub> = surface<sub>toit</sub> * nbre_couches</p>
+          </li>
+          <li>Calculer la quantité de peinture :
+            <p class="text-center">quantité<sub>peinture</sub> = surface<sub>peinte</sub> / rendement</p>
+          </li>
+        </ol>
+      </section>
+
+      <section>
+        <h3>Amélioration de l'algorithme</h3>
+
+        <figure class="d-print-none">
+          <img src="images/module02/peintre_professionnel.jpg" alt="Fethi peintre professionel">
+          <figcaption>Fethi peintre professionel</figcaption>
+        </figure>
+
+        <p>M Fethi souhaite que nous améliorons notre programme. Il veut :</p>
+        <ol>
+          <li>Saisir les dimensions du toit qu'il veut peindre : <code>long</code> &times; <code>larg</code></li>
+          <li>Saisir le nombre de couches de peinture qu'il veut appliquer : <code>nbc</code></li>
+          <li>Saisir le rendement du peinture par m² : <code>rend</code></li>
+          <li>Que le programme effectue ses calculs, puis affiche le résultat.</li>
+        </ol>
+
+        <p><strong>Travail demandé</strong></p>
+        <ol>
+          <li>Effectuer les changements requis sur l'algorithme.</li>
+          <li>Traduire l'algorithme en Python.</li>
+        </ol>
+      </section>
+
+      <section>
+        <h3>Algorithme version finale</h3>
+
+        <p>L'algorithme final comporte trois parties :</p>
+
+        <ul>
+          <li>Saisie des données</li>
+          <li>Calculs</li>
+          <li>Affichage des résultats</li>
+        </ul>
+        <div class="row">
+          <div class="col-9"><pre><code class="language-algorithm">Algorithme Peinture2
+Début
+  // -- Saisie de données --
+  // Longueur de la pièce en m
+  Ecrire("Longueur de la pièce en m ? ") ; Lire(long)
+  // Largeur de la pièce en m
+  Ecrire("Largeur de la pièce en m ? ") ; Lire(larg)
+  // Nombre de couches de peinture
+  Ecrire("Nombre de couches de peinture ? ") ; Lire(nbc)
+  // Rendement en m²/Kg
+  Ecrire("Rendement en m²/Kg ? ") ; Lire(rend)
+
+  // -- Calculs --
+  // Surface du toit m²
+  st &larr; long * larg
+  // Surface à peindre
+  sp &larr; st * nbc
+  // Quantité de peinture
+  qp &larr; sp / rend
+
+  // -- Affichages des rséultats --
+  Ecrire("Surface pièce =", st, "m²")
+  Ecrire("Nombre de couches =", nbc)
+  Ecrire("Surface totale =", sp, "m²")
+  Ecrire("Rendement =", rend, "m²/Kg")
+  Ecrire("La quantité de peinture =", qp, "Kg")
+</code></pre></div>
+          <div class="col-3">
+            <p class="text-center"><strong>TDO</strong></p>
+            <table class="table table-sm table-striped table-bordered table-hover border-dark">
+              <thead>
+                <tr>
+                  <th class="w-50">Objet</th>
+                  <th>Type</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>long, larg, rend, st, sp, qp</td>
+                  <td>réel</td>
+                </tr>
+                <tr>
+                  <td>nbc</td>
+                  <td>entier</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        
+
+        <h4 class="p-break">Exemples d'exécution</h4>
+
+        <p>Le programme final affiche des résultats différents selon les entrées de l'utilisateur.</p>
+
+        <div class="row">
+          <div class="col-sm-6">
+            <pre><code class="nohighlight shell python" data-text="Résultat du programme">Longueur de la pièce en m ? 6
+Largeur de la pièce en m ? 3.5
+Nombre de couches de peinture ? 2
+Rendement en m²/Kg ? 10
+Surface pièce = 21.0 m²
+Nombre de couches = 2
+Surface totale = 42.0 m²
+Rendement = 10.0 m²/Kg
+La quantité de peinture = 4.2 Kg</code></pre>
+          </div>
+          <div class="col-sm-6">
+            <pre><code class="nohighlight shell python" data-text="Résultat du programme">Longueur de la pièce en m ? 4
+Largeur de la pièce en m ? 2.5
+Nombre de couches de peinture ? 1
+Rendement en m²/Kg ? 6
+Surface pièce = 10.0 m²
+Nombre de couches = 1
+Surface totale = 10.0 m²
+Rendement = 6.0 m²/Kg
+La quantité de peinture = 1.6666666666666667 Kg</code></pre>
+          </div>
+        </div>
+      </section>
+    </article>
+
+    <article class="p-break">
+      <h2>Résumé</h2>
+
+      <section>
+        <h3>Saisie</h3>
+
+        <p>L'entrée, ou la saisie, des données utilisateur est effectuée à partir du périphérique d'entrée standard :
+          <strong>Le clavier</strong>.
+        </p>
+        <p>On utilise, en algorithme, <code>Lire(nom_var)</code> pour affecter les entrées de l'utilisateur à la
+          variable <code>nom_var</code>. Exemples :</p>
+        <pre><code class="language-algorithm">// Saisie d'une chaîne de caractères
+Écrire("Votre nom ? ") ; Lire(ch)
+
+// Saisie d'un nombre entier
+Écrire("Quel âge as-tu ? ") ; Lire(age)
+
+// Saisie d'un nombre réel
+Écrire("Quelle est ta moyenne ? ") ; Lire(moy)</code></pre>
+
+        <p>En Python, l'entrée des données est effectuée à partir du clavier à l'aide de la fonction
+          <code>input(message)</code>.
+        </p>
+        <p>Cette fonction retourne toujours une <strong>chaîne de caractères</strong> (type <code>str</code>). Exemple :
+        </p>
+        <figure>
+          <img class="h4cm" src="images/module02/input_syntax.png" alt="Syntaxe de la fonction input">
+          <figcaption>Saisie d'une chaîne de caractères</figcaption>
+        </figure>
+
+        <p>Souvent, on désire saisir des données numériques de type <strong>entier</strong> ou <strong>réel</strong>.
+          Dans ce cas, il faudra convertir la valeur saisie à l'aide des fonctions :</p>
+        <ul>
+          <li><code>int(...)</code> pour récupérer un <strong>entier</strong></li>
+          <li>Et, <code>float(...)</code> pour récupérer un <strong>réel</strong>.</li>
+        </ul>
+
+        <figure>
+          <img class="h4cm" src="images/module02/input_syntax_cast.png" alt="Conversions de types">
+          <figcaption>Conversions de types</figcaption>
+        </figure>
+
+        <h4>Exemple</h4>
+
+        <pre><code class="language-python"># Saisie d'une chaîne de caractères
+ch = input("Votre nom ? ")
+
+# Saisie d'un nombre entier
+age = int(input("Quel âge as-tu ? "))
+
+# Saisie d'un nombre réel
+moy = float(input("Quelle est ta moyenne ? "))</code></pre>
+      </section>
+    </article>
+
+    <article class="p-break">
+      <h2>Renforcement</h2>
+
+      <section class="d-print-none">
+        <h3>QCM</h3>
+
+        Le QCM est accessible dans cette
+        <a href="qcm02.html" target="_blank" rel="noopener noreferrer">page</a>.
+      </section>
+
+      <section>
+        <h3>Corrigez-moi !</h3>
+
+        <figure class="d-print-none">
+          <img src="images/module02/bug_informatique.jpg" alt="Débogage d'un programme">
+          <figcaption>Débogage d'un programme</figcaption>
+        </figure>
+
+        <pre><code class="language-python">input("Donner un entier [10, 99] : ") = a
+b = "Donner un entier [10, 99] : "
+
+moy = a + b sur 2
+
+print La moyenne de a et b est moy</code></pre>
+
+        <div class="row">
+          <div class="col-sm-6">
+            <pre><code class="nohighlight shell python" data-text="Exemple de résultat n°1">Donner un entier [10, 99] : 15
+Donner un entier [10, 99] : 30
+La moyenne de 15 et 30 est 22</code></pre>
+          </div>
+          <div class="col-sm-6">
+            <pre><code class="nohighlight shell python" data-text="Exemple de résultat n°2">Donner un entier [10, 99] : 16
+Donner un entier [10, 99] : 80
+La moyenne de 16 et 80 est 48</code></pre>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h3>Point de rencontre</h3>
+
+        <figure class="d-print-none">
+          <img src="images/module02/point_rencontre.jpg" alt="Point de rencontre de deux véhicules">
+          <figcaption>Point de rencontre de deux véhicules</figcaption>
+        </figure>
+
+        <p>Sofien et Saber habitent dans deux villes différentes éloignées d'une distance <strong>d</strong>. Si les
+          deux camarades partent en même temps, on désire calculer et afficher à quel instant ils vont se rencontrer.
+        </p>
+
+        <p>On suppose que Sofien avance à une vitesse constante notée <b>v1</b> et que Saber avance à une vitesse
+          constante notée <b>v2</b>.</p>
+
+        <p>On donne la formule qui permet de calculer le temps de rencontre en fonction de la distance et de la vitesse
+          des deux personnes.</p>
+
+        <figure>
+          <img class="h2cm" src="images/module02/temps_rencontre.png" alt="Temps de rencontre des deux personnes">
+          <figcaption>Temps de rencontre des deux personnes</figcaption>
+        </figure>
+
+        <p>Ecrire l'algorithme d'un programme qui permet de simuler cette situation.</p>
+
+        <div class="d-print-none">
+          <div class="row">
+            <div class="col-sm-4">
+              <pre><code class="nohighlight shell python" data-text="Exemple d'exécution n°1">Distance en km ? 3
+  Vitesse de Sahbi km/h ? 7
+  Vitesse de Sofien km/h ? 8
+  Rencontre après 12 mn et 0 s
+  Sahbi se trouve à 1.4 km de sa maison
+  Sofien se trouve à 1.6 km de sa maison</code></pre>
+            </div>
+            <div class="col-sm-4">
+              <pre><code class="nohighlight shell python" data-text="Exemple d'exécution n°2">Distance en km ? 0.5
+  Vitesse de Sahbi km/h ? 8
+  Vitesse de Sofien km/h ? 9
+  Rencontre après 1 mn et 45 s
+  Sahbi se trouve à 0.235 km de sa maison 
+  Sofien se trouve à 0.265 km de sa maison</code></pre>
+            </div>
+            <div class="col-sm-4">
+              <pre><code class="nohighlight shell python" data-text="Exemple d'exécution n°3">Distance en km ? 0.2
+  Vitesse de Sahbi km/h ? 3
+  Vitesse de Sofien km/h ? 3.5
+  Rencontre après 1 mn et 50 s
+  Sahbi se trouve à 0.092 km de sa maison
+  Sofien se trouve à 0.108 km de sa maison</code></pre>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h3>Calcul Résistance</h3>
+
+        <p>Le courant qui traverse une diode LED ne doit pas dépasser 20mA et la tension à ses bornes doit être limitée
+          selon sa couleur.</p>
+
+        <p>Pour celà, on utilise souvent une résistance en série avec une diode LED pour limiter le courant dans la
+          diode, et ainsi éviter de la griller.</p>
+
+        <figure>
+          <img src="images/module02/schema-led.gif" alt="Alimentation Diode LED">
+          <img src="images/module02/led_voltage.png" alt="Tension selon la couleur du LED">
+          <figcaption>Alimentation Diode LED</figcaption>
+        </figure>
+
+        <p class="p-break">On demande de concevoir l'algorithme d'un programme qui :</p>
+        <ul>
+          <li>Saisit les valeurs suivantes :
+            <ul>
+              <li>La tension d'alimentation en Volts, notée U</li>
+              <li>La tension au bornes de la diode en Volts (voir tableau), notée U<sub>f</sub></li>
+              <li>Le courant parcourant la diode (entre 10mA à 20mA), noté I<sub>f</sub></li>
+            </ul>
+          </li>
+          <li>Calcule la résistance R : R = (U - U<sub>f</sub>) * 1000 / I<sub>f</sub></li>
+          <li>Affiche sa valeur</li>
+        </ul>
+
+        <div class="d-print-none">
+          <div class="row">
+            <div class="col-sm-4">
+              <pre><code class="nohighlight shell python" data-text="Exemple d'exécution n°1">Tension d'alimentation ? 5
+Tension LED ? 1.8
+Courant diode mA ? 15
+R = 213 Ω</code></pre>
+            </div>
+            <div class="col-sm-4">
+              <pre><code class="nohighlight shell python" data-text="Exemple d'exécution n°2">Tension d'alimentation ? 12
+Tension LED ? 3.2
+Courant diode mA ? 15
+R = 586 Ω</code></pre>
+            </div>
+            <div class="col-sm-4">
+              <pre><code class="nohighlight shell python" data-text="Exemple d'exécution n°3">Tension d'alimentation ? 9
+Tension LED ? 2.1
+Courant diode mA ? 10
+R = 690 Ω</code></pre>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h3>Distributeur de Jus</h3>
+
+        <figure class="d-print-none">
+          <img src="images/module02/distributeur_jus.jpg" alt="Distributeur de jus">
+          <img src="images/module02/gobelets_jus.jpg" alt="Gobelets de jus">
+          <figcaption>Distributeur de jus / Gobelets de jus</figcaption>
+        </figure>
+
+        <p>Ayoub est un élève intelligent, il a conçu dans le club de robotique un distributeur de jus ingénieux. Ce
+          système demande à l'utilisateur d'entrer la quantité de jus <strong>qj</strong> à sa disposition (en Cl) et le
+          nombre de personnes à servir <strong>np</strong>.</p>
+
+        <p>Une fois les informations validées le robot remplit automatiquement les <strong>np</strong> gobelets de jus.
+        </p>
+
+        <p>On demande d'écrire l'algorithme d'un programme qui calcule la quantité de jus à mettre dans chaque gobelet,
+          et puis
+          l'affiche.</p>
+
+        <p><i>On rappelle que : 1 litre = 100 Cl</i></p>
+
+        <div class="d-print-none">
+          <div class="row">
+            <div class="col-sm-6">
+              <pre><code class="nohighlight shell python" data-text="Exemple d'exécution n°1">Quantité de jus en Cl ? 100
+Nombre de personnes ? 5
+Quantité de jus/Gobelet = 20 Cl</code></pre>
+            </div>
+            <div class="col-sm-6">
+              <pre><code class="nohighlight shell python" data-text="Exemple d'exécution n°2">Quantité de jus en Cl ? 75
+Nombre de personnes ? 4
+Quantité de jus/Gobelet = 18 C</code></pre>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h3>Jogging</h3>
+
+        <p>Tous les matins, Samir aime faire un jogging dans son quartier qui possède la forme d'un triangle rectangle.
+        </p>
+
+        <p>Pour mesurer sa performance, Samir désire calculer sa vitesse moyenne après un jogging.</p>
+
+        <p>On rappelle que :</p>
+        <ul>
+          <li>vitesse = distance / temps</li>
+          <li>vitesse(km/h) = vitesse(m/s) * 3.6</li>
+        </ul>
+
+        <p>Ecrire l'algorithme d'un programme qui :</p>
+
+        <ul>
+          <li>Saisit :
+            <ul>
+              <li>le temps total du jogging <code>tj</code>, en secondes.</li>
+              <li>le nombre de tours effectué autour du quartier <code>nbt</code>.</li>
+              <li>la longueur de la base du triangle <code>a</code></li>
+              <li>la longueur de l'hauteur <code>b</code></li>
+            </ul>
+          </li>
+          <li>Calcule :
+            <ul>
+              <li>la longueur de l'hypoténus <code>c</code>, On rappelle que c peut être calculé à l'aide de la
+                formule de Pythagore : c² = a² + b²</li>
+              <li>le périmètre du quartier <code>pq</code>, pq = (a + b + c)</li>
+              <li>la vitesse de Samir <code>v</code>, v = pq * nbt / tj</li>
+            </ul>
+          </li>
+
+          <li>Affiche le résultat en m/s et en km/h</li>
+        </ul>
+
+        <div class="d-print-none">
+          <div class="row">
+            <div class="col-sm-6">
+              <pre><code class="nohighlight shell python" data-text="Exemple d'exécution n°1">Temps jogging (s) ? 4000
+Nombre de tours ? 19
+Longueur de la base (m) ? 500
+Longueur de l'hauteur (m) ? 100
+Vitesse de Samir = 5 m/s =  18 km/h</code></pre>
+            </div>
+            <div class="col-sm-6">
+              <pre><code class="nohighlight shell python" data-text="Exemple d'exécution n°2">Temps jogging (s) ? 3600
+Nombre de tours ? 15
+Longueur de la base (m) ? 500
+Longueur de l'hauteur (m) ? 100
+Vitesse de Samir = 4 m/s =  16 km/h</code></pre>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h3>Citerne d'huile</h3>
+
+        <p>Dans une presse d'huile, l'huile est conservée dans des citernes cylindriques de diamètre <b>d</b> et de
+          profondeur <b>h</b>. Sur la paroie de la citerne un indicateur gradué indique le niveau <b>nh</b> de l'huile
+          sous forme d'un pourcentage.</p>
+        <ul>
+          <li>Si l'indicateur affiche 0%, la citerne est vide.</li>
+          <li>Si l'indicateur affiche 20%, la citerne est remplie à 20% de sa capacité.</li>
+          <li>Si l'indicateur affiche 100%, la citerne est totalement remplie.</li>
+        </ul>
+        <p>On demande d'écrire l'algorithme d'un programme qui saisit les données de l'utilisateur (en mètres), puis
+          affiche la quantité de l'huile en litres.</p>
+        <p>On donne :</p>
+        <ul>
+          <li>Le diamètre de la citerne <b>d</b> et son hauteur (h) sont mesurés en mètres.</li>
+          <li>Le niveau de l'huile <b>nh</b> est mesuré en pourcentage (%).</li>
+          <li>1 m<sup>3</sup> = 1000 litres</li>
+          <li>La constante π (<code>pi</code>) peut être importée du module <code>math</code> :</li>
+        </ul>
+
+        <pre class="p-break"><code class="language-python">from math import pi</code></pre>
+
+        <figure>
+          <img src="images/module02/citerne_huile.svg" alt="Citerne d'huile" class="h4cm">
+          <figcaption>Citerne d'huile</figcaption>
+        </figure>
+
+        <pre><code class="nohighlight shell python" data-text="Exemple d'exécution">Donner le diamètre de la citerne (m) : 1.2
+Donner l'heuteur de la citerne (m) : 3
+Donne le niveau de l'huile (%) : 20
+La citerne contient 678 litres d'huile.</code></pre>
+      </section>
+
+      <section>
+        <h3>Gare routière</h3>
+
+        <figure class="d-print-none">
+          <img src="images/module02/gare_routiere.png" alt="Gare routière">
+          <figcaption>Gare routière</figcaption>
+        </figure>
+
+        <p>Un bus dans une gare routière, commence ses courses à partir de <code>hd</code> (heure de départ) du matin.
+          Ses courses continuent jusqu'au soir <code>hf</code> (heure fin). Sachant que le bus revient à la gare
+          routière toutes les <code>dt</code> (durée trajet) minutes, on veut calculer le nombre de voyages de ce bus en
+          une journée.
+        </p>
+
+        <p>On demande d'écrire l'algorithme d'un programme qui permet de trouver le nombre de voyages effectués par le
+          bus le long de la journée.</p>
+
+        <p class="explication">Exemple d'exécution</p>
+
+        <pre><code class="nohighlight shell python" data-text="Exemple d'exécution">Quelle est l'heure de départ (hh:00) ? 5
+Quelle est l'heure de fin (hh:00) ? 17
+Quelle est la durée du trajet ? 20
+Le bus fait 36 voyages de 5h à 17h.</code></pre>
+      </section>
+    </article>
+  </main>
+  <footer class="d-print-none bg-dark text-white p-2">
+    <div class="text-center">Page créée avec ♥ par Mohamed Anis MANI</div>
+    <div class="text-center small">Année scolaire : 2023/2024</div>
+  </footer>
+
+  <script src="assets/js/jquery.min.js"></script>
+  <script src="assets/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/highlight.pack.js"></script>
+  <script src="assets/js/hljs.algorithm.js"></script>
+  <script src="assets/js/clipboard.min.js"></script>
+  <script src="assets/js/pages.js"></script>
+  <script>
+    hljs.initHighlightingOnLoad();
+
+    document.querySelectorAll('.language-algorithm,.language-python')
+      .forEach(item => {
+        const div = document.createElement('div');
+        div.className = 'bd-clipboard d-print-none';
+        const btn = document.createElement('button');
+        btn.className = 'btn-clipboard';
+        btn.textContent = "📋";
+        btn.title = "Copier";
+        div.appendChild(btn);
+        item.parentElement.insertBefore(div, item);
+      });
+    new ClipboardJS('.btn-clipboard', {
+      target: (trigger) => {
+        return trigger.parentElement.nextElementSibling;
+      }
+    });
+  </script>
+</body>
+
+</html>

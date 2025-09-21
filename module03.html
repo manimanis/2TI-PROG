@@ -1,0 +1,1046 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/css/default.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <title>Structures de données</title>
+</head>
+
+<body>
+  <aside>
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#aside_navbar"
+        aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span> Menu
+      </button>
+      <div class="collapse navbar-collapse" id="aside_navbar"></div>
+    </nav>
+  </aside>
+
+  <main class="container my-3">
+    <h1>Module 3 : Structures de données</h1>
+
+    <article>
+      <h2>Situations</h2>
+
+      <section>
+        <h3>Caractères & Codes</h3>
+
+        <figure class="d-print-none">
+          <img src="images/module03/ascii-art.jpg" alt="ASCII Art">
+          <figcaption>ASCII Art</figcaption>
+        </figure>
+
+        <p>On donne le programme suivant :</p>
+
+        <pre><code class="language-python">car = "E"
+num = ord(car)
+print("Caractère :", chr(num))
+print("Code :", ord(car))</code></pre>
+
+        <ol>
+          <li>Copier/coller, puis tester le programme. Qu'est ce qu'il affiche ?</li>
+          <li>En déduire le rôle des fonctions <code>chr(num)</code> et <code>ord(car)</code>.</li>
+          <li>En utilisant ce programme, déterminer les codes ASCII des caractères suivants : "e", "4"</li>
+          <li>En utilisant ce programme, déterminer les caractères correspondants aux code ASCII suivants : 90, 33</li>
+          <li>En se référant à la table ASCII suivante, trouver les codes ASCII :
+            <ul>
+              <li>des chiffres : 0, 1, ..., 9</li>
+              <li>des lettres alphabétiques majuscules : A, B, ..., Z</li>
+              <li>des lettres alphabétiques minuscules : a, b, ..., z</li>
+            </ul>
+          </li>
+        </ol>
+
+        <figure class="d-print-none">
+          <img src="images/module03/ascii-table.jpg" alt="Table ASCII">
+          <figcaption>Table ASCII</figcaption>
+        </figure>
+
+        <h4>Exercice</h4>
+        <p>Ecrire l'algorithme d'un programme qui convertit une lettre majuscule en minuscule en utilisant les fonctions
+          <code>chr(code)</code> et <code>ord(car)</code>.
+        </p>
+        <p>Traduire l'algorithme en Python.</p>
+        <p>Quelle est la modification à apporter à cet algorithme pour convertir une lettre minuscule en majuscule ?</p>
+      </section>
+
+      <section>
+        <h3>Nombre automorphe</h3>
+
+        <p>Un <strong>nombre automorphe</strong> est un entier naturel dont la suite des chiffres du carré se termine
+          par celle du nombre lui-même. Par exemple, </p>
+        <p class="fs-1 text-center"><span class="text-danger">5</span>² = 2<span class="text-danger">5</span>, <span
+            class="text-danger">6</span>² = 3<span class="text-danger">6</span>, <span class="text-danger">25</span>² =
+          6<span class="text-danger">25</span>, <br><span class="text-danger">76</span>² = 57<span
+            class="text-danger">76</span>, <span class="text-danger">890625</span>² = 793212<span
+            class="text-danger">890625</span></p>
+
+        <p>On veut écrire l'algorithme d'un programme qui teste si un nombre est automorphe.</p>
+
+        <p>On demande de :</p>
+        <ol>
+          <li>Déterminer, d'après <strong>la définition d'un nombre automorphe</strong>, quels sont les nombres
+            automorphes dans la liste suivante : 376, 9376, 17, 125.</li>
+          <li>Afin d'écrire l'algorithme du programme, nous devons répondre aux questions suivantes :
+            <ul>
+              <li>Comment calculer le carré d'un nombre ?</li>
+              <li>Comment tester si le nombre est automorphe ?</li>
+              <li>Comment convertir un nombre en une chaîne ?</li>
+              <li>Comment trouver la longueur du nombre contenu dans une chaîne ?</li>
+              <li>Comment extraire les deniers chiffres d'une chaîne ?</li>
+            </ul>
+          </li>
+          <li>Ecrire l'algorithme, puis le traduire en Python.</li>
+        </ol>
+      </section>
+
+      <section class="p-break">
+        <h3>Le plus âgé</h3>
+
+        <figure class="d-print-none">
+          <img src="images/module03/ages.webp" alt="Le plus âgé">
+          <figcaption>Le plus âgé</figcaption>
+        </figure>
+
+        <p>On veut faire un programme qui détermine si une personne est plus âgée qu'une autre. Pour cela on donne le
+          programme ci-dessous :</p>
+
+        <pre><code class="language-python">nom1 = input("Nom de la 1ère personne ? ")
+age1 = input("Âge de " + nom1 + " ? ")
+
+nom2 = input("Nom de la 2ème personne ? ")
+age2 = input("Âge de " + nom2 + " ? ")
+
+c1 = age1 > age2
+
+print(nom1, "est plus âgé que", nom2, "?", c1)</code></pre>
+
+        <p>On demande de :</p>
+        <ol>
+          <li>Retrouver l'algorithme du programme, et dresser son <strong>tableau de déclaration des objets
+              (TDO)</strong>.</li>
+          <li>Tester le programme à l'aide des valeurs suivantes. Est-il correct ? Quel est le problème ? Comment le
+            corriger ?
+            <div class="row justify-content-center">
+              <table class="table table-sm table-striped table-hover w-50">
+                <thead>
+                  <tr>
+                    <th>nom1</th>
+                    <th>age1</th>
+                    <th>nom2</th>
+                    <th>age2</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Abderrazek</td>
+                    <td>9</td>
+                    <td>Hala</td>
+                    <td>3</td>
+                  </tr>
+                  <tr>
+                    <td>Emna</td>
+                    <td>73</td>
+                    <td>Abderrazek</td>
+                    <td>9</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </li>
+        </ol>
+      </section>
+
+      <section>
+        <h3>Pomme ou pomme de terre ?</h3>
+
+        <figure class="d-print-none">
+          <img src="images/module03/pomme.jpg" alt="Pomme">
+          <img src="images/module03/pomme-de-terre.jpg" alt="Pomme de terre">
+          <figcaption>Pomme ou pomme de terre ?</figcaption>
+        </figure>
+
+        <p>Pour son cours de français, Ahmed a rédigé le paragraphe suivant, un peu distrait par son petit frère il a
+          commis deux types d'erreurs :</p>
+        <ul>
+          <li>Il a ajouté des mots qui devront être <span
+              class="text-danger text-decoration-line-through">supprimés</span> pour rectifier son texte.</li>
+          <li>Il a oublié des mots qui devront être <span class="text-success">ajoutés</span> pour enrichir son texte.
+          </li>
+        </ul>
+
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Les bienfaits de la pomme<span class="text-danger text-decoration-line-through"> de
+                terre</span></h5>
+            <div class="card-text">
+              <p>La pomme<span class="text-danger text-decoration-line-through"> de terre</span> est un fruit <span
+                  class="text-success">succulent</span> qui apporte une grande satiété, se transporte facilement et
+                peut se consommer partout.</p>
+              <p>La pomme<span class="text-danger text-decoration-line-through"> de terre</span> est particulièrement
+                intéressante<span class="text-success"> pour les sportifs</span> : avant l'effort elle apporte de
+                l'énergie, pendant l'effort, elle apporte<span class="text-danger text-decoration-line-through"> des
+                  minéraux</span> des minéraux et des vitamines qui rechargent
+                l'organisme et
+                après l'effort, elle réhydrate !</p>
+            </div>
+          </div>
+        </div>
+
+        <p>Voulant montrer ses nouveaux acquis en programmation Python, Ahmed a essayé d'écrire l'algorithme suivant :
+        </p>
+
+        <pre><code class="language-algorithm">Algorithme Pomme_de_terre
+Début
+  titre &larr; "Les bienfaits de la pomme de terre"
+  ph1 &larr; "La pomme de terre est un fruit qui apporte une grande satiété," +
+        " se transporte facilement et peut se consommer partout."
+  ph2 &larr; "La pomme de terre est particulièrement intéressante :" +
+        " avant l'effort elle apporte de l'énergie," + 
+        " pendant l'effort, elle apporte des minéraux des minéraux" + 
+        " et des vitamines qui rechargent l'organisme" +
+        " et après l'effort, elle réhydrate !"
+
+  // Supprimer les mots " de terre" 
+  // du titre, de ph1 et de ph2
+
+  // Supprimer les mots " des minéraux" de ph2
+
+  // Insérer 
+  // le mot "succulent" après "est un fruit" dans ph1
+  // les mots "pour les sportifs" après "intéressante" dans ph2
+
+  Ecrire(titre)
+  Ecrire(ph1)
+  Ecrire(ph2)
+Fin</code></pre>
+
+        <p>Afin de compléter son algorithme, Ahmed se demande :</p>
+        <ol>
+          <li>Comment retrouver la 1e position d'un mot dans une chaîne ?</li>
+          <li>Comment effacer un mot d'une chaîne ?</li>
+          <li>Comment insérer un mot dans une chaîne ?</li>
+        </ol>
+
+        <p>On demande de compléter l'algorithme précédent. Puis, de le traduire en Python.</p>
+      </section>
+
+      <section>
+        <h3>Le Halloween & les Bonbons</h3>
+
+        <figure class="d-print-none">
+          <img src="images/module03/halloween-deguisement.jpg" alt="Déguisement Halloween">
+          <img src="images/module03/halloween.jpg" alt="Halloween & Bonbons">
+          <figcaption>Déguisement et Bonbons pour Halloween</figcaption>
+        </figure>
+
+        <p>A l'occasion du Halloween, Samer et ses deux soeurs aînées Sarra at Samar se déguisent pour le Halloween. Le
+          soir, ils visitent les maisons du quartier tout en chantant. Les voisins, très reconnaissants pour le geste,
+          remplissent leur citrouille de bonbons et de friandises.</p>
+        <p>&Agrave; la fin du soirée, les trois enfants à la maison, partagent leur butin. Chaque enfant doit avoir le
+          même nombre de bonbons, le reste est partagé entre la mère et le père.</p>
+        <p>Pour une distrubtion équitable des friandises leur père a écrit l'algorithme' suivant :</p>
+
+        <pre><code class="language-algorithm">Algorithme halloween
+Début
+  nb &larr; 16 // Nombre total de bonbons
+  nbe &larr; 3 // Nombre d'enfants
+
+  nbpe &larr; 5 // Nombre de bonbons par enfant
+  nbr &larr; 1  // Nombre de bonbons restants
+
+  Ecrire("Nbre de bonbons par enfant :", nbpe)
+  Ecrire("Nbre de bonbons restants :", nbr)
+Fin</code></pre>
+
+        <p>On demande de :</p>
+        <ol>
+          <li>Dresser le <abbr title="tableau de déclaration des objets">TDO</abbr> de cet algorithme.</li>
+          <li>Modifier l'algorithme pour qu'il :
+            <ul>
+              <li>accepte le nombre total de bonbons, ainsi que le nombre d'enfants.</li>
+              <li>calcule le nombre de bonbons par enfant, ainsi que le nombre de bonbons restants.</li>
+            </ul>
+          </li>
+          <li>Traduire l'algorithme en Python.</li>
+        </ol>
+      </section>
+
+      <section>
+        <h3>Résistance équivalente</h3>
+
+        <figure>
+          <img class="h2cm" src="images/module03/resistances-paralleles.png" alt="Résistances en parallèle">
+          <img class="h2cm" src="images/module03/resistance-equivalente.png" alt="Résistance équivalente">
+          <figcaption>Résistance équivalente de deux résistances montés en parallèle</figcaption>
+        </figure>
+
+        <p class="p-break">On demande de :</p>
+        <ol>
+          <li>Calculer la résistance équivalente de deux résistances dans les cas suivants :
+            <div class="row justify-content-center">
+              <table class="table table-sm table-striped table-hover w-50">
+                <thead>
+                  <tr>
+                    <th>r1 (Ω)</th>
+                    <th>r2 (Ω)</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>0.1</td>
+                    <td>0.2</td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>470</td>
+                    <td>220</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </li>
+          <li>D'écrire l'algorithme de ce programme. Puis, de dresser son <abbr
+              title="tableau de déclaration des objets">TDO</abbr>.</li>
+          <li>Traduire l'algorithme en Python, puis tester le programme avec les valeurs du tableau précédent.</li>
+          <li>Améliorer le programme pour qu'il affiche des résultats à 2 déciamles : <code>Req = 66.67 Ω</code> au lieu
+            de <code>Req = 66.66666666666667 Ω</code>.</li>
+        </ol>
+      </section>
+
+      <section>
+        <h3>Logic gates</h3>
+
+        <figure>
+          <img src="images/module03/logic-gates.png" alt="Portes logiques">
+          <figcaption>Portes logiques</figcaption>
+        </figure>
+
+        <ol>
+          <li>Soit le circuit logique ci-dessus, on demande d'écrire l'équation logique de la lampe <code>L</code> en
+            fonction des entrées logiques <code>a</code>, <code>b</code> et <code>c</code>.</li>
+          <li>Dresser le tableau de vérité de ce circuit. Puis, remplir la colonne L.
+            <div class="row justify-content-center">
+              <table class="table table-sm table-striped table-hover w-50">
+                <thead>
+                  <tr>
+                    <th>a</th>
+                    <th>b</th>
+                    <th>c</th>
+                    <th>L</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><span class="text-danger">Faux</span></td>
+                    <td><span class="text-danger">Faux</span></td>
+                    <td><span class="text-danger">Faux</span></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td><span class="text-danger">Faux</span></td>
+                    <td><span class="text-danger">Faux</span></td>
+                    <td><span class="text-success">Vrai</span></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td><span class="text-danger">Faux</span></td>
+                    <td><span class="text-success">Vrai</span></td>
+                    <td><span class="text-danger">Faux</span></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td><span class="text-danger">Faux</span></td>
+                    <td><span class="text-success">Vrai</span></td>
+                    <td><span class="text-success">Vrai</span></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td><span class="text-success">Vrai</span></td>
+                    <td><span class="text-danger">Faux</span></td>
+                    <td><span class="text-danger">Faux</span></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td><span class="text-success">Vrai</span></td>
+                    <td><span class="text-danger">Faux</span></td>
+                    <td><span class="text-success">Vrai</span></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td><span class="text-success">Vrai</span></td>
+                    <td><span class="text-success">Vrai</span></td>
+                    <td><span class="text-danger">Faux</span></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td><span class="text-success">Vrai</span></td>
+                    <td><span class="text-success">Vrai</span></td>
+                    <td><span class="text-success">Vrai</span></td>
+                    <td></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </li>
+          <li class="p-break">On donne l'algorithme incomplet suivant qui permet de simuler ce circuit :
+            <pre><code class="language-python">Algorithme Logic_gates
+Début
+  // etat est une chaîne contenant trois lettres
+  // "V" bouton fermé / "F" bouton ouvert
+  Ecrire("Etat des boutons") ; Lire(etat)
+
+  a &larr; Faux // Vrai si le 1e bouton est fermé
+  b &larr; Faux // Vrai si le 2e bouton est fermé
+  c &larr; Faux // Vrai si le 3e bouton est fermé
+
+  L &larr; Faux // Equation logique de L
+
+  // Résultat
+  Ecrire(a, ",", b, ",", c, "=>", L)
+Fin</code></pre>
+          </li>
+          <li>Dresser le <abbr title="tableau de déclaration des objets">TDO</abbr> du programme.</li>
+          <li>Compléter l'algorithme, le traduire en Python, puis le tester.</li>
+          <li>Améliorer l'algorithme et le programme pour qu'ils acceptent des lettres majuscules ou minuscules.</li>
+        </ol>
+      </section>
+    </article>
+
+    <article>
+      <h2 class="p-break">Résumé</h2>
+
+      <section>
+        <h3>Type Caractère</h3>
+
+        <p>Un caractère peut-être :</p>
+        <ul>
+          <li>Une lettre alphabétique majuscule : "A", "B", ..., "Z"</li>
+          <li>Une lettre alphabétique minuscule : "a", "b", ..., "z"</li>
+          <li>Un chiffre : "0", "1", ..., "9"</li>
+          <li>Un symbole : " ", "!", "\"", "#", etc.</li>
+        </ul>
+
+        <p>Chaque caractère possède un code normalisé appelé :</p>
+        <ul>
+          <li><strong>Code ASCII</strong> pour les 256 premiers caractères (voir table ASCII)</li>
+          <li><strong>Code Unicode</strong> au dela des 256 premiers caractères.</li>
+        </ul>
+
+        <figure>
+          <img src="images/module03/ascii-table.jpg" alt="Table ASCII" class="h13cm">
+          <figcaption>Table ASCII</figcaption>
+        </figure>
+
+        <table class="table table-sm table-striped table-hover">
+          <thead>
+            <tr>
+              <th>Fonction</th>
+              <th>Rôle</th>
+              <th>Exemple</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>ord(car)</td>
+              <td>Retrouver le code ASCII/Unicode d'un caractère.</td>
+              <td>
+                <pre><code class="language-python">car = "A"
+num = ord(car) # num = 65</code></pre>
+              </td>
+            </tr>
+            <tr>
+              <td>chr(num)</td>
+              <td>Retrouver le caractère correspondant à un code ASCII/Unicode.</td>
+              <td>
+                <pre><code class="language-python">num = 64
+car = chr(num) # car = "@"</code></pre>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section class="p-break">
+        <h3>Type chaîne de caractères</h3>
+
+        <p>Une chaîne de caractères est formée par un ensemble de caractères.</p>
+
+        <h4>Longueur</h4>
+        <p>Une chaîne possède une <strong>longueur</strong> qui indique le nombre de ses caractères. On utilise la
+          fonction <code>len(chaine)</code> pour déterminer la longueur d'une chaîne.</p>
+
+        <p>Une chaîne de longueur zéro est appelée <strong>chaîne vide</strong>. Elle est notée <code>""</code> ou
+          <code>''</code> et <code>len("") &rarr; 0</code>.
+        </p>
+
+        <h4>Concaténation</h4>
+        <p>Une chaîne peut être le résultat de <abbr title="collage">concaténation</abbr> de deux ou plusieurs chaînes
+          <code>"Sa" + "mi" &rarr; "Sami"</code>.
+        </p>
+
+        <h4>Indexation</h4>
+        <p>On peut <strong>accéder aux caractères individuels</strong> d'une chaîne à travers l'opérateur
+          <code>[]</code>. Une chaîne peut-être <strong>indexée</strong> de deux façons différentes.
+        </p>
+
+        <figure>
+          <img class="h2cm" src="images/module03/string-indexing.png" alt="Indexation d'une chaîne de caractères">
+          <figcaption>Indexation d'une chaîne de caractères</figcaption>
+        </figure>
+
+        <p>D'après la figure précédente, on peut retrouver le premier caractère de la <code>chaine</code> soit en
+          utilisant <strong>l'indexation positive</strong> <code>chaine[0]</code> soit en utilisant <strong>l'indexation
+            négative</strong> <code>chaine[-6]</code>.</p>
+
+        <h4>Sous chaîne</h4>
+        <p>On peut <strong>extraire une partie de la chaîne</strong> en utilisant l'opérateur <code>[:]</code>.</p>
+
+        <figure>
+          <img class="h3cm" src="images/module03/string-slicing.png" alt="Extraction d'une sous-chaîne">
+          <figcaption>Extraction d'une sous-chaîne</figcaption>
+        </figure>
+
+        <p>Pour extraire une partie d'une chaîne on écrit <code>chaine[deb:fin]</code>. Cette instruction extrait les
+          caractères compris entre les indices <strong>deb</strong> inclu et <strong>fin</strong> non inclu,
+          <strong>deb</strong> est l'indice de début, et <strong>fin</strong> est l'indice de fin.
+        </p>
+
+        <h4>Recherche de position</h4>
+        <p>Pour retrouver la position d'une sous-chaine <code>sch</code> dans une chaine <code>ch</code> on écrit
+          <code>ch.find(sch)</code>, cette instruction retourne la première occurence de <code>sch</code> dans
+          <code>ch</code>, ou <code>-1</code> si elle est introuvable.
+        </p>
+
+        <h4>Recherche d'existence</h4>
+        <p>Pour tester l'existance d'une sous-chaîne <code>sch</code> dans une autre chaine <code>ch</code>, on écrit
+          <code>sch in ch</code>. Cette expression renvoie un booléen : <code>True</code> / <code>False</code>.
+        </p>
+
+        <figure>
+          <img class="h3cm" src="images/module03/string-find_in.jpg" alt="Recherche dans une chaîne">
+          <figcaption>Recherche dans une chaîne</figcaption>
+        </figure>
+
+        <h4 class="p-break">Effacer une sous-chaîne</h4>
+        <p>Il n'existe pas une instruction Python pour <strong>effacer une partie d'une chaîne</strong>. Cependant, il
+          est possible d'utiliser une concaténation de sous-chaines.</p>
+
+        <p>Pour effacer la partie comprise entre les indices <code>deb</code> (inclu) et <code>fin</code> (non inclu)
+          dans une <code>chaine</code>, on écrit <code>chaine[:deb] + chaine[fin:]</code>.</p>
+
+        <figure>
+          <img class="h2cm" src="images/module03/string-erase.png" alt="Effacer une sous-chaîne">
+          <figcaption>Effacer une sous-chaîne</figcaption>
+        </figure>
+
+        <h4>Changer la casse</h4>
+        <p>Python offre plusieurs <abbr title="fonctions">méthodes</abbr> pour changer la casse d'une chaine de
+          caractère, voici quelques-unes.</p>
+        <ul>
+          <li><code>chaine.upper()</code> : <span style="text-transform: uppercase;">Convertit toute une chaine en
+              majuscules</span>.</li>
+          <li><code>chaine.lower()</code> : <span style="text-transform: lowercase;">Convertit toute une chaine en
+              minuscules</span>.</li>
+          <li><code>chaine.capitalize()</code> : Met la première lettre en majuscule et les toutes autres en minuscules.
+          </li>
+          <li><code>chaine.title()</code> : <span style="text-transform: capitalize;">Convertit la première lettre de
+              chaque mot en majuscules</span>.</li>
+        </ul>
+
+        <figure>
+          <img class="h5cm" src="images/module03/string-case.png" alt="Modifier la casse d'une chaîne">
+          <figcaption>Modifier la casse d'une chaîne</figcaption>
+        </figure>
+
+        <h4>Conversions</h4>
+        <p>Une <strong>chaîne</strong> qui <em>contient une valeur numérique</em> peut-être transformée en <strong>un
+            entier</strong> à
+          l'aide de la fonction <code>int(chaine)</code> ou en <strong>un réel</strong> à l'aide de la fonction
+          <code>float(chaine)</code>. La fonction <code>str(nombre)</code> est utilisée pour convertir un
+          <strong>entier</strong> ou un <strong>réel</strong> en une <strong>chaîne de caractères</strong>.
+        </p>
+
+        <figure>
+          <img class="h2cm" src="images/module03/string-cast.png" alt="Conversions d'une chaîne">
+          <figcaption>Conversions d'une chaîne</figcaption>
+        </figure>
+
+        <p>La conversion d'une chaîne qui ne contient pas une valeur numérique produit <strong>une erreur
+            d'exécution</strong> qui peut interrompre l'exécution d'un programme pour cela on peut utiliser la fonction
+          <code>chaine.isdigit()</code> pour tester si une chaine <strong>contient uniquement des chiffres</strong>.
+        </p>
+      </section>
+
+      <section class="p-break">
+        <h3>Type entier</h3>
+
+        <p>Le type entier couvre une partie de l'ensemble des entiers relatifs &Zopf;, c'est à dire l'ensembles des
+          entiers positifs 0, 1, 2, 3, etc. et des entiers négatifs -1, -2, -3, etc.</p>
+
+        <p>Les opérateurs possibles avec les entiers sont :</p>
+        <ul>
+          <li><strong>L'addition</strong> <code>8 + 5 &rarr; 13</code></li>
+          <li><strong>La soustraction</strong> <code>8 - 5 &rarr; 3</code></li>
+          <li><strong>La multiplication</strong> <code>8 * 5 &rarr; 40</code></li>
+          <li><strong>La division réelle</strong> <code>8 / 5 &rarr; 1.6</code></li>
+          <li><strong>Le quotient de la division entière</strong> <code>8 // 5 &rarr; 1</code></li>
+          <li><strong>Le reste de la divion entière</strong> <code>18 % 7 &rarr; 4</code></li>
+          <li><strong>L'exponentiation</strong> <code>5 ** 3 &rarr; 125</code></li>
+        </ul>
+
+        <p>Voici quelques fonctions possibles avec les entiers :</p>
+        <ul>
+          <li><strong>La valeur absolue</strong> <code>abs(-9) &rarr; 9</code></li>
+          <li><strong>Choix d'une valeur aléatoire</strong> dans un intervalle
+            <code>randint(1, 6) &rarr; une valeur au hasard dans l'intervalle [1, 6]</code>.
+            <br><span class="text-danger">Attention</span><br>
+            <span>Pour utiliser <code>randint(a, b)</code>, il faut veiller à importer cette fonction du module
+              <code>random</code> <abbr title="en utilisant">via</abbr> l'instruction
+              <code>from random import randint</code>.</span>
+          </li>
+        </ul>
+      </section>
+
+      <section>
+        <h3>Type réel</h3>
+
+        <p>Le type réel couvre une partie de l'ensemble des réels &Ropf;, c'est à dire les nombres à virgule flottante.
+        </p>
+
+        <p>Les opérateurs possibles avec les réels sont <strong>les mêmes que ceux disponibles avec les
+            entiers</strong>, <a href="#section-2-3">voir opérateurs avec les entiers</a>.</p>
+
+        <p>Certaines fonctions avec les réels doivent être importées depuis le module <code>math</code>. Parmi ces
+          fonctions on cite :</p>
+        <ul>
+          <li><strong>La racine carré</strong> <code>sqrt(5) &rarr; <script>document.write(Math.sqrt(5))</script></code>
+          </li>
+          <li><strong>La partie entière</strong> d'un réel <code>trunc(6.2545) &rarr; 6</code></li>
+        </ul>
+      </section>
+
+      <section>
+        <h3>Type booléen</h3>
+
+        <p>Les variables de ce type peuvent prendre uniquement les deux valeurs <code>True</code> ou <code>False</code>.
+        </p>
+
+        <p>On utilise les <strong>opérateurs de comparaison</strong> pour comparer des valeurs de mêmes types ou de
+          types compatibles :</p>
+
+        <div class="row justify-content-center">
+          <table class="table table-sm table-striped table-hover w-50">
+            <thead>
+              <tr>
+                <th>Opérateur</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>&lt;</td>
+                <td>Inférieur</td>
+              </tr>
+              <tr>
+                <td>&lt;=</td>
+                <td>Inférieur ou égal</td>
+              </tr>
+              <tr>
+                <td>&gt;</td>
+                <td>Supérieur</td>
+              </tr>
+              <tr>
+                <td>&gt;=</td>
+                <td>Supérieur ou égal</td>
+              </tr>
+              <tr>
+                <td>==</td>
+                <td>égal</td>
+              </tr>
+              <tr>
+                <td>!=</td>
+                <td>Différent</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p>On utilise les <strong>opérateurs logiques</strong> pour construire des expressions booléennes plus
+          sophistiquées.</p>
+
+        <div class="row justify-content-center">
+          <table class="table table-sm table-striped table-hover w-75">
+            <thead>
+              <tr>
+                <th>Opérateur</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>not a</td>
+                <td>Négation logique, si <code>a</code> est vraie <code>not a</code> est fausse, sinon
+                  <code>not a</code>
+                  est vraie.
+                </td>
+              </tr>
+              <tr>
+                <td>a and b</td>
+                <td>Et logique, <code>a and b</code> est vraie uniquement lorsque <code>a</code> est vraie et
+                  <code>b</code> est vraie.
+                </td>
+              </tr>
+              <tr>
+                <td>a or b</td>
+                <td>Ou logique, <code>a or b</code> est fausse uniquement lorsque <code>a</code> est fausse et
+                  <code>b</code> est fausse, elle est vraie lorsque l'un des <strong>opérandes</strong> <code>a</code>
+                  ou
+                  <code>b</code> est vrai.
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h4 class="p-break">Tables de vérité</h4>
+        <div class="row">
+          <div class="col-sm-6">
+            <h5>Opérateur unaire</h5>
+            <table class="table table-sm table-striped table-hover w-75">
+              <thead>
+                <tr>
+                  <th>a</th>
+                  <th>not a</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><span class="text-danger">False</span></td>
+                  <td><span class="text-success">True</span></td>
+                </tr>
+                <tr>
+                  <td><span class="text-success">True</span></td>
+                  <td><span class="text-danger">False</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="col-sm-6">
+            <h5>Opérateurs binaires</h5>
+            <table class="table table-sm table-striped table-hover w-75">
+              <thead>
+                <tr>
+                  <th>a</th>
+                  <th>b</th>
+                  <th>a and b</th>
+                  <th>a or b</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><span class="text-danger">False</span></td>
+                  <td><span class="text-danger">False</span></td>
+                  <td><span class="text-danger">False</span></td>
+                  <td><span class="text-danger">False</span></td>
+                </tr>
+                <tr>
+                  <td><span class="text-success">True</span></td>
+                  <td><span class="text-danger">False</span></td>
+                  <td><span class="text-danger">False</span></td>
+                  <td><span class="text-success">True</span></td>
+                </tr>
+                <tr>
+                  <td><span class="text-danger">False</span></td>
+                  <td><span class="text-success">True</span></td>
+                  <td><span class="text-danger">False</span></td>
+                  <td><span class="text-success">True</span></td>
+                </tr>
+                <tr>
+                  <td><span class="text-success">True</span></td>
+                  <td><span class="text-success">True</span></td>
+                  <td><span class="text-success">True</span></td>
+                  <td><span class="text-success">True</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <h4>Priorité des opérateurs</h4>
+        <p>Les opérateurs logiques sont ordonnés dans le tableau précédent selon leurs <strong>priorités</strong>
+          respectives.</p>
+        <p>Il est <strong>vivement conseillé</strong> d'utiliser les parenthèses pour imposer l'ordre
+          d'évaluation des opérateurs.</p>
+
+        <p>Exemple, l'expression <code>not a or b and c</code> est évaluée comme suit <code>(not a) or (b and c)</code>.
+          Si on veut écrire <code>not ((a or b) and c)</code> ou <code>(not (a or b)) and c</code> , il faudra utiliser
+          impérativement les parenthèses.</p>
+
+        <h4>Comparaison des variables de type de numérique</h4>
+
+        <p>Pour les entiers et les réels <code>a &gt; b</code> si et seulement si <code>a - b &gt; 0</code>,
+          <code>a == b</code> si et seulement si <code>a - b == 0</code>.
+        </p>
+
+        <h4>Comparaison des caractères et des chaînes de caractères</h4>
+        <p>La comparaison pour les <strong>caractères</strong> est basée sur le <strong>code ASCII/Unicode</strong>.</p>
+        <p class="text-center">
+          <code>" " &lt; "!"  &lt; ...  &lt; "0" &lt; "1" &lt; ... &lt; "A" &lt; "B" &lt; ... &lt; "a" &lt; "b" &lt; ...</code>
+        </p>
+
+        <p>Pour les <strong>chaînes de caractères</strong> on applique le même principe avec chacune des lettres des
+          deux chaînes.</p>
+        <p><code>"Amine" &lt; "Eya"</code> puisque <code>"A" &lt; "E"</code></p>
+        <p><code>"bassine" &lt; "bassins"</code> bien qu'il soient de même longueur mais la dernière lettre
+          <code>"e" &lt; "s"</code>
+        </p>
+        </p>
+      </section>
+
+    </article>
+
+    <article class="p-break">
+      <h2>Renforcement</h2>
+
+      <section class="d-print-none">
+        <h3>QCM</h3>
+
+        Les QCMs sont accessibles dans ces pages :
+        <ul>
+          <li><a href="qcm03-01.html" target="_blank" rel="noopener noreferrer">Type caractère</a>.</li>
+          <li><a href="qcm03-02.html" target="_blank" rel="noopener noreferrer">Type chaîne</a>.</li>
+          <li><a href="qcm03-03.html" target="_blank" rel="noopener noreferrer">Types numérique</a>.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h3>Conjugaison au présent</h3>
+
+        <p>Ecrire l'algorithme un programme qui conjuge un verbe de 1<sup>er</sup> groupe au présent.</p>
+
+        <pre><code class="nohighlight shell python" data-text="Exemple de résultat">Donner un verbe de 1er groupe ? manger
+Je mange
+Tu manges
+Il/Elle mange
+Nous mangons
+Vous mangez
+Ils/Elles mangent</code></pre>
+      </section>
+
+      <section>
+        <h3>English calendar</h3>
+
+        <p>Les français expriment les dates de la façon suivante : <span class="text-danger">jj</span>/<span
+            class="text-success">mm</span>/aaaa, alors que les anglais l'expriment d'une autre façon : <span
+            class="text-success">mm</span>/<span class="text-danger">jj</span>/aaaa.</p>
+
+        <p>Ecrire l'algorithme d'un programme qui convertit les dates du calendrier français au calendrier anglais.</p>
+
+        <pre><code class="nohighlight shell python" data-text="Exemple de résultat">Date au format jj/mm/aaaa ? 24/08/1983
+24/08/1983 is 08/24/1983 in english calendar.</code></pre>
+      </section>
+
+      <section>
+        <h3>Division Euclidienne</h3>
+
+        <p>Tout nombre entier positif n &in; &Nopf; peut être exprimé sous la forme :</p>
+        <p class="text-center fs-2">n = p.q + r</p>
+        <p>Avec p > 0, q &ge; 0 et 0 &le; r &lt; p</p>
+
+        <p>On veut écrire l'algorithme d'un programme qui, pour deux entiers <code>n</code> et <code>p</code> donnés, calcule et
+          affiche la valeur de <code>q</code> et <code>r</code>.</p>
+
+        <div class="d-print-none row">
+          <div class="col-sm-6">
+            <pre><code class="nohighlight shell python" data-text="Exemple de résultat n°1">Donner n ? 25
+Donner p ? 11
+25 = 11 . 2 + 3</code></pre>
+          </div>
+          <div class="col-sm-6">
+            <pre><code class="nohighlight shell python" data-text="Exemple de résultat n°2">Donner n ? 18
+Donner p ? 7
+18 = 7 . 2 + 4</code></pre>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h3>Chronomètre</h3>
+
+        <figure class="d-print-none">
+          <img src="images/module03/chronometre.webp" alt="Chronomètre">
+          <figcaption>Chronomètre</figcaption>
+        </figure>
+
+        <p>Un chronomètre présente une durée au format "h:mm:ss", voir figure. On veut retrouver ce que cette valeur
+          représente en secondes.</p>
+
+        <p>Ecrire l'algorithme d'un programme pour réaliser cette tâche.</p>
+
+        <div class="row">
+          <div class="col-sm-6">
+            <pre><code class="nohighlight shell python" data-text="Exemple de résultat n°1">Affichage du chronomètre ? 1:10:50
+1:10:50 vaut 4250 secondes</code></pre>
+          </div>
+          <div class="col-sm-6">
+            <pre><code class="nohighlight shell python" data-text="Exemple de résultat n°2">Affichage du chronomètre ? 02:34:20
+02:34:20 vaut 9260 secondes</code></pre>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h3>Permutation de chiffres</h3>
+
+        <p>Ecrire l'algorithme un programme qui saisit un nombre de 4 chiffres, puis permute le chiffre des centaines avec celui des
+          milliers et le chiffre des dizaines avec celui des unités.</p>
+        <p class="text-center fs-1"><span class="text-success">1</span><span class="text-danger">3</span><span
+            class="text-success">7</span><span class="text-danger">4</span> &rarr; <span
+            class="text-danger">3</span><span class="text-success">1</span><span class="text-danger">4</span><span
+            class="text-success">7</span>
+          -
+          <span class="text-success">1</span><span class="text-danger">0</span><span class="text-success">0</span><span
+            class="text-danger">5</span> &rarr; <span class="text-danger">0</span><span
+            class="text-success">1</span><span class="text-danger">5</span><span class="text-success">0</span>
+        </p>
+        <p>Proposer <strong>deux méthodes de résolution</strong> :</p>
+        <ul>
+          <li>Une solution arithmétique.</li>
+          <li>Une solution en utilisant les fonctions de manipulation des chaînes.
+          </li>
+        </ul>
+      </section>
+
+      <section>
+        <h3>Nombres voisins</h3>
+
+        <p>Deux nombres sont dits voisins si le dernier chiffre du premier nombre est égal au premier chiffre du second
+          nombre.</p>
+
+        <p class="text-center fs-1">
+          123<span class="text-success">4</span> et <span class="text-success">4</span>200 /
+          6<span class="text-success">7</span> et <span class="text-success">7</span>30 /
+          73<span class="text-danger">0</span> et <span class="text-danger">6</span>7
+        </p>
+
+        <p>Les deux premiers exemples présentent deux nombres voisins, le troisième d'un exemple de nombre non voisins.
+        </p>
+
+        <div class="d-print-none row">
+          <div class="col-sm-6">
+            <pre><code class="nohighlight shell python" data-text="Exemple de résultat n°1">Donner a ? 67
+Donner b ? 730
+67 et 730 sont voisins ? True</code></pre>
+          </div>
+          <div class="col-sm-6">
+            <pre><code class="nohighlight shell python" data-text="Exemple de résultat n°2">Donner a ? 730
+Donner b ? 67
+730 et 67 sont voisins ? False</code></pre>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h3>Consommation de carburant</h3>
+
+        <figure class="d-print-none">
+          <img src="images/module03/indicateur-carburant.jpg" alt="Indicateur de niveau du carburant">
+          <img src="images/module03/indicateur-kilometrage.jpg" alt="Indicateur de kilométrage">
+          <figcaption>Indicateur de niveau du carburant et Indicateur de kilométrage</figcaption>
+        </figure>
+
+        <p>Un automobiliste surveille la consommation en carburant de sa voiture pour faire une maintenance préventive
+          en cas de besoin.</p>
+        <p>Le matin, son réservoir initialement vide, il fait le plein de <code>nd</code> litres de carburant. A cet
+          instant, il a parcouru <code>dd</code> kilomètres.</p>
+        <p>Le soir, l'indicateur de niveau de carburant indique <code>nf</code> litres et l'indicateur de kilométrage
+          indique <code>df</code> kilomètres.</p>
+        <p>On demande d'écrire l'algorithme d'un programme qui saisit les données puis calcule le taux de consommation de la voiture en
+          litres/100km.</p>
+
+        <p class="text-center"><b>taux = consommation / distance</b></p>
+
+        <div class="row">
+          <div class="col-sm-6">
+            <pre><code class="nohighlight shell python" data-text="Exemple de résultat n°1">Le matin
+Niveau de carburant ? 30
+Nombre de km parcourus ? 3000
+Le soir
+Niveau de carburant ? 10
+Nombre de km parcourus ? 3200
+La voiture a consommé 20 litres pour 200 km
+La voiture a consommé 10.0 l/100km</code></pre>
+          </div>
+          <div class="col-sm-6">
+            <pre><code class="nohighlight shell python" data-text="Exemple de résultat n°2">Le matin
+Niveau de carburant ? 10
+Nombre de km parcourus ? 100
+Le soir
+Niveau de carburant ? 8
+Nombre de km parcourus ? 127
+La voiture a consommé 2 litres pour 27 km
+La voiture a consommé 7.4 l/100km</code></pre>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h3>Plein de zéros</h3>
+
+        <p>Ecrire l'algorithme d'un programme qui saisit un nombre de 2 chiffres, puis insère autant de zéros que la différence entre
+          ses chiffres de dizaines et d'unités.</p>
+
+        <p class="text-center fs-1">
+          <span class="text-success">1</span><span class="text-danger">3</span> &rarr; <span
+            class="text-success">1</span>00<span class="text-danger">3</span> /
+          <span class="text-success">2</span><span class="text-danger">2</span> &rarr; <span
+            class="text-success">2</span><span class="text-danger">2</span> /
+          <span class="text-success">7</span><span class="text-danger">1</span> &rarr; <span
+            class="text-success">7</span>000000<span class="text-danger">1</span>
+        </p>
+
+        <p>Prévoir deux méthodes de résoluion différentes.</p>
+      </section>
+    </article>
+  </main>
+  <footer class="d-print-none bg-dark text-white p-2">
+    <div class="text-center">Page créée avec ♥ par Mohamed Anis MANI</div>
+    <div class="text-center small">Année scolaire : 2021/2022</div>
+  </footer>
+
+  <script src="assets/js/jquery.min.js"></script>
+  <script src="assets/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/highlight.pack.js"></script>
+  <script src="assets/js/hljs.algorithm.js"></script>
+  <script src="assets/js/clipboard.min.js"></script>
+  <script src="assets/js/pages.js"></script>
+  <script>
+    hljs.initHighlightingOnLoad();
+
+    document.querySelectorAll('.language-algorithm,.language-python')
+      .forEach(item => {
+        const div = document.createElement('div');
+        div.className = 'bd-clipboard d-print-none';
+        const btn = document.createElement('button');
+        btn.className = 'btn-clipboard';
+        btn.textContent = "📋";
+        btn.title = "Copier";
+        div.appendChild(btn);
+        item.parentElement.insertBefore(div, item);
+      });
+    new ClipboardJS('.btn-clipboard', {
+      target: (trigger) => {
+        return trigger.parentElement.nextElementSibling;
+      }
+    });
+  </script>
+</body>
+
+</html>

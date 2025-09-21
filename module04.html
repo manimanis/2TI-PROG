@@ -1,0 +1,1196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/css/default.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <title>Structures conditionnelles</title>
+</head>
+
+<body>
+  <aside>
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#aside_navbar"
+        aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span> Menu
+      </button>
+      <div class="collapse navbar-collapse" id="aside_navbar"></div>
+    </nav>
+  </aside>
+
+  <main class="container my-3">
+    <h1>Module 4 : Structures conditionnelles</h1>
+
+    <article>
+      <h2>Situations</h2>
+
+      <section>
+        <h3>Barrière automatique</h3>
+
+        <figure class="d-print-none">
+          <img src="images/module04/barriere_automatique.jpg" alt="Barrière automatique">
+          <figcaption>Barrière automatique</figcaption>
+        </figure>
+
+        <p>La barrière automatique est installée dans les villes sur les intersections entre la voie ferrée et la route.
+        </p>
+        <p>En temps normal, la barrière est toujours levée et les voitures circulent.</p>
+        <p>Lors de l'arrivée d'un train, la barrière descend et une sirène se fait entendre pour alerter les
+          automobilistes du danger et les inciter à s'arrêter.</p>
+        <p>La situation est schématisée comme suit :</p>
+
+        <figure>
+          <img src="images/module04/forme_simple.png" alt="Algorigramme barrière automatique" class="h3cm">
+          <figcaption>Algorigramme barrière automatique</figcaption>
+        </figure>
+
+        <p>On demande d'écrire un algorithme pour simuler cette situation :</p>
+        <ol>
+          <li>Quelles sont les entrées de l'algorithme ?</li>
+          <li>Combien y-a-t'il de résultats possibles pour cet algorithme ?</li>
+          <li>Utiliser une structure conditionnelle à forme réduite pour écrire l'algorithme.</li>
+        </ol>
+      </section>
+
+      <section>
+        <h3>Jeu Pile/Face</h3>
+
+        <figure class="d-print-none">
+          <img src="images/module04/pile_face.jpeg" alt="Jeu Pile/Face">
+          <figcaption>Jeu Pile/Face</figcaption>
+        </figure>
+
+        <p>Pour choisir le possesseur du ballon au début d'un match de football on procède au jeu Pile/Face.</p>
+        <p>Ce jeu est joué contre l'ordinateur de la façon suivante :</p>
+        <ul>
+          <li>L'utilisateur fait son choix (0 : Pile et 1 : Face) <code>chu</code></li>
+          <li>L'ordinateur fait le tirage au sort, choix d'un nombre au hasard 0 ou 1 <code>cho</code></li>
+          <li>On affiche le gagnant :
+            <ul>
+              <li>Si <u>chu est égal à cho</u> l'<strong>Utilisateur gagne</strong>,</li>
+              <li>Si <u>chu est différent de cho</u> l'<strong>Utilisateur perd</strong>.</li>
+            </ul>
+          </li>
+        </ul>
+
+        <p>On demande d'écrire un algorithme pour simuler cette situation :</p>
+        <ol>
+          <li>Combien y-a-t'il de résultats possibles dans cet algorithme ?</li>
+          <li>Comment l'ordinateur peut-il choisir une valeur aléatoire ?</li>
+          <li>Peut-on utiliser une structure conditionnelle à forme réduite pour implémenter ce algorithme ? Pourquoi ?
+          </li>
+        </ol>
+      </section>
+
+      <section>
+        <h3>Subway Surf</h3>
+
+        <figure class="d-print-none">
+          <img src="images/module04/subway_img1.jpg" alt="Bonus">
+          <img src="images/module04/subway_img3.jpg" alt="Prix possibles"><br>
+          <img src="images/module04/subway_img2.jpg" alt="Boîte bonus">
+          <img src="images/module04/subway_img4.jpg" alt="Exemple de prix">
+          <figcaption>Bonus Subway Surf</figcaption>
+        </figure>
+
+        <p>Dans le jeu <b>Subway Surf</b> on peut gagner des boîtes mystères gratuites. Lorsqu'on clique sur le bouton
+          gratuit, l'ordinateur choisit une valeur aléatoire de 0 à 7 qui correspond à l'un des bonus suivants :</p>
+        <ul>
+          <li>Si <b>choix est égal à 0</b> on gagne <u>3 Insignes</u></li>
+          <li>Si <b>choix est égal à 1</b> on gagne <u>800 pièces</u></li>
+          <li>Si <b>choix est égal à 2</b> on gagne <u>3 Hoverboards</u></li>
+          <li>Si <b>choix est égal à 3</b> on gagne <u>2000 pièces</u></li>
+          <li>Si <b>choix est égal à 4</b> on gagne <u>une clé</u></li>
+          <li>Si <b>choix est égal à 5</b> on gagne <u>un avantage de départ</u></li>
+          <li>Si <b>choix est égal à 6</b> on gagne <u>un booster de score</u></li>
+          <li>Si <b>choix est égal à 7</b> on gagne <u>2 clés</u></li>
+        </ul>
+
+        <p>On demande d'écrire un algorithme pour simuler cette situation :</p>
+        <ol>
+          <li>Combien y-a-t'il de résultats possibles dans cet algorithme ?</li>
+          <li>Peut-on utiliser une structure conditionnelle à forme alternative pour implémenter ce algorithme ? Quel
+            est
+            son inconvénient ?
+          </li>
+        </ol>
+      </section>
+
+    </article>
+
+    <article>
+      <h2>Résumé</h2>
+
+      <section>
+        <h3>Structure conditionnelle à forme réduite</h3>
+
+        <p>Une structure conditionnelle simple à forme réduite admet <u>un seul traitement</u> qui sera exécuté
+          uniquement <b>si la condition est vraie</b>.</p>
+
+        <figure>
+          <img src="images/module04/forme-simple-reduite.png" alt="Forme simple réduite">
+          <figcaption>Forme simple réduite</figcaption>
+        </figure>
+
+        <div class="row">
+          <div class="col-sm-6">
+            <pre><code class="language-python">if condition:
+    traitements
+  </code></pre>
+          </div>
+          <div class="col-sm-6">
+            <pre><code class="language-algorithm">Si condition Alors
+    traitements
+Fin Si</code></pre>
+          </div>
+        </div>
+
+        <h4>Exemple</h4>
+        <div class="row">
+          <div class="col-sm-6">
+            <pre><code class="language-python"># Valeur absolue d'un nombre x
+absx = x
+if x &lt; 0:
+    absx = -x
+
+print("abs(", x, ")=", absx)</code></pre>
+          </div>
+          <div class="col-sm-6">
+            <pre><code class="language-algorithm">// Valeur absolue d'un nombre x
+absx &larr; x
+Si x &lt; 0 Alors
+    absx &larr; -x
+Fin Si
+Ecrire("abs(", x, ")=", absx)</code></pre>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h3>Structure conditionnelle à forme alternative</h3>
+
+        <p>Une structure conditionnelle à forme alternative admet <u>deux traitements différents</u> :</p>
+        <ul>
+          <li>Le <u>premier traitement</u> est exécuté uniquement <b>si la condition est vraie</b>,</li>
+          <li>Le <u>second traitement</u> est exécuté uniquement <b>si la condition est fausse</b>.</li>
+        </ul>
+
+        <figure>
+          <img src="images/module04/forme-simple-alternative.png" alt="Forme simple alternative">
+          <figcaption>Forme simple alternative</figcaption>
+        </figure>
+
+        <div class="row">
+          <div class="col-sm-6">
+            <pre><code class="language-python">if condition:
+    traitement1
+else:
+    traitement2
+  </code></pre>
+          </div>
+          <div class="col-sm-6">
+            <pre><code class="language-algorithm">Si condition Alors
+    traitement1
+Sinon
+    traitement2
+Fin Si</code></pre>
+          </div>
+        </div>
+
+        <h4 class="p-break">Exemple</h4>
+        <div class="row">
+          <div class="col-sm-6">
+            <pre><code class="language-python"># Maximum de deux nombres
+if a > b:
+    max = a
+else:
+    max = b
+
+print("max=", max)</code></pre>
+          </div>
+          <div class="col-sm-6">
+            <pre><code class="language-algorithm">// Maximum de deux nombres
+Si a > b Alors
+    max = a
+Sinon
+    max = b
+Fin Si
+Ecrire("max=", max)</code></pre>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h3>Structure conditionnelle à forme généralisée</h3>
+
+        <p>Une <b>structure conditionnelle</b> simple à forme <b>généralisée</b> admet <u>trois traitements différents
+            ou plus</u> qui seront exécutés en fonction de <u>plusieurs conditions</u>.</p>
+
+        <figure>
+          <img src="images/module04/forme-simple-generalisee.png" alt="Forme simple généralisée">
+          <figcaption>Forme simple généralisée</figcaption>
+        </figure>
+
+        <div class="row">
+          <div class="col-sm-6">
+            <pre><code class="language-python">if condition:
+    traitement1
+elif condition2:
+    traitement2
+else:
+    traitement3
+  </code></pre>
+          </div>
+          <div class="col-sm-6">
+            <pre><code class="language-algorithm">Si condition1 Alors
+    traitement1
+Sinon Si condition2 Alors
+    traitement2
+Sinon
+    traitement3
+Fin Si</code></pre>
+          </div>
+        </div>
+
+        <h4>Exemple</h4>
+        <div class="row">
+          <div class="col-sm-6">
+            <pre><code class="language-python"># Comparaison entre deux nombres
+if a > b:
+    eq = ">"
+elif a &lt; b:
+    eq = "&lt;"
+else:
+    eq = "="
+
+print(a, eq, b)</code></pre>
+          </div>
+          <div class="col-sm-6">
+            <pre><code class="language-algorithm">// Comparaison entre deux nombres
+Si a > b Alors
+    eq &larr; ">"
+Sinon Si a &lt; b Alors
+    eq &larr; "&lt;"
+Sinon
+    eq &larr; "="
+Fin Si
+Ecrire(a, eq, b)</code></pre>
+          </div>
+        </div>
+      </section>
+    </article>
+
+    <article class="p-break">
+      <h2>Renforcement</h2>
+
+      <section class="d-print-none">
+        <h3>QCM</h3>
+
+        Les QCMs sont accessibles dans ces pages :
+        <ul>
+          <li><a href="qcm04.html" target="_blank" rel="noopener noreferrer">QCM</a>.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h3>L'aide fermier ★</h3>
+
+        <p>Yamen travaille comme aide fermier dans la ferme de M Tarek. Aujourd'hui, il a trois tâches à faire :</p>
+        <ul>
+          <li>Nettoyer l'étable</li>
+          <li>Remplir l'abreuvoir des vaches s'il est vide</li>
+          <li>Traire les vaches</li>
+        </ul>
+
+        <figure class="d-print-none">
+          <img src="images/module04/abreuvoir.jpg" alt="Abreuvoir">
+          <figcaption>Abreuvoir</figcaption>
+        </figure>
+
+        <p>Ecrire un algorithme pour simuler cette situation, l'utilisateur entre l'état de l'abreuvoir</p>
+        <ul>
+          <li>V : s'il est vide</li>
+          <li>R : s'il est remplit</li>
+        </ul>
+
+        <div class="row">
+          <div class="col-sm-6">
+            <pre><code class="nohighlight shell python" data-text="Exemple 1">Etat de l'abreuvoir (V : vide / R : Rempli) ? V
+Tâches à réaliser :
+ - Nettoyer l'étable
+ - Remplir l'abreuvoir
+ - Traire les vaches</code></pre>
+          </div>
+          <div class="col-sm-6">
+            <pre><code class="nohighlight shell python" data-text="Exemple 2">Etat de l'abreuvoir (V : vide / R : Rempli) ? R
+Tâches à réaliser :
+ - Nettoyer l'étable
+ - Traire les vaches
+ </code></pre>
+          </div>
+        </div>
+
+      </section>
+
+      <section>
+        <h3>Personne majeure ou mineure ★</h3>
+
+        <figure class="d-print-none">
+          <img src="images/module04/majeur_mineur.jpg" alt="Personne majeure ou mineure">
+          <figcaption>Personne majeure ou mineure</figcaption>
+        </figure>
+
+        <p>Une personne est considérée <b>majeure</b>, devant la loi, si son âge a dépassé 18 ans, sinon cette personne
+          est dite <b>mineure</b>.</p>
+        <p>Écrire un algorithme qui affiche si une personne est majeure ou mineure selon son âge.</p>
+
+        <div class="d-print-none row">
+          <div class="col-sm-6">
+            <pre><code class="nohighlight shell python" data-text="Exemple 1">Votre âge ? 25
+Vous êtes majeur</code></pre>
+          </div>
+          <div class="col-sm-6">
+            <pre><code class="nohighlight shell python" data-text="Exemple 2">Votre âge ? 13
+Vous êtes mineur</code></pre>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h3>Signe d'un nombre ★</h3>
+
+        <figure class="d-print-none">
+          <img src="images/module04/signe_nombre.png" alt="Signe d'un nombre">
+          <figcaption>Signe d'un nombre</figcaption>
+        </figure>
+
+        <p>Écrire un algorithme qui affiche si un nombre <code>x</code> donné est :</p>
+        <ul>
+          <li>positif, x &gt; 0</li>
+          <li>négatif, x &lt; 0</li>
+          <li>null, x = 0</li>
+        </ul>
+
+        <div class="d-print-none row">
+          <div class="col-sm-6">
+            <pre><code class="nohighlight shell python" data-text="Exemple 1">Donner un nombre ? 27
+27 est positif</code></pre>
+          </div>
+          <div class="col-sm-6">
+            <pre><code class="nohighlight shell python" data-text="Exemple 2">Donner un nombre ? -6
+-6 est négatif</code></pre>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h3>Intersection entre deux cercles ★</h3>
+
+        <p>Soient deux cercles du plan <strong>C1</strong> et <strong>C2</strong> de rayons respectifs <code>r1</code>
+          et <code>r2</code>, les centres des deux cercles sont à une distance <code>d</code> donnée.</p>
+
+        <p>Ces deux cercles :</p>
+        <ul>
+          <li><strong>se coupent en deux points</strong>, si <code>r1 + r2 &gt; d</code></li>
+          <li><strong>sont tangentes</strong>, si <code>r1 + r2 = d</code></li>
+          <li><strong>ne se coupent pas</strong>, si <code>r1 + r2 &lt; d</code></li>
+        </ul>
+
+        <figure>
+          <img src="images/module04/inter-cercles.png" alt="Intersection de deux cercles" class="h4cm">
+          <figcaption>Intersection de deux cercles</figcaption>
+        </figure>
+
+        <p>On demande d'écrire un algorithme qui saisit les données mentionnés puis affiche si les deux cercles se
+          coupent.</p>
+
+        <div class="d-print-none row">
+          <div class="col-sm-6">
+            <pre><code class="nohighlight shell python" data-text="Exemple 1">Rayon de C1 ? 6
+Rayon de C2 ? 3
+Distance entre les centres ? 9
+Les deux cercles sont tangentes</code></pre>
+          </div>
+          <div class="col-sm-6">
+            <pre><code class="nohighlight shell python" data-text="Exemple 2">DRayon de C1 ? 10
+Rayon de C2 ? 10
+Distance entre les centres ? 10
+Les cercles se coupent en deux points</code></pre>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h3 class="p-break">Jeu de dés ★</h3>
+
+        <figure class="d-print-none">
+          <img src="images/module04/jeu_3des.jpeg" alt="Jeu de trois dés">
+          <figcaption>Jeu de trois dés</figcaption>
+        </figure>
+
+        <p>Les combinaisons gagnantes dans un jeu de trois dés sont les suivantes :</p>
+        <ul>
+          <li>Trois nombres identiques, on gagne 300pts</li>
+          <li>Deux nombres identiques ou la somme des trois dés est égale à six, on gagne 200pts</li>
+          <li>Un six, on gagne 50 pts</li>
+          <li>Dans les autres cas, on gagne la somme des trois dés</li>
+        </ul>
+
+        <p>On demande d'écrire un algorithme qui :</p>
+        <ul>
+          <li>Simule le lancement de trois dés</li>
+          <li>Affiche la valeur de chaque dés, ainsi que la somme des trois dés</li>
+          <li>Calcule et affiche le nombre de points gagnés</li>
+        </ul>
+
+        <div class="row">
+          <div class="col-sm-6">
+            <pre><code class="nohighlight shell python" data-text="Exemple 1">Dé1 : 6 - Dé2 : 3 - Dé3 : 4
+Somme : 13
+Vous gagnez 50 pts</code></pre>
+          </div>
+          <div class="col-sm-6">
+            <pre><code class="nohighlight shell python" data-text="Exemple 2">Dé1 : 4 - Dé2 : 1 - Dé3 : 2
+Somme : 7
+Vous gagnez 7 pts</code></pre>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h3>Convertisseur de devise ★★</h3>
+
+        <figure class="d-print-none">
+          <img src="images/module04/devises.webp" alt="Conversion de devise">
+          <figcaption>Conversion de devise</figcaption>
+        </figure>
+
+        <p>Le 26 Septembre 2021, vers 9h du matin, le taux de change est comme suit : 1€ = 1.17$ = 3.28 D.</p>
+        <p>Écrire un algorithme qui :</p>
+        <ul>
+          <li>Saisit le montant à convertir <code>mac</code>.</li>
+          <li>Saisit la devise initiale, <code>di</code> représentée par l'un des trois symboles :
+            <ul>
+              <li>$ : Pour le Dollar américain</li>
+              <li>€ : Pour l'Euro</li>
+              <li>D : Pour le Dinar Tunisien</li>
+            </ul>
+          </li>
+          <li>Saisit la devise requises, <code>dr</code> représentée par l'un des symboles cités.</li>
+          <li>Calcule la valeur de <code>mac</code> de la devise <code>di</code> dans la devise <code>dr</code></li>
+          <li>Affiche le change</li>
+        </ul>
+
+        <div class="row">
+          <div class="col-sm-6">
+            <pre><code class="nohighlight shell python" data-text="Exemple 1">Montant ? 100
+Devise initiale ($/€/D) ? D
+Devise requise ($/€/D) ? $
+100 D = 35.67 $</code></pre>
+          </div>
+          <div class="col-sm-6">
+            <pre><code class="nohighlight shell python" data-text="Exemple 2">VMontant ? 100
+Devise initiale ($/€/D) ? €
+Devise requise ($/€/D) ? $
+100 € = 117.0 $</code></pre>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h3>Garde enfant ★★★</h3>
+
+        <figure class="d-print-none">
+          <img src="images/module04/garde-enfants.jpeg" alt="Garde enfant">
+          <figcaption>Garde enfant</figcaption>
+        </figure>
+
+        <p>Pour les parents qui sortent le soir, une garde offre pour eux ses services pour les prix suivants :</p>
+        <ul>
+          <li>10DT par heure entre 18h et 20h</li>
+          <li>15DT par heure entre 20h et 23h</li>
+          <li>20DT par heure entre 23h et 03h</li>
+        </ul>
+
+        <figure class="d-print-none">
+          <img src="images/module04/garde-enfants-prix.png" alt="Prix de la garde enfant">
+          <figcaption>Prix de la garde enfant</figcaption>
+        </figure>
+
+        <p>On veut écrire un algorithme qui saisit l'heure d'arrivée d'un enfant dans la garde, puis l'heure de
+          l'arrivée
+          de ses parents pour le récupérer afin d'afficher le montant à payer.</p>
+
+        <div class="row">
+          <div class="col-sm-6">
+            <pre><code class="nohighlight shell python" data-text="Exemple 1">Heure d'arrivée ? 18
+Heure de départ ? 23
+Le montant à payer 65 DT</code></pre>
+          </div>
+          <div class="col-sm-6">
+            <pre><code class="nohighlight shell python" data-text="Exemple 2">Heure d'arrivée ? 21
+Heure de départ ? 0
+Le montant à payer 50 DT</code></pre>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h3 class="p-break">Date du lendemain ★★</h3>
+
+        <p>On veut écrire un algorithme qui saisit une date sous forme jj/mm/aaaa, calcule et affiche la date du
+          lendemain.</p>
+
+        <figure class="d-print-none">
+          <img src="images/module04/date-lendemain.png" alt="Date du lendemain">
+          <figcaption>Date du lendemain</figcaption>
+        </figure>
+
+        <p>On rappelle le nombre de jours des mois :</p>
+        <table class="table table-sm table-striped table-hover col-12">
+          <thead>
+            <tr>
+              <th>Janvier</th>
+              <th>Février</th>
+              <th>Mars</th>
+              <th>Avril</th>
+              <th>Mai</th>
+              <th>Juin</th>
+              <th>Juillet</th>
+              <th>Août</th>
+              <th>Septembre</th>
+              <th>Octobre</th>
+              <th>Novembre</th>
+              <th>Décembre</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>31</td>
+              <td>28</td>
+              <td>31</td>
+              <td>30</td>
+              <td>31</td>
+              <td>30</td>
+              <td>31</td>
+              <td>31</td>
+              <td>30</td>
+              <td>31</td>
+              <td>30</td>
+              <td>31</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="row">
+          <div class="col-sm-6">
+            <pre><code class="nohighlight shell python" data-text="Exemple 1">Entrer une date (jj/mm/aaaa) ? 31/12/2021
+Lendemain = 1 / 1 / 2022</code></pre>
+          </div>
+          <div class="col-sm-6">
+            <pre><code class="nohighlight shell python" data-text="Exemple 2">Entrer une date (jj/mm/aaaa) ? 28/02/2021
+Lendemain = 1 / 3 / 2021</code></pre>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h3>Vendeur de poissons ★</h3>
+
+        <figure class="d-print-none">
+          <img src="images/module04/vendeur-poissons.jpg" alt="Vendeur de poissons">
+          <figcaption>Vendeur de poissons</figcaption>
+        </figure>
+
+        <p>Un vendeur de poissons veut calculer le prix de vente de ses marchandises en fonction du prix d'achat.</p>
+        <p class="text-center"><code>Prix vente = Prix achat × (1 + gain / 100)</code></p>
+        <p>Sachant que :</p>
+        <ul>
+          <li>gain = 20%, si 0 ≤ Prix achat &lt; 15</li>
+          <li>gain = 25%, si 15 ≤ Prix achat &lt; 30</li>
+          <li>gain = 35%, si 30 ≤ Prix achat</li>
+        </ul>
+        <p>Ecrire l'algorithme d'un algorithme qui :</p>
+        <ul>
+          <li>Saisit le nom du produit, variable <code>np</code></li>
+          <li>Saisit le prix d'achat, variable <code>pa</code></li>
+          <li>Calcule le <strong>gain</strong> en fonction du prix d'achat, variable <code>g</code></li>
+          <li>Calcule le <strong>prix de vente</strong> en utilisant la formule ci-dessus, variable <code>pv</code></li>
+          <li>Affiche le prix de vente</li>
+        </ul>
+        <div class="row">
+          <div class="col-sm-6">
+            <pre><code class="nohighlight shell python" data-text="Exemple 1">Calcul du prix de vente
+==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-
+Quel est le nom du produit ? Sardines
+Quel est le prix d'achat (DT) ? 5
+Gain : 20 %
+Prix de vente : 6.0 DT</code></pre>
+          </div>
+          <div class="col-sm-6">
+            <pre><code class="nohighlight shell python" data-text="Exemple 2">Calcul du prix de vente
+==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-
+Quel est le nom du produit ? Trilia
+Quel est le prix d'achat (DT) ? 20
+Gain : 25 %
+Prix de vente : 25.0 DT</code></pre>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h3>Vendeur ambulant ★</h3>
+
+        <figure class="d-print-none">
+          <img src="images/module04/vendeur_ambulant.jpeg" alt="Vendeur ambulant">
+          <figcaption>Vendeur ambulant</figcaption>
+        </figure>
+
+        <p>Un vendeur ambulant vend trois catégories d'articles dans un marché de la région.</p>
+        <p>Les prix respectifs de ces articles sont :</p>
+        <ul>
+          <li>Catégorie A : 1DT/pièce</li>
+          <li>Catégorie B : 3DT/pièce</li>
+          <li>Catégorie C : 5DT/pièce</li>
+        </ul>
+        <p>En fin de journée, ce vendeur veut savoir si ses ventes, de la journée, sont satisfaisantes ou non.</p>
+        <p>Le chiffre d'affaire des ventes <code>ca</code> est calculé de la façon suivante :</p>
+        <p class="text-center"><code>ca = na + nb × 3 + nc × 5</code></p>
+        <p class="text-center small"><code>na</code>, <code>nb</code> et <code>nc</code> étant le nombre d'articles
+          vendus
+          de chacune des catégories.</p>
+        <p class="p-break">Le chiffre d'affaire est :</p>
+        <ul>
+          <li><strong>Satisfaisant</strong>, si <code>ca ≥ 100</code></li>
+          <li><strong>Bon</strong>, si <code>50 &gt; ca ≥ 150</code></li>
+          <li><strong>Mauvais</strong>, si <code>ca &lt; 100</code></li>
+        </ul>
+        <p>Ecrire l'algorithme d'un algorithme qui :</p>
+        <ul>
+          <li>Saisit le nombre d'articles de chaque catégorie <code>na</code>, <code>nb</code>, et <code>nc</code>.</li>
+          <li>Calcule le chiffre d'affaire <code>ca</code> en utilisant la formule ci-dessus.</li>
+          <li>Affiche le chiffre d'affaire de la journée.</li>
+          <li>Affiche s'il est satisfaisant, bon, ou mauvais.</li>
+        </ul>
+        <div class="row">
+          <div class="col-sm-6">
+            <pre><code class="nohighlight shell python" data-text="Exemple 1">Vendeur ambulant
+==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-
+Indiquer le nombre d'articles de chaque catégorie :
+Catégorie A ? 20
+Catégorie B ? 12
+Catégorie C ? 13
+Le chiffre d'affaires de la journée : 121 DT
+Le chiffre d'affaire est Satisfaisant</code></pre>
+          </div>
+          <div class="col-sm-6">
+            <pre><code class="nohighlight shell python" data-text="Exemple 2">Vendeur ambulant
+==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-
+Indiquer le nombre d'articles de chaque catégorie :
+Catégorie A ? 35
+Catégorie B ? 20
+Catégorie C ? 20
+Le chiffre d'affaires de la journée : 195 DT
+Le chiffre d'affaire est Bon</code></pre>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h3>Mon croissant ★</h3>
+
+        <figure>
+          <img class="h4cm" src="images/module04/patisserie-croissant.jpg" alt="Croissants">
+          <figcaption>Croissants</figcaption>
+        </figure>
+
+        <p>Je suis dans une patisserie pour acheter des croissants. Le prix du croissant est 800 millimes/pièce.</p>
+        <p>J'achète un nombre de croissants, je paye et le caissier me rend la monnaie avant de quitter la patisserie.
+        </p>
+
+        <p><strong>Ecrire un algorithme pour simuler cette situation.</strong></p>
+
+        <div class="row">
+          <div class="col-sm-6">
+            <pre><code class="nohighlight shell python" data-text="Exemple 1">Nbre de croissants ? 5
+Total = 800 &times; 5 = 4000
+Votre argent ? 5000
+Monnaie = 1000</code></pre>
+          </div>
+          <div class="col-sm-6">
+            <pre><code class="nohighlight shell python" data-text="Exemple 2">Nbre de croissants ? 10
+Total = 800 &times; 10 = 8000
+Votre argent ? 5000
+Manquant = 3000</code></pre>
+          </div>
+          <div class="col-sm-6">
+            <pre><code class="nohighlight shell python" data-text="Exemple 3">Nbre de croissants ? 7
+Total = 800 &times; 7 = 5600
+Votre argent ? 6000
+Monnaie = 400</code></pre>
+          </div>
+          <div class="col-sm-6">
+            <pre><code class="nohighlight shell python" data-text="Exemple 2">Nbre de croissants ? 10
+Total = 800 &times; 10 = 8000
+Votre argent ? 8000
+A bientôt</code></pre>
+          </div>
+        </div>
+
+        <div id="simulation-2" class="d-print-none my-3 border border-dark bg-light p-3">
+          <div v-if="step == -1">
+            <div class="my-2">Cliquer sur le bouton suivant pour faire la simulation.</div>
+            <button class="btn btn-primary" v-on:click="simuler(0)">Simuler</button>
+          </div>
+          <div class="my-2" v-if="step >= 0">
+            Nbre de croissants ? <input v-if="step == 0" ref="qte" name="qte" type="text" v-model="qte"
+              v-on:keydown.enter="simuler(1)">
+            <span v-else>{{qte}}</span>
+          </div>
+          <div v-if="step >= 1">
+            <div class="my-2">Total = 800 &times; {{qte}} = {{800*qte}}<br></div>
+            <div class="my-2">
+              Votre argent ? <input v-if="step == 1" ref="argent" name="argent" type="text" v-model="argent"
+                v-on:keydown.enter="simuler(2)">
+              <span v-else>{{argent}}</span>
+            </div>
+          </div>
+          <div class="my-2" v-if="step >= 2">
+            {{message}}.
+          </div>
+          <div class="my-2" v-if="step >= 2">
+            <button class="btn btn-secondary" ref="restart" v-on:click="simuler(-1)">Reset</button>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h3 class="p-break">Pierre/Feuille/Ciseaux ★★</h3>
+
+        <figure>
+          <img class="h4cm" src="images/module04/pfc.jpg" alt="Pierre / Feuille / Ciseaux">
+          <figcaption>Personne majeure ou mineure</figcaption>
+        </figure>
+
+        <p>Le jeu pierre / feuille / ciseaux est un jeu qui se joue à deux joueurs. Les deux joueurs doivent choisir en
+          même temps l'un des trois objets : <strong>Pierre</strong>, <strong>Feuille</strong> ou
+          <strong>Ciseaux</strong>.
+        </p>
+        <ul>
+          <li>La <strong>Pierre</strong> bat les <strong>Ciseaux</strong></li>
+          <li>Les <strong>Ciseaux</strong> battent la <strong>Feuille</strong></li>
+          <li>La <strong>Feuille</strong> bat la <strong>Pierre</strong></li>
+        </ul>
+
+        <p>On désire implémenter une version simplifiée de ce jeu où l'utilisateur joue contre l'ordinateur.</p>
+
+        <p>L'utilisateur :</p>
+        <ul>
+          <li>choisit le nombre <strong>0</strong> pour l'objet <strong>Pierre</strong>.</li>
+          <li>choisit le nombre <strong>1</strong> pour l'objet <strong>Feuille</strong>.</li>
+          <li>choisit le nombre <strong>2</strong> pour l'objet <strong>Ciseaux</strong>.</li>
+        </ul>
+        <p>L'ordinateur fait de même. La partie peut être <strong>nulle</strong> si les deux choisissent le même objet,
+          sinon l'<strong>un d'eux gagne</strong> selon les règles du jeu.</p>
+
+        <p><strong>Ecrire un algorithme du jeu.</strong></p>
+
+        <div class="row d-print-none">
+          <div class="col-sm-4">
+            <pre><code class="nohighlight shell python" data-text="Exemple 1">Jeu Pierre - Feuille - Ciseaux
+
+Votre choix
+0: Pierre/1: Feuille/2: Ciseaux ? 1
+Feuille contre Pierre
+Bravo, vous gagnez!</code></pre>
+          </div>
+          <div class="col-sm-4">
+            <pre><code class="nohighlight shell python" data-text="Exemple 2">Jeu Pierre - Feuille - Ciseaux
+
+Votre choix
+0: Pierre/1: Feuille/2: Ciseaux ? 2
+Ciseaux contre Pierre
+Désolé, vous perdez!</code></pre>
+          </div>
+          <div class="col-sm-4">
+            <pre><code class="nohighlight shell python" data-text="Exemple 3">Jeu Pierre - Feuille - Ciseaux
+
+Votre choix
+0: Pierre/1: Feuille/2: Ciseaux ? 1
+Feuille contre Feuille
+Match nul</code></pre>
+          </div>
+        </div>
+
+        <div id="simulation-1" class="d-print-none my-3 border border-dark bg-light p-3">
+          <div v-if="step == -1">
+            <div class="my-2">Cliquer sur le bouton suivant pour faire la simulation.</div>
+            <button class="btn btn-primary" v-on:click="simuler(0)">Simuler</button>
+          </div>
+          <div v-if="step >= 0">
+            <div class="my-2">Jeu Pierre - Feuille - Ciseaux</div>
+            <div class="my-2">
+              Votre choix<br>
+              0: Pierre/1: Feuille/2: Ciseaux ? <input v-if="step == 0" ref="j1" name="j1" type="number" min="0" max="2"
+                v-model="j1" v-on:keydown.enter="simuler(1)">
+              <span v-else>{{j1}}</span>
+            </div>
+          </div>
+          <div v-if="step >= 1">
+            <div class="my-1">Joueur : {{objets[j1]}}.</div>
+            <div class="my-1">Ordinateur : {{objets[j2]}}.</div>
+            <div class="my-1">{{objets[j1]}} contre {{objets[j2]}}.</div>
+            <div class="my-1">{{message}}.</div>
+          </div>
+          <div class="my-2" v-if="step >= 1">
+            <button class="btn btn-secondary" ref="restart" v-on:click="simuler(-1)">Reset</button>
+          </div>
+        </div>
+
+        <h4>Travail demandé</h4>
+        <ol>
+          <li>Déterminer les données de ce problème.</li>
+          <li>Déterminer les résultats de ce problème.</li>
+          <li>Remplir le tableau suivant :
+            <div class="row">
+              <div class="col-6">
+                <ul>
+                  <li>j1 = 0 pour Pierre</li>
+                  <li>j1 = 1 pour Feuille</li>
+                  <li>j1 = 2 pour Ciseaux</li>
+                </ul>
+              </div>
+              <div class="col-6">
+                <ul>
+                  <li>j2 = 0 pour Pierre</li>
+                  <li>j2 = 1 pour Feuille</li>
+                  <li>j2 = 2 pour Ciseaux</li>
+                </ul>
+              </div>
+            </div>
+
+            <table class="table table-sm table-hover table-bordered table-striped border-dark">
+              <thead>
+                <tr>
+                  <th width="16.66%">Objet joueur 1</th>
+                  <th width="16.66%">Objet joueur 2</th>
+                  <th width="16.66%">j1</th>
+                  <th width="16.66%">j2</th>
+                  <th width="16.66%">j1 - j2</th>
+                  <th>Gagnant</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Pierre</td>
+                  <td>Pierre</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Pierre</td>
+                  <td>Feuille</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Pierre</td>
+                  <td>Ciseaux</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Feuille</td>
+                  <td>Pierre</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Feuille</td>
+                  <td>Feuille</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Feuille</td>
+                  <td>Ciseaux</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Ciseaux</td>
+                  <td>Pierre</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Ciseaux</td>
+                  <td>Feuille</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Ciseaux</td>
+                  <td>Ciseaux</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+          </li>
+          <li>Ecrire l'algorithme.</li>
+        </ol>
+      </section>
+    </article>
+
+    <article class="p-break">
+      <h2>Exercices</h2>
+
+      <section>
+        <h3>Catégorie d'un transformateur ★</h3>
+
+        <p>Un transformateur est un composant électrique utiliser pour isoler deux circuits électriques opérant sous
+          deux tensions différentes.</p>
+        <p>Il possède deux enroulements :</p>
+        <ul>
+          <li>Le primaire avec une tension d'entrée U<sub>1</sub></li>
+          <li>Le secondaire avec une tension de sortie U<sub>2</sub></li>
+        </ul>
+
+        <figure>
+          <img class="h4cm" src="images/module04/transformateurmonophase.png" alt="Transformateur">
+          <figcaption>Schéma d'un transformateur</figcaption>
+        </figure>
+
+        <p>La tension du sortie du transformateur est calculée à l'aide de la formule :</p>
+        <p class="text-center">U<sub>2</sub> = U<sub>1</sub> &times; r<sub>21</sub></p>
+
+        <p>Il existe trois catégories de transformateurs dépedant du rapport de transformation r<sub>21</sub> :</p>
+        <ul>
+          <li>Si r<sub>21</sub> &gt; 1.03, le transformateur est élévateur</li>
+          <li>Si r<sub>21</sub> &lt; 0.97, le transformateur est abaisseur</li>
+          <li>Si 0.97 &le; r<sub>21</sub> &le; 1.03, le transformateur est isolateur</li>
+        </ul>
+
+        <h4>Travail demandé</h4>
+        <p>Ecrire l'algorithme d'un programme qui saisit les tensions d'entrée U<sub>1</sub> et de sortie U<sub>2</sub>
+          d'un transformateur puis affiche sa catégorie.</p>
+
+        <div class="row d-print-none">
+          <div class="col-sm-4">
+            <pre><code class="nohighlight shell python" data-text="Exemple 1">Tension d'entrée ? 220
+Tension de sortie ? 12
+Transformateur abaisseur</code></pre>
+          </div>
+          <div class="col-sm-4">
+            <pre><code class="nohighlight shell python" data-text="Exemple 2">Tension d'entrée ? 24
+Tension de sortie ? 110
+Transformateur élévateur</code></pre>
+          </div>
+          <div class="col-sm-4">
+            <pre><code class="nohighlight shell python" data-text="Exemple 3">Tension d'entrée ? 220
+Tension de sortie ? 225
+Transformateur isolateur</code></pre>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h3>Carrelage ★</h3>
+        <p>Un professionnel souhaite couvrir une chambre rectangulaire de parterre carré.</p>
+        <p>On demande d'écrire l'algorithme d'un programme qui saisit les dimensions de la chambre (longueur &times
+          largeur) ainsi que les dimensions du carrelage, puis détermine le nombre de pièces nécessaires pour carreler
+          la pièce.</p>
+
+        <figure>
+          <img src="images/module04/carrelage.webp" alt="Carrelage">
+          <figcaption>Carrelage d'une chambre</figcaption>
+        </figure>
+
+        <p><strong>NB :</strong> On ajoute un carreau lorsque l'espace restant est supérieur ou égal à 5 cm.</p>
+        <figure>
+          <img src="images/module04/carrelage_chambre.webp" alt="Carrelage chambre">
+          <figcaption>Calcul de nombre de carreaux pour carreler une chambre</figcaption>
+        </figure>
+
+        <div class="row d-print-none">
+          <div class="col-sm-4">
+            <pre><code class="nohighlight shell python" data-text="Exemple 1">Longueur (m) ? 4
+Largeur (m) ? 3
+Carrelage (cm) ? 25
+La pièce nécessite 192 carreaux.</code></pre>
+          </div>
+          <div class="col-sm-4">
+            <pre><code class="nohighlight shell python" data-text="Exemple 2">Longueur (m) ? 4
+Largeur (m) ? 3
+Carrelage (cm) ? 40
+La pièce nécessite 80 carreaux.</code></pre>
+          </div>
+          <div class="col-sm-4">
+            <pre><code class="nohighlight shell python" data-text="Exemple 3">Longueur (m) ? 2
+Largeur (m) ? 2
+Carrelage (cm) ? 33
+La pièce nécessite 36 carreaux.</code></pre>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h3>Voiture la plus vieielle ★</h3>
+        <p>L'immatriculation d'une voiture en Tunisie possède le format [num_ordre]TU[num_serie], exemple 9250TU60. On
+          veut comparer l'immatriculation de deux voitures afin de déterminer la voiture la plus vieille.</p>
+
+
+        <figure>
+          <img src="images/module04/immatriculation.png" alt=""><br>
+          <img src="images/module04/immatriculation01.png" alt="Immatriculation voiture 1">
+          <img src="images/module04/immatriculation02.png" alt="Immatriculation voiture 2">
+          <figcaption>La voiture immatriculée 67TU220 est plus vieille que la voiture 1TU238</figcaption>
+        </figure>
+
+        <p>Ecrire l'algorithme d'un programme qui saisit l'immatriculation de deux voitures, puis affiche celle de la
+          plus vieille des deux.</p>
+
+        <div class="row d-print-none">
+          <div class="col-sm-4">
+            <pre><code class="nohighlight shell python" data-text="Exemple 1">Immatriculation voiture 1 ? 1TU240
+Immatriculation voiture 2 ? 999TU202
+999TU202 est plus vieille que 1TU240</code></pre>
+          </div>
+          <div class="col-sm-4">
+            <pre><code class="nohighlight shell python" data-text="Exemple 2">Immatriculation voiture 1 ? 1001TU232
+Immatriculation voiture 2 ? 15TU232
+15TU232 est plus vieille que 1001TU232</code></pre>
+          </div>
+          <div class="col-sm-4">
+            <pre><code class="nohighlight shell python" data-text="Exemple 3">Immatriculation voiture 1 ? 3600TU205
+Immatriculation voiture 2 ? 3600TU205
+Même matricule, même voiture.</code></pre>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h3>Heure après une tâche ★★</h3>
+
+        <p>On veut calculer l'heure après l'exécution d'une tâche qui commence à une heure donnée au format
+          <code>hh:mm</code> et qui dure <code>n</code> minutes (n est un entier positif).
+        </p>
+        <p>Ecrire l'algorithme d'un programme qui réalise ce calcul.</p>
+
+        <div class="row d-print-none">
+          <div class="col-sm-4">
+            <pre><code class="nohighlight shell python" data-text="Exemple 1">Heure début (hh:mm) ? 23:59
+Durée (minutes) ? 2000
+La tâche prend fin à 09:19, 2 jour(s) après</code></pre>
+          </div>
+          <div class="col-sm-4">
+            <pre><code class="nohighlight shell python" data-text="Exemple 2">Heure début (hh:mm) ? 15:00
+Durée (minutes) ? -20
+Données incorrectes</code></pre>
+          </div>
+          <div class="col-sm-4">
+            <pre><code class="nohighlight shell python" data-text="Exemple 3">Heure début (hh:mm) ? 15:00
+Durée (minutes) ? 30
+La tâche prend fin à 15:30</code></pre>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h3>Jeu d'échecs ★★★</h3>
+        <p>Ecrire l'algorithme d'un programme qui saisit la position initiale d'un fou, sa direction de déplacement, et
+          le nombre de pas effectués, puis calcule et affiche la nouvelle position de la pièce sur l'échiquier.</p>
+        <figure>
+          <img src="images/module04/deplacement-fou.jpg" alt="Déplacement du fou">
+          <figcaption>Déplacement du fou</figcaption>
+        </figure>
+        <p>Le programme affiche :</p>
+        <ul>
+          <li>"Position incorrecte", si la position choisie n'appartient pas à l'échiquier,</li>
+          <li>"Direction incorrecte", si la direction choisie est invalide,</li>
+          <li>"La pièce sort de l'échiquier", si le nombre de pas est trop grand,</li>
+          <li>La nouvelle position du fou, sinon.</li>
+        </ul>
+
+        <div class="row d-print-none">
+          <div class="col-sm-4">
+            <pre><code class="nohighlight shell python" data-text="Exemple 1">Position fou ? e4
+Direction (U:Up,D:Down,R:Right,L:Left) ? UL
+Nombre pas ? 3
+Nouvelle position : b7</code></pre>
+          </div>
+          <div class="col-sm-4">
+            <pre><code class="nohighlight shell python" data-text="Exemple 2">Position fou ? x5
+Direction (U:Up,D:Down,R:Right,L:Left) ? UR
+Nombre pas ? 2
+Position incorrecte</code></pre>
+          </div>
+          <div class="col-sm-4">
+            <pre><code class="nohighlight shell python" data-text="Exemple 3">Position fou ? e4
+Direction (U:Up,D:Down,R:Right,L:Left) ? DR
+Nombre pas ? 5
+La pièce sort de l'échiquier</code></pre>
+          </div>
+        </div>
+      </section>
+    </article>
+  </main>
+  <footer class="d-print-none bg-dark text-white p-2">
+    <div class="text-center">Page créée avec ♥ par Mohamed Anis MANI</div>
+    <div class="text-center small">Année scolaire : 2021/2022</div>
+  </footer>
+
+  <script src="assets/js/jquery.min.js"></script>
+  <script src="assets/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/highlight.pack.js"></script>
+  <script src="assets/js/hljs.algorithm.js"></script>
+  <script src="assets/js/clipboard.min.js"></script>
+  <script src="assets/js/pages.js"></script>
+  <script src="assets/js/vue.min.js"></script>
+  <script src="assets/apps/algorithme02.js"></script>
+  <script>
+    hljs.initHighlightingOnLoad();
+
+    document.querySelectorAll('.language-algorithm,.language-python')
+      .forEach(item => {
+        const div = document.createElement('div');
+        div.className = 'bd-clipboard d-print-none';
+        const btn = document.createElement('button');
+        btn.className = 'btn-clipboard';
+        btn.textContent = "📋";
+        btn.title = "Copier";
+        div.appendChild(btn);
+        item.parentElement.insertBefore(div, item);
+      });
+    new ClipboardJS('.btn-clipboard', {
+      target: (trigger) => {
+        return trigger.parentElement.nextElementSibling;
+      }
+    });
+  </script>
+</body>
+
+</html>
