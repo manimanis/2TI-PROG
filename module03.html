@@ -38,201 +38,166 @@
 
         <p>On donne le programme suivant :</p>
 
-        <pre><code class="language-python">car = "E"
-num = ord(car)
-print("Caractère :", chr(num))
-print("Code :", ord(car))</code></pre>
+        <pre><code class="language-python">c1 = chr(32)
+c2 = chr(33)
+c3 = chr(34)
+c4 = chr(49)
+c5 = chr(50)
+c6 = chr(65)
+c7 = chr(66)
+c8 = chr(97)
+print(c1, c2, c3, c4, c5, c6, c7, c8)</code></pre>
 
         <ol>
           <li>Copier/coller, puis tester le programme. Qu'est ce qu'il affiche ?</li>
-          <li>En déduire le rôle des fonctions <code>chr(num)</code> et <code>ord(car)</code>.</li>
-          <li>En utilisant ce programme, déterminer les codes ASCII des caractères suivants : "e", "4"</li>
-          <li>En utilisant ce programme, déterminer les caractères correspondants aux code ASCII suivants : 90, 33</li>
-          <li>En se référant à la table ASCII suivante, trouver les codes ASCII :
-            <ul>
-              <li>des chiffres : 0, 1, ..., 9</li>
-              <li>des lettres alphabétiques majuscules : A, B, ..., Z</li>
-              <li>des lettres alphabétiques minuscules : a, b, ..., z</li>
-            </ul>
-          </li>
+          <li>En déduire le rôle de la fonction <code>chr</code>.</li>
         </ol>
+      </section>
+
+      <section>
+        <h3>Caractères & Codes (suite)</h3>
+        <p>On donne le programme suivant :</p>
+        <pre><code class="language-python">o1 = ord(" ")
+o2 = ord("!")
+o3 = ord('"')
+o4 = ord("1")
+o5 = ord("2")
+o6 = ord("A")
+o7 = ord("B")
+o8 = ord("a")
+print(o1, o2, o3, o4, o5, o6, o7, o8)</code></pre>
+        <ol>
+          <li>Copier/coller, puis tester le programme. Qu'est ce qu'il affiche ?</li>
+          <li>En déduire le rôle de la fonctions <code>ord(car)</code>.</li>
+        </ol>
+      </section>
+
+      <section>
+        <h3>Conversion MAJ &rarr; min</h3>
+
+        <h4>Exercice</h4>
+        <p>Ecrire l'algorithme d'un programme qui convertit une lettre majuscule en minuscule en utilisant les fonctions
+          <code>chr(code)</code> et <code>ord(car)</code>. Traduire l'algorithme en Python.
+        </p>
+        <p>Quelle est la modification à apporter à cet algorithme pour convertir une lettre minuscule en majuscule ?</p>
 
         <figure class="d-print-none">
           <img src="images/module03/ascii-table.jpg" alt="Table ASCII">
           <figcaption>Table ASCII</figcaption>
         </figure>
-
-        <h4>Exercice</h4>
-        <p>Ecrire l'algorithme d'un programme qui convertit une lettre majuscule en minuscule en utilisant les fonctions
-          <code>chr(code)</code> et <code>ord(car)</code>.
-        </p>
-        <p>Traduire l'algorithme en Python.</p>
-        <p>Quelle est la modification à apporter à cet algorithme pour convertir une lettre minuscule en majuscule ?</p>
       </section>
 
       <section>
-        <h3>Nombre automorphe</h3>
+        <h3>Goodbye / Byebye</h3>
+        <p>On donne le programme suivant :</p>
 
-        <p>Un <strong>nombre automorphe</strong> est un entier naturel dont la suite des chiffres du carré se termine
-          par celle du nombre lui-même. Par exemple, </p>
-        <p class="fs-1 text-center"><span class="text-danger">5</span>² = 2<span class="text-danger">5</span>, <span
-            class="text-danger">6</span>² = 3<span class="text-danger">6</span>, <span class="text-danger">25</span>² =
-          6<span class="text-danger">25</span>, <br><span class="text-danger">76</span>² = 57<span
-            class="text-danger">76</span>, <span class="text-danger">890625</span>² = 793212<span
-            class="text-danger">890625</span></p>
 
-        <p>On veut écrire l'algorithme d'un programme qui teste si un nombre est automorphe.</p>
 
-        <p>On demande de :</p>
-        <ol>
-          <li>Déterminer, d'après <strong>la définition d'un nombre automorphe</strong>, quels sont les nombres
-            automorphes dans la liste suivante : 376, 9376, 17, 125.</li>
-          <li>Afin d'écrire l'algorithme du programme, nous devons répondre aux questions suivantes :
-            <ul>
-              <li>Comment calculer le carré d'un nombre ?</li>
-              <li>Comment tester si le nombre est automorphe ?</li>
-              <li>Comment convertir un nombre en une chaîne ?</li>
-              <li>Comment trouver la longueur du nombre contenu dans une chaîne ?</li>
-              <li>Comment extraire les deniers chiffres d'une chaîne ?</li>
-            </ul>
-          </li>
-          <li>Ecrire l'algorithme, puis le traduire en Python.</li>
+        <p>Copier/coller et tester le programme. Puis répondre aux questions ci-dessous :</p>
+
+
+        <h4>Partie 1 :</h4>
+        <pre><code class="language-python"># Partie 1
+ch1 = "Good"
+ch2 = "Bye"
+ch3 = ch1 + ch2
+ch4 = ch2 + ch2
+print(ch3, ch4)
+</code></pre>
+        Quel est le rôle de l'opérateur <code>+</code> avec les chaînes de caractères ?
+
+        <h4>Partie 2 :</h4>
+        <pre><code class="language-python"># Partie 2
+l3 = len(ch3)
+l4 = 0
+print(ch3, "contient", l3, "caractères")
+print(ch4, "contient", l4, "caractères")</code></pre>
+        <ol type="a">
+          <li>Que fait la fonction <code>len</code> ? Quel est son équivalent en algorithme ?</li>
+          <li>Retrouver la longueur de la chaîne <code>ch4</code>.</li>
         </ol>
-      </section>
 
-      <section class="p-break">
-        <h3>Le plus âgé</h3>
 
-        <figure class="d-print-none">
-          <img src="images/module03/ages.webp" alt="Le plus âgé">
-          <figcaption>Le plus âgé</figcaption>
-        </figure>
-
-        <p>On veut faire un programme qui détermine si une personne est plus âgée qu'une autre. Pour cela on donne le
-          programme ci-dessous :</p>
-
-        <pre><code class="language-python">nom1 = input("Nom de la 1ère personne ? ")
-age1 = input("Âge de " + nom1 + " ? ")
-
-nom2 = input("Nom de la 2ème personne ? ")
-age2 = input("Âge de " + nom2 + " ? ")
-
-c1 = age1 > age2
-
-print(nom1, "est plus âgé que", nom2, "?", c1)</code></pre>
-
-        <p>On demande de :</p>
-        <ol>
-          <li>Retrouver l'algorithme du programme, et dresser son <strong>tableau de déclaration des objets
-              (TDO)</strong>.</li>
-          <li>Tester le programme à l'aide des valeurs suivantes. Est-il correct ? Quel est le problème ? Comment le
-            corriger ?
-            <div class="row justify-content-center">
-              <table class="table table-sm table-striped table-hover w-50">
-                <thead>
-                  <tr>
-                    <th>nom1</th>
-                    <th>age1</th>
-                    <th>nom2</th>
-                    <th>age2</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>Abderrazek</td>
-                    <td>9</td>
-                    <td>Hala</td>
-                    <td>3</td>
-                  </tr>
-                  <tr>
-                    <td>Emna</td>
-                    <td>73</td>
-                    <td>Abderrazek</td>
-                    <td>9</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
+        <h4>Partie 3 :</h4>
+        <pre><code class="language-python"># Partie 3
+print(ch1[0], ch1[2])
+ch5 = "shoot"
+ch6 = ""
+print(ch6)</code></pre>
+        D'après le code de la 3<sup>e</sup> partie :
+        <ol type="a">
+          <li>Comment afficher la 4<sup>e</sup> lettre de la chaîne <code>ch3</code> ?</li>
+          <li>Comment afficher la dernière lettre de <code>ch3</code> ? <u>Proposer deux méthodes.</u></li>
+          <li>Former le mot <code>"hotdoG"</code> à partir des caractères de <code>ch1</code> et <code>ch5</code>.
           </li>
+        </ol>
+
+        <h4>Partie 4 :</h4>
+        <pre><code class="language-python"># Partie 4
+ch7 = "Rêver, oser, créer, réussir, inspirer."
+mot1 = ch7[0:5]
+mot2 = ch7[7:11]
+mot3 = ""
+mot4 = ""
+mot5 = ""
+print(mot1, mot2, mot3, mot4, mot5)</code></pre>
+        <ol type="a">
+          <li>Que contiennent les variables <code>mot1</code> et <code>mot2</code> ?</li>
+          <li>Compléter le code la partie 4 pour extraire chacun des autres mots depuis <code>ch7</code>.</li>
+          <li>Quel est l'équivalent de l'instruction <code>ch[d:f]</code> en algorithme ?</li>
+          <li>Former la phrase <code>"Rêver - créer - inspirer"</code> à partir de ch7. Donner l'instruction Python
+            puis l'instruction algorithmique.</li>
+        </ol>
+
+        <h4>Partie 5 :</h4>
+        <pre><code class="language-python"># Partie 5
+ch8 = "God bless you."
+p1 = ch8.find("e")
+p2 = ch8.find("E")
+p3 = -1
+print("'e' est trouvée à la position", p1)
+print("'E' est trouvée à la position", p2)
+print("'you' est trouvée à la position", p3)</code></pre>
+        <ol type="a">
+          <li>Quelle est la fonction de la méthode <code>find</code> dans les expressions <code>p1</code> et
+            <code>p2</code> ? Quel est son équivalent algorithmique ?
+          </li>
+          <li>Retrouver la position du mot <code>'you'</code> dans la chaîne <code>ch8</code>.</li>
+        </ol>
+
+        <h4>Partie 6 :</h4>
+        <pre><code class="language-python"># Partie 6
+ch9 = "Best luck luck for for for all"
+ch9 = ch9[:10] + ch9[23:]
+print(ch9)
+ch10 = "parlementaire"
+ch10 = ch10[:1] + ch10[12:]
+print(ch10)
+ch11 = "bateaux"
+ch11 = ch11[:1] + ch11[1:] + " " + ch11
+print(ch11)</code></pre>
+        <ol type="a">
+          <li>Quelle est la valeur de <code>ch9</code> ? Que fait ce code ?</li>
+          <li>Transformer le code ci-dessus en algorithmique.</li>
+          <li>Modifier l'expression <code>ch10</code> afin de retrouver le mot <code>"partaire"</code>.</li>
+          <li>Modifier l'expression <code>ch11</code> afin de retrouver <code>"beaux bateaux"</code>.</li>
+        </ol>
+
+        <h4>Partie 7 :</h4>
+        <pre><code class="language-python"># Partie 7
+ch12 = "yes we can"
+ch12 = ch2.upper()
+print(ch12)</code></pre>
+        <ol type="a">
+          <li>Quelle est la valeur de <code>ch12</code> ? Que fait la méthode <code>upper()</code> ?</li>
+          <li>Transformer le code ci-dessus en algorithmique.</li>
+          <li>Donner une expression algorithmique qui permet d'affecter <code>"Yes We Can</code> en utilisant les
+            fonctions <code>sous_chaine</code> et <code>majus</code>. Traduire en Python.</li>
         </ol>
       </section>
 
       <section>
-        <h3>Pomme ou pomme de terre ?</h3>
-
-        <figure class="d-print-none">
-          <img src="images/module03/pomme.jpg" alt="Pomme">
-          <img src="images/module03/pomme-de-terre.jpg" alt="Pomme de terre">
-          <figcaption>Pomme ou pomme de terre ?</figcaption>
-        </figure>
-
-        <p>Pour son cours de français, Ahmed a rédigé le paragraphe suivant, un peu distrait par son petit frère il a
-          commis deux types d'erreurs :</p>
-        <ul>
-          <li>Il a ajouté des mots qui devront être <span
-              class="text-danger text-decoration-line-through">supprimés</span> pour rectifier son texte.</li>
-          <li>Il a oublié des mots qui devront être <span class="text-success">ajoutés</span> pour enrichir son texte.
-          </li>
-        </ul>
-
-        <div class="card">
-          <div class="card-body">
-            <h5 class="card-title">Les bienfaits de la pomme<span class="text-danger text-decoration-line-through"> de
-                terre</span></h5>
-            <div class="card-text">
-              <p>La pomme<span class="text-danger text-decoration-line-through"> de terre</span> est un fruit <span
-                  class="text-success">succulent</span> qui apporte une grande satiété, se transporte facilement et
-                peut se consommer partout.</p>
-              <p>La pomme<span class="text-danger text-decoration-line-through"> de terre</span> est particulièrement
-                intéressante<span class="text-success"> pour les sportifs</span> : avant l'effort elle apporte de
-                l'énergie, pendant l'effort, elle apporte<span class="text-danger text-decoration-line-through"> des
-                  minéraux</span> des minéraux et des vitamines qui rechargent
-                l'organisme et
-                après l'effort, elle réhydrate !</p>
-            </div>
-          </div>
-        </div>
-
-        <p>Voulant montrer ses nouveaux acquis en programmation Python, Ahmed a essayé d'écrire l'algorithme suivant :
-        </p>
-
-        <pre><code class="language-algorithm">Algorithme Pomme_de_terre
-Début
-  titre &larr; "Les bienfaits de la pomme de terre"
-  ph1 &larr; "La pomme de terre est un fruit qui apporte une grande satiété," +
-        " se transporte facilement et peut se consommer partout."
-  ph2 &larr; "La pomme de terre est particulièrement intéressante :" +
-        " avant l'effort elle apporte de l'énergie," + 
-        " pendant l'effort, elle apporte des minéraux des minéraux" + 
-        " et des vitamines qui rechargent l'organisme" +
-        " et après l'effort, elle réhydrate !"
-
-  // Supprimer les mots " de terre" 
-  // du titre, de ph1 et de ph2
-
-  // Supprimer les mots " des minéraux" de ph2
-
-  // Insérer 
-  // le mot "succulent" après "est un fruit" dans ph1
-  // les mots "pour les sportifs" après "intéressante" dans ph2
-
-  Ecrire(titre)
-  Ecrire(ph1)
-  Ecrire(ph2)
-Fin</code></pre>
-
-        <p>Afin de compléter son algorithme, Ahmed se demande :</p>
-        <ol>
-          <li>Comment retrouver la 1e position d'un mot dans une chaîne ?</li>
-          <li>Comment effacer un mot d'une chaîne ?</li>
-          <li>Comment insérer un mot dans une chaîne ?</li>
-        </ol>
-
-        <p>On demande de compléter l'algorithme précédent. Puis, de le traduire en Python.</p>
-      </section>
-
-      <section>
-        <h3>Le Halloween & les Bonbons</h3>
+        <h3>Halloween & les Bonbons</h3>
 
         <figure class="d-print-none">
           <img src="images/module03/halloween-deguisement.jpg" alt="Déguisement Halloween">
@@ -249,9 +214,10 @@ Fin</code></pre>
 
         <pre><code class="language-algorithm">Algorithme halloween
 Début
-  nb &larr; 16 // Nombre total de bonbons
-  nbe &larr; 3 // Nombre d'enfants
+  Ecrire("Nombre total de bonbons ? ") ; Lire(nb)
+  Ecrire("Nombre d'enfants ? ") ; Lire(nbe)
 
+  // A calculer 
   nbpe &larr; 5 // Nombre de bonbons par enfant
   nbr &larr; 1  // Nombre de bonbons restants
 
@@ -262,60 +228,16 @@ Fin</code></pre>
         <p>On demande de :</p>
         <ol>
           <li>Dresser le <abbr title="tableau de déclaration des objets">TDO</abbr> de cet algorithme.</li>
-          <li>Modifier l'algorithme pour qu'il :
-            <ul>
-              <li>accepte le nombre total de bonbons, ainsi que le nombre d'enfants.</li>
-              <li>calcule le nombre de bonbons par enfant, ainsi que le nombre de bonbons restants.</li>
-            </ul>
-          </li>
+          <li>Modifier l'algorithme pour qu'il calcule le nombre de bonbons par enfant, ainsi que le nombre de bonbons
+            restants.</li>
           <li>Traduire l'algorithme en Python.</li>
         </ol>
       </section>
 
       <section>
-        <h3>Résistance équivalente</h3>
-
-        <figure>
-          <img class="h2cm" src="images/module03/resistances-paralleles.png" alt="Résistances en parallèle">
-          <img class="h2cm" src="images/module03/resistance-equivalente.png" alt="Résistance équivalente">
-          <figcaption>Résistance équivalente de deux résistances montés en parallèle</figcaption>
-        </figure>
-
-        <p class="p-break">On demande de :</p>
-        <ol>
-          <li>Calculer la résistance équivalente de deux résistances dans les cas suivants :
-            <div class="row justify-content-center">
-              <table class="table table-sm table-striped table-hover w-50">
-                <thead>
-                  <tr>
-                    <th>r1 (Ω)</th>
-                    <th>r2 (Ω)</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>0.1</td>
-                    <td>0.2</td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <td>470</td>
-                    <td>220</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </li>
-          <li>D'écrire l'algorithme de ce programme. Puis, de dresser son <abbr
-              title="tableau de déclaration des objets">TDO</abbr>.</li>
-          <li>Traduire l'algorithme en Python, puis tester le programme avec les valeurs du tableau précédent.</li>
-          <li>Améliorer le programme pour qu'il affiche des résultats à 2 déciamles : <code>Req = 66.67 Ω</code> au lieu
-            de <code>Req = 66.66666666666667 Ω</code>.</li>
-        </ol>
-      </section>
-
-      <section>
         <h3>Logic gates</h3>
+
+        <p>Soit le circuit logique ci-après :</p>
 
         <figure>
           <img src="images/module03/logic-gates.png" alt="Portes logiques">
@@ -323,71 +245,8 @@ Fin</code></pre>
         </figure>
 
         <ol>
-          <li>Soit le circuit logique ci-dessus, on demande d'écrire l'équation logique de la lampe <code>L</code> en
-            fonction des entrées logiques <code>a</code>, <code>b</code> et <code>c</code>.</li>
-          <li>Dresser le tableau de vérité de ce circuit. Puis, remplir la colonne L.
-            <div class="row justify-content-center">
-              <table class="table table-sm table-striped table-hover w-50">
-                <thead>
-                  <tr>
-                    <th>a</th>
-                    <th>b</th>
-                    <th>c</th>
-                    <th>L</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td><span class="text-danger">Faux</span></td>
-                    <td><span class="text-danger">Faux</span></td>
-                    <td><span class="text-danger">Faux</span></td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <td><span class="text-danger">Faux</span></td>
-                    <td><span class="text-danger">Faux</span></td>
-                    <td><span class="text-success">Vrai</span></td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <td><span class="text-danger">Faux</span></td>
-                    <td><span class="text-success">Vrai</span></td>
-                    <td><span class="text-danger">Faux</span></td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <td><span class="text-danger">Faux</span></td>
-                    <td><span class="text-success">Vrai</span></td>
-                    <td><span class="text-success">Vrai</span></td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <td><span class="text-success">Vrai</span></td>
-                    <td><span class="text-danger">Faux</span></td>
-                    <td><span class="text-danger">Faux</span></td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <td><span class="text-success">Vrai</span></td>
-                    <td><span class="text-danger">Faux</span></td>
-                    <td><span class="text-success">Vrai</span></td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <td><span class="text-success">Vrai</span></td>
-                    <td><span class="text-success">Vrai</span></td>
-                    <td><span class="text-danger">Faux</span></td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <td><span class="text-success">Vrai</span></td>
-                    <td><span class="text-success">Vrai</span></td>
-                    <td><span class="text-success">Vrai</span></td>
-                    <td></td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
+          <li>Ecrire l'équation logique de la lampe <code>L</code> en fonction des entrées logiques <code>a</code>,
+            <code>b</code> et <code>c</code>.
           </li>
           <li class="p-break">On donne l'algorithme incomplet suivant qui permet de simuler ce circuit :
             <pre><code class="language-python">Algorithme Logic_gates
@@ -396,19 +255,66 @@ Début
   // "V" bouton fermé / "F" bouton ouvert
   Ecrire("Etat des boutons") ; Lire(etat)
 
-  a &larr; Faux // Vrai si le 1e bouton est fermé
-  b &larr; Faux // Vrai si le 2e bouton est fermé
-  c &larr; Faux // Vrai si le 3e bouton est fermé
+  etat &larr; majus(etat)
 
-  L &larr; Faux // Equation logique de L
+  // Vrai si le bouton est fermé
+  a &larr; etat[0] = "V" 
+  b &larr; etat[1] = "V"
+  c &larr; etat[2] = "V"
 
-  // Résultat
+  // Equation logique de L
+  L &larr; Faux 
+
   Ecrire(a, ",", b, ",", c, "=>", L)
 Fin</code></pre>
+            Traduire l'algorithme en Python tout en le complétant.
           </li>
-          <li>Dresser le <abbr title="tableau de déclaration des objets">TDO</abbr> du programme.</li>
-          <li>Compléter l'algorithme, le traduire en Python, puis le tester.</li>
-          <li>Améliorer l'algorithme et le programme pour qu'ils acceptent des lettres majuscules ou minuscules.</li>
+          <li>Dresser la table de vérité du circuit. Puis, remplir la colonne L.
+            <div class="row justify-content-center">
+              <table class="table table-sm table-striped table-hover table-bordered border-dark w-25">
+                <thead>
+                  <tr>
+                    <th>etat</th>
+                    <th>L</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>FFF</td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>FFV</td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>FVF</td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>FVV</td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>VFF</td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>VFV</td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>VVF</td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>VVV</td>
+                    <td></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </li>
         </ol>
       </section>
     </article>
@@ -820,6 +726,58 @@ car = chr(num) # car = "@"</code></pre>
         </ul>
       </section>
 
+      <section class="p-break">
+        <h3>Le plus âgé</h3>
+
+        <figure class="d-print-none">
+          <img src="images/module03/ages.webp" alt="Le plus âgé">
+          <figcaption>Le plus âgé</figcaption>
+        </figure>
+
+        <p>On veut faire un programme qui détermine si une personne est plus âgée qu'une autre. Pour cela on donne le
+          programme <strong>incomplet</strong> suivant :</p>
+
+        <pre><code class="language-python">nom1 = input("Nom de la 1ère personne ? ")
+age1 = input("Âge de " + nom1 + " ? ")
+
+nom2 = input("Nom de la 2ème personne ? ")
+age2 = input("Âge de " + nom2 + " ? ")
+
+c1 = age1 > age2
+
+print(nom1, "est plus âgé que", nom2, "?", c1)</code></pre>
+
+        <p>On demande de tester le programme à l'aide des valeurs suivantes. Est-il correct ? Quel est le problème ?
+          Comment le
+          corriger ?</p>
+        <div class="row justify-content-center">
+          <table class="table table-sm table-striped table-hover w-50">
+            <thead>
+              <tr>
+                <th>nom1</th>
+                <th>age1</th>
+                <th>nom2</th>
+                <th>age2</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Abderrazek</td>
+                <td>9</td>
+                <td>Hala</td>
+                <td>3</td>
+              </tr>
+              <tr>
+                <td>Emna</td>
+                <td>73</td>
+                <td>Abderrazek</td>
+                <td>9</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
       <section>
         <h3>Conjugaison au présent</h3>
 
@@ -832,6 +790,20 @@ Il/Elle mange
 Nous mangons
 Vous mangez
 Ils/Elles mangent</code></pre>
+      </section>
+
+      <section>
+        <h3>Nombre automorphe</h3>
+
+        <p>Un <strong>nombre automorphe</strong> est un entier naturel dont la suite des chiffres du carré se termine
+          par celle du nombre lui-même. Par exemple, </p>
+        <p class="fs-1 text-center"><span class="text-danger">5</span>² = 2<span class="text-danger">5</span>, <span
+            class="text-danger">6</span>² = 3<span class="text-danger">6</span>, <span class="text-danger">25</span>² =
+          6<span class="text-danger">25</span>, <br><span class="text-danger">76</span>² = 57<span
+            class="text-danger">76</span>, <span class="text-danger">890625</span>² = 793212<span
+            class="text-danger">890625</span></p>
+
+        <p>On veut écrire l'algorithme d'un programme qui teste si un nombre est automorphe.</p>
       </section>
 
       <section>
@@ -854,7 +826,8 @@ Ils/Elles mangent</code></pre>
         <p class="text-center fs-2">n = p.q + r</p>
         <p>Avec p > 0, q &ge; 0 et 0 &le; r &lt; p</p>
 
-        <p>On veut écrire l'algorithme d'un programme qui, pour deux entiers <code>n</code> et <code>p</code> donnés, calcule et
+        <p>On veut écrire l'algorithme d'un programme qui, pour deux entiers <code>n</code> et <code>p</code> donnés,
+          calcule et
           affiche la valeur de <code>q</code> et <code>r</code>.</p>
 
         <div class="d-print-none row">
@@ -899,7 +872,8 @@ Donner p ? 7
       <section>
         <h3>Permutation de chiffres</h3>
 
-        <p>Ecrire l'algorithme un programme qui saisit un nombre de 4 chiffres, puis permute le chiffre des centaines avec celui des
+        <p>Ecrire l'algorithme un programme qui saisit un nombre de 4 chiffres, puis permute le chiffre des centaines
+          avec celui des
           milliers et le chiffre des dizaines avec celui des unités.</p>
         <p class="text-center fs-1"><span class="text-success">1</span><span class="text-danger">3</span><span
             class="text-success">7</span><span class="text-danger">4</span> &rarr; <span
@@ -962,7 +936,8 @@ Donner b ? 67
           instant, il a parcouru <code>dd</code> kilomètres.</p>
         <p>Le soir, l'indicateur de niveau de carburant indique <code>nf</code> litres et l'indicateur de kilométrage
           indique <code>df</code> kilomètres.</p>
-        <p>On demande d'écrire l'algorithme d'un programme qui saisit les données puis calcule le taux de consommation de la voiture en
+        <p>On demande d'écrire l'algorithme d'un programme qui saisit les données puis calcule le taux de consommation
+          de la voiture en
           litres/100km.</p>
 
         <p class="text-center"><b>taux = consommation / distance</b></p>
@@ -994,7 +969,8 @@ La voiture a consommé 7.4 l/100km</code></pre>
       <section>
         <h3>Plein de zéros</h3>
 
-        <p>Ecrire l'algorithme d'un programme qui saisit un nombre de 2 chiffres, puis insère autant de zéros que la différence entre
+        <p>Ecrire l'algorithme d'un programme qui saisit un nombre de 2 chiffres, puis insère autant de zéros que la
+          différence entre
           ses chiffres de dizaines et d'unités.</p>
 
         <p class="text-center fs-1">
