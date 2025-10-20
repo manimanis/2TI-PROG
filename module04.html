@@ -61,6 +61,19 @@ Fin</code></pre>
       </section>
 
       <section>
+        <h3>Plus grand nombre</h3>
+
+        <p>Ecrire l'algorithme d'un programme qui saisit un entier de deux chiffres <code>n</code> puis calcule et
+          affiche le nombre maximal formé par les chiffres de <code>n</code>.</p>
+        <p class="text-center fs-1"><span class="text-success">1</span><span class="text-danger">6</span> &rarr; <span
+            class="text-danger">6</span><span class="text-success">1</span>
+          -
+          <span class="text-danger">7</span><span class="text-success">3</span> &rarr; <span
+            class="text-danger">7</span><span class="text-success">3</span>
+        </p>
+      </section>
+
+      <section>
         <h3>Jeu Pile/Face</h3>
 
         <figure class="d-print-none">
@@ -103,6 +116,30 @@ Fin</code></pre>
           <li>Peut-on utiliser une structure conditionnelle à forme réduite dans cet exercice ? Proposer une
             implémentation en Python de la solution.</li>
         </ol>
+      </section>
+
+      <section>
+        <h3>Année bissextile</h3>
+        <p>Une année <strong>bissextile</strong> compte <strong>366</strong> jours car le mois de février comporte 29
+          jours.</p>
+        <p>Une année est considérée bissextile uniquement dans les deux cas suivants :</p>
+        <ul>
+          <li>L'année est divisible par 4 et non divisible par 100 (Exemple : 2020)</li>
+          <li>L'année est divisible par 400 (Exemple : 2000)</li>
+        </ul>
+        <p>Ecrire l'algorithme d'un programme qui saisit une année <code>a</code> puis affiche si elle est bissextile ou
+          non.</p>
+        <div class="row">
+          <div class="col-6">
+            <pre><code class="nohighlight shell python" data-text="Exemple 1">Année ? 2019
+2019 n'est pas une année bissextile</code></pre>
+          </div>
+          <div class="col-6">
+            <pre><code class="nohighlight shell python" data-text="Exemple 2">Année ? 2024
+2024 est une année bissextile</code></pre>
+          </div>
+        </div>
+
       </section>
 
       <section>
@@ -159,11 +196,57 @@ Fin</code></pre>
           <li>Dresser le TDO relatif à cet algorithme.</li>
           <li>Identifier la structure conditionnelle dans cet algorithme.</li>
           <li>Traduire l'algorithme en Python.</li>
-          <li>Peut-on utiliser une structure conditionnelle à forme réduite dans cet exercice ? Proposer une
-            implémentation en Python de la solution.</li>
         </ol>
       </section>
 
+      <section>
+        <h3>Prix photocopie</h3>
+
+        <p>L'algorithme suivant est utilisé par un photocopieur pour calculer le prix d'impression d'un document étant
+          donné le nombre de pages <code>np</code>.</p>
+        <pre><code class="language-algorithm">Algorithme Prix_Impression
+Début
+  Ecrire("Nombre de pages ? ") ; Lire(np)
+  Si np &le; 0 Alors
+    pu &larr; 0
+  Sinon Si np > 0 et np &le; 10 Alors
+    pu &larr; 150
+  Sinon Si np > 10 et np &le; 50 Alors
+    pu &larr; 130
+  Sinon Si np > 50 et np &le; 100 Alors
+    pu &larr; 120
+  Sinon Si np > 100 Alors
+    pu &larr; 100
+  Fin Si
+  total &larr; pu * np
+  Ecrire(pu, "&times;", np, "=", total)
+Fin</code></pre>
+        <h4>Travail demandé</h4>
+        <ol>
+          <li>Pour quelles plages de valeurs le prix d'impression <code>pu</code> correspond à la valeur mentionnée dans
+            le tableau ci-dessous.
+            <table class="table table-bordered table-sm table-striped col-6">
+              <tr>
+                <th>pu</th>
+                <td>0</td>
+                <td>150</td>
+                <td>130</td>
+                <td>120</td>
+                <td>100</td>
+              </tr>
+              <tr>
+                <th>np</th>
+                <td>......</td>
+                <td>......</td>
+                <td>......</td>
+                <td>......</td>
+                <td>......</td>
+              </tr>
+            </table>
+          </li>
+          <li>Récrire l'algorithme précédent tout en réduisant le nombre de tests dans ses conditions.</li>
+        </ol>
+      </section>
     </article>
 
     <article>
