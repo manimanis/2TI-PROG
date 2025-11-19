@@ -30,6 +30,162 @@
       <h2>Situations</h2>
 
       <section>
+        <h3>for Keyword</h3>
+        <table class="table table-bordered table-sm table-striped col-3">
+          <tr>
+            <th>Python</th>
+            <th>Algorithme</th>
+            <th>Affichage</th>
+          </tr>
+          <tr>
+            <td>
+              <pre><code class="python"># Code 1
+for i in range(3):
+    print(i)</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+          </tr>
+          <tr>
+            <td><pre><code class="python"># Code 2
+for i in range(5):
+    print(i)</code></pre>
+            </td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+          </tr>
+          <tr>
+            <td>
+              <pre><code class="python"># Code 3
+for i in range(1, 5):
+    print(i)</code></pre>
+            </td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+          </tr>
+          <tr>
+            <td>
+              <pre><code class="python"># Code 4
+for i in range(1, 5, 3):
+    print(i)</code></pre>
+            </td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+          </tr>
+          <tr>
+            <td>
+              <pre><code class="python"># Code 5
+for i in range(1, 10, 2):
+    print(i)</code></pre>
+            </td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+          </tr>
+          <tr>
+            <td>
+              <pre><code class="python"># Code 6
+for i in range(5, 1):
+    print(i)</code></pre>
+            </td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+          </tr>
+          <tr>
+            <td>
+              <pre><code class="python"># Code 7
+for i in range(5, 1, -1)
+    print(i)</code></pre>
+            </td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+          </tr>
+          <tr>
+            <td>
+              <pre><code class="python"># Code 8
+for i in range(10, 1, -3):
+    print(i)</code></pre>
+            </td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+          </tr>
+        </table>
+      </section>
+
+      <section>
+        <h3>Compteur / Décompteur</h3>
+        <p>Tirer un nombre <strong class="text-danger">n</strong> au hasard, entre <strong
+            class="text-info">-20</strong> et <strong class="text-info">20</strong>, puis afficher tous les nombres :
+        </p>
+        <ul>
+          <li>de <strong class="text-info">1</strong> à <strong class="text-danger">n</strong>, si <strong class="text-danger">n</strong> &gt; 0.</li>
+          <li>de <strong class="text-info">-1</strong> à <strong class="text-danger">n</strong>, si <strong class="text-danger">n</strong> &lt; 0.</li>
+        </ul>
+        <div class="row">
+          <div class="col-6"><strong>Exemple 1 :</strong>
+            <pre><code class="nohighlight shell python" data-text="Exemple 1">n ? 8
+→ 1, 2, 3, 4, 5, 6, 7, 8</code></pre>
+          </div>
+          <div class="col-6"><strong>Exemple 2 :</strong>
+            <pre><code class="nohighlight shell python" data-text="Exemple 2">n ? -5
+→ -1, -2, -3, -4, -5</code></pre>
+          </div>
+        </div>
+        <p><strong>Proposer 3 méthodes de résolution.</strong></p>
+      </section>
+
+      <section>
+        <h3>Lettres majuscules</h3>
+        <p>Afficher les lettres alphabétiques majuscules (A – Z) en utilisant la fonction chr.</p>
+        <p><strong>NB :</strong> chr(65) → "A" ; chr(90) → "Z"</p>
+        <p><strong>Proposer 3 méthodes de résolution.</strong></p>
+      </section>
+
+      <section>
+        <h3>Nombres suivants</h3>
+
+        <p>Demander un nombre <strong class="text-danger">a</strong> à l'utilisateur puis afficher les <strong>cinq
+            nombres</strong> suivants.</p>
+        <div class="row">
+          <div class="col-6"><strong>Exemple 1 :</strong>
+            <pre><code class="nohighlight shell python" data-text="Exemple 1">a ? 8
+9, 10, 11, 12, 13</code></pre>
+          </div>
+          <div class="col-6"><strong>Exemple 2 :</strong>
+            <pre><code class="nohighlight shell python" data-text="Exemple 2">a ? -5
+-4, -3, -2, -1, 0</code></pre>
+          </div>
+        </div>
+        <p><strong>Proposer 3 méthodes de résolution.</strong></p>
+      </section>
+
+      <section>
+        <h3>Somme impairs multiples de 3</h3>
+        <p>Calculer la somme des nombres impairs, multiples de trois, inférieurs ou égaux à un nombre n donné.</p>
+
+        <div class="row">
+          <div class="col-6"><strong>Exemple 1 :</strong>
+            <pre><code class="nohighlight shell python" data-text="Exemple 1">n ? 20
+Somme = 27</code></pre>
+            <p class="example"><em class="text-success">Impairs</em>, <strong class="text-info">multiples de 3
+                inférieurs à 20</strong>
+              :<br><b>3</b>, <s>6</s>, <b>9</b>, <s>12</s>, <b>15</b>, <s>18</s><br> → <b>3</b> + <b>9</b> + <b>15</b> =
+              27</p>
+          </div>
+          <div class="col-6"><strong>Exemple 2 :</strong>
+            <pre><code class="nohighlight shell python" data-text="Exemple 2">n ? 60
+Somme = 300</code></pre>
+            <p class="example"><em class="text-success">Impairs</em>, <strong class="text-info">multiples de 3
+                inférieurs à 20</strong>
+              :<br> <b>3</b>, <s>6</s>, <b>9</b>, <s>12</s>, <b>15</b>, <s>18</s>, <b>21</b>, <s>24</s>,
+              <b>27</b>, <s>30</s>, <b>33</b>, <s>36</s>, <b>39</b>, <s>42</s>, <b>45</b>, <s>48</s>,
+              <b>51</b>, <s>54</s>, <b>57</b><br> → <b>3</b> + <b>9</b> + <b>15</b> + <b>21</b> + <b>27</b> + <b>33</b>
+              + <b>39</b> + <b>45</b> + <b>51</b> + <b>57</b> = 300
+            </p>
+          </div>
+        </div>
+        <p><strong>Proposer 3 méthodes de résolution.</strong></p>
+      </section>
+
+      <section>
         <h3>Nombre de 6</h3>
 
         <p>Lancer un dé 🎲 dix fois et compter le nomrbe de 6 obtenus.</p>

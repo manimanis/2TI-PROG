@@ -283,6 +283,14 @@ table.col-20 td {
   width: calc(100% / 20);
 }
 
+.example b {
+  color: red;
+}
+
+.example s {
+  color: darkblue;
+}
+
 /****Tables end****/
 
 .list-group-item pre {
