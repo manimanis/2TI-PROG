@@ -165,19 +165,22 @@ for i in range(10, 1, -3):
       <section>
         <h3>Nombres suivants</h3>
 
-        <p>Demander un nombre <strong class="text-danger">a</strong> à l'utilisateur puis afficher les <strong>cinq
-            nombres</strong> suivants.</p>
-        <div class="row">
-          <div class="col-6"><strong>Exemple 1 :</strong>
-            <pre><code class="nohighlight shell python" data-text="Exemple 1">a ? 8
-9, 10, 11, 12, 13</code></pre>
-          </div>
-          <div class="col-6"><strong>Exemple 2 :</strong>
-            <pre><code class="nohighlight shell python" data-text="Exemple 2">a ? -5
--4, -3, -2, -1, 0</code></pre>
-          </div>
-        </div>
-        <p><strong>Proposer 3 méthodes de résolution.</strong></p>
+        <p>Soit le code suivant :</p>
+        <pre><code class="language-algorithm">Algorithme Nombres_Suivants
+Début
+  Ecrire("Donner a ? ") ; Lire(a)
+  Ecrire(a + 1)
+  Ecrire(a + 2)
+  Ecrire(a + 3)
+  Ecrire(a + 4)
+  Ecrire(a + 5)
+Fin</code></pre>
+
+        <ol>
+          <li>Indiquer le rôle de ce code.</li>
+          <li>Eliminer la répétition dans le code en utilisant une structure itérative (boucle pour). Proposer 3
+            méthodes de résolution.</li>
+        </ol>
       </section>
 
       <section>
@@ -439,6 +442,8 @@ Fin TantQue</code></pre>
         <ul>
           <li>2 × 5 = 2 + 2 + 2 + 2 + 2 = 10</li>
           <li>6 × 3 = 6 + 6 + 6 = 18</li>
+          <li>-5 × -2 = -(-5 + -5) = 10</li>
+          <li>5 × -2 = -(5 + 5) = 10</li>
         </ul>
       </section>
 
@@ -485,24 +490,28 @@ Fin TantQue</code></pre>
         </figure>
         <p>En cliquant sur les nombre de ce composant l'utilisateur peut afficher un contenu qui s'étend sur plusieurs
           pages écran.</p>
-        <p>On demande d'écrire un programme qui saisit le numéro de la page actuelle visualisée par l'utilisateur et
-          affiche les numéros des deux pages qui précèdent et des deux pages qui succèdent sachant qu'il y a 20 pages
-          en tout à consulter.</p>
+        <p>On demande d'écrire un programme qui saisit le numéro de la page actuelle <code>npa</code> visualisée par
+          l'utilisateur et affiche les numéros des deux pages qui précèdent et des deux pages qui succèdent sachant
+          qu'il y a <code>n</code> pages en tout à consulter (<code>n &ge; 5</code>).</p>
         <div class="row">
           <div class="col-3">
-            <pre><code class="nohighlight shell python" data-text="Exemple 1">Numéro de page ? 1
+            <pre><code class="nohighlight shell python" data-text="Exemple 1">Nombre de pages ? 20
+Numéro de page ? 1
 [1] 2 3 4 5</code></pre>
           </div>
           <div class="col-3">
-            <pre><code class="nohighlight shell python" data-text="Exemple 2">Numéro de page ? 11
+            <pre><code class="nohighlight shell python" data-text="Exemple 2">Nombre de pages ? 20
+Numéro de page ? 11
 9 10 [11] 12 13</code></pre>
           </div>
           <div class="col-3">
-            <pre><code class="nohighlight shell python" data-text="Exemple 3">Numéro de page ? 17
+            <pre><code class="nohighlight shell python" data-text="Exemple 3">Nombre de pages ? 20
+Numéro de page ? 17
 15 16 [17] 18 19</code></pre>
           </div>
           <div class="col-3">
-            <pre><code class="nohighlight shell python" data-text="Exemple 4">Numéro de page ? 19
+            <pre><code class="nohighlight shell python" data-text="Exemple 4">Nombre de pages ? 20
+Numéro de page ? 19
 16 17 18 [19] 20</code></pre>
           </div>
         </div>
