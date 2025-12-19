@@ -30,245 +30,118 @@
       <h2>Situations</h2>
 
       <section>
-        <h3>Compteurs de lettres</h3>
+        <h3>Moyenne de la classe</h3>
 
-        <p>On désire compter le nombre de lettres dans les paragraphes suivants :</p>
+        <p>Une classe comporte entre 4 et 40 élèves. On veut écrire l'algorithme d'un programme qui :</p>
 
-        <p><strong>Premier paragraphe</strong></p>
+        <ul>
+          <li>Saisit <code>ne</code> le nombre d'élèves dans une classe, (4 &le; ne &le; 40).</li>
+          <li>Saisit les noms des élèves dans le tableau <code>tn</code> ainsi que leurs moyennes dans le tableau
+            <code>tm</code>.
+          </li>
+          <li>Calcule la moyenne de la classe <code>mc</code>, puis l'affiche.</li>
+          <li>Affiche les noms des élèves qui ont obtenu au dessus de la moyenne de la classe <code>tm[i] &ge; mc</code>
+            ainsi que leurs moyennes respectives.</li>
+        </ul>
 
-        <p class="bg-secondary text-white p-2">Hello my friend.</p>
+        <figure>
+          <img src="images/module06/classe.png" alt="Salle de Classe">
+          <figcaption>Salle de classe</figcaption>
+        </figure>
 
-        <p><strong>Deuxième paragraphe</strong></p>
+        <p><strong>Exemple</strong></p>
 
-        <p class="bg-secondary text-white p-2">Imagine you're at the beach, and you're watching the waves. When two
-          waves meet, they can do one of two things: if the peak of one wave aligns with the peak of another, they add
-          up to make a bigger wave. This is called constructive interference. But if the peak of one wave meets the
-          trough (the lowest point) of another, they cancel each other out, making the water calm. This is destructive
-          interference.</p>
-
-        <h4>Travail demandé</h4>
-        <p>Ecrire l'algorithme d'un programme qui compte le nombre de lettres dans un paragraphe donné.</p>
-
-        <pre><code class="nohighlight shell python" data-text="Exemple 1">Donner un paragraphe ? Hello my friend.
-
-D : 1 - E : 2 - F : 1 - H : 1 - I : 1 - L : 2
-M : 1 - N : 1 - O : 1 - R : 1 - Y : 1</code></pre>
-
-        <pre class="d-print-none"><code class="nohighlight shell python" data-text="Exemple 2" style="text-wrap: pretty;">Donner un paragraphe ? Imagine you're at the beach, and you're watching the waves. When two waves meet, they can do one of two things: if the peak of one wave aligns with the peak of another, they add up to make a bigger wave. This is called constructive interference. But if the peak of one wave meets the trough (the lowest point) of another, they cancel each other out, making the water calm. This is destructive interference.
-
-A : 26 - B : 3 - C : 13 - D : 6 - E : 52 - F : 9
-G : 8 - H : 23 - I : 19 - K : 5 - L : 6 - M : 6
-N : 20 - O : 22 - P : 5 - R : 1</code></pre>
+        <pre><code class="nohighlight shell python" data-text="Exemple">Nombre d'élèves ? 8
+Elève n° 1
+Nom ? Asma
+Moyenne ? 17.5
+Elève n° 2
+Nom ? Akram
+Moyenne ? 18.5
+Elève n° 3
+Nom ? Chiraz
+Moyenne ? 19.5
+Elève n° 4
+Nom ? Salim
+Moyenne ? 18.5
+Elève n° 5
+Nom ? Bassem
+Moyenne ? 19.5
+Elève n° 6
+Nom ? Salma
+Moyenne ? 15.5
+Elève n° 7
+Nom ? Dania
+Moyenne ? 16.5
+Elève n° 8
+Nom ? Youssef
+Moyenne ? 17.25
+Moyenne de la classe :  17.84
+Les élèves qui ont obtenu du dessus de la moyenne sont :
+Akram 18.5
+Chiraz 19.5
+Salim 18.5
+Bassem 19.5</code></pre>
+        </div>
       </section>
 
       <section>
         <h3>Solution : Algorithme</h3>
+
         <div class="row">
-          <div class="col-9">
-            <pre><code class="language-algorithm">Algorithme compteur
+          <div class="col-sm-9">
+            <pre><code class="language-algorithm">Algorithme Moyenne_Classe
 Début
-  // Saisie d'un paragraphe
-  Ecrire("Donner un paragraphe ? ") ; Lire(par)
-
-  // Initialisation du tableau
-  Pour i de 0 à 25 Faire
-    cpt[i] &larr; 0
-  Fin pour
-
-  // Compter le nombre de lettres
-  Pour i de 0 à Long(par) - 1 Faire
-    Si "A" &le; Majus(par[i]) &le; "Z" Alors
-      indice &larr; ord(Majus(par[i])) - ord("A")
-      cpt[indice] &larr; cpt[indice] + 1
-    Fin Si
-  Fin Pour
-
-  // Afficher le nombre de lettres
-  Pour i de 0 à 25 Faire
-    Ecrire(chr(65+i), ":", cpt[i])
-  Fin Pour
-Fin</code></pre>
-          </div>
-          <div class="col-3">
-            <table class="table table-sm table-hover table-bordered table-striped border-dark">
-              <thead>
-                <tr>
-                  <th width="50%">Objet</th>
-                  <th width="50%">Type</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>par</td>
-                  <td>chaîne</td>
-                </tr>
-                <tr>
-                  <td>i, indice</td>
-                  <td>Entier</td>
-                </tr>
-                <tr>
-                  <td>cpt</td>
-                  <td>Tableau de 26 entier</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </section>
-
-      <section>
-        <h3 class="p-break">Solution : Python</h3>
-        <pre><code class="language-python">from numpy import array
-
-# Saisie d'un paragraphe
-par = input("Donner un paragraphe ? ")
-
-# Initialisation du tableau
-cpt = array([0]*26)
-
-# Compter le nombre de lettres
-for i in range(len(par)):
-    if "A" <= par[i].upper() <= "Z":
-      indice = ord(par[i].upper()) - ord("A")
-      cpt[indice] = cpt[indice] + 1
-
-# Afficher le nombre de lettres
-dlc = 0
-for i in range(26):
-    if cpt[i] != 0:
-        if dlc % 6 != 0:
-            print(end=" - ")
-        else:
-            print()
-        dlc = dlc + 1
-        print(chr(65+i), ":", cpt[i], end="")</code></pre>
-      </section>
-
-      <section class="d-print-block">
-        <h3>Pairs / Impairs</h3>
-        <p>Ahmed a conçu un petit jeu pour sa sœur Sarra.</p>
-        <figure>
-          <img src="images/module06/pair-impair.jpg" alt="Nombres pairs et nombres impairs" class="h5cm">
-          <figcaption>Nombres pairs et nombres impairs</figcaption>
-        </figure>
-        <p>L'ordinateur présente à la petite <code>n</code> nombres donné (<code>5 ≤ n ≤ 15</code>). Ces nombres seront
-          choisis au hasard entre 1 et 40.</p>
-        <p>Et Sarra doit deviner la liste des nombres pairs.</p>
-        <p>Après que la petite réponde le programme lui donne la correction.</p>
-        <div class="row">
-          <div class="col-6">
-            <p><strong>Exemple 1 : </strong> Pour <code>n = 10</code> et les nombres suivants :</p>
-            <table width="80%" class="m-auto col-10 text-center">
-              <tbody>
-                <tr>
-                  <script>
-                    let t = [1, 31, 8, 5, 15, 19, 2, 37, 36, 25];
-                    document.write("<tr>");
-                    for (let v of t) {
-                      document.write("<td class=\"border border-dark\">", v, "</td>");
-                    }
-                    document.write("</tr><tr>");
-                    for (let i = 0; i < t.length; i++) {
-                      document.write("<td>", i, "</td>");
-                    }
-                    document.write("</tr>");
-                  </script>
-                </tr>
-              </tbody>
-            </table>
-            <p><strong>Le programme affiche :</strong></p>
-            <pre><code class="nohighlight">Liste des nombres pairs : <script>i = 0;
-              for (let v of t) {
-                if (v % 2 == 0) {
-                  if (i > 0) {
-                    document.write(', ');
-                  }
-                  document.write(v);
-                  i++;
-                }
-              }</script></code></pre>
-          </div>
-          <div class="col-6">
-            <p><strong>Exemple 2 : </strong> Pour <code>n = 5</code> et les nombres suivants :</p>
-            <table width="80%" class="m-auto col-10 text-center">
-              <tbody>
-                <tr>
-                  <script>
-                    t = [16, 25, 14, 5, 24];
-                    document.write("<tr>");
-                    for (let v of t) {
-                      document.write("<td class=\"border border-dark\">", v, "</td>");
-                    }
-                    document.write("</tr><tr>");
-                    for (let i = 0; i < t.length; i++) {
-                      document.write("<td>", i, "</td>");
-                    }
-                    document.write("</tr>");
-                  </script>
-                </tr>
-              </tbody>
-            </table>
-            <p><strong>Le programme affiche :</strong></p>
-            <pre><code class="nohighlight">Liste des nombres pairs : <script>i = 0;
-              for (let v of t) {
-                if (v % 2 == 0) {
-                  if (i > 0) {
-                    document.write(', ');
-                  }
-                  document.write(v);
-                  i++;
-                }
-              }</script></code></pre>
-          </div>
-        </div>
-        <h4>Travail demandé</h4>
-        <ol>
-          <li>Quels sont les objets nécessaires pour résoudre ce problème ? Tracer le TDO.</li>
-          <li>Ecrire l'algorithme du programme ci-dessus.</li>
-        </ol>
-      </section>
-
-      <section>
-        <h3 class="p-break">Solution : Algorithme</h3>
-
-        <div class="row">
-          <div class="col-9">
-            <pre><code class="language-algorithm">Programme Pair_Impair
-Début
-  // Saisie de n (5 ≤ n ≤ 15)
+  // Séquence 1 : Saisie du nombre des élèves
   Répéter
-    Ecrire("Donner n [5, 15] ? ")
-    Lire(n)
-  Jusqu'à (5 ≤ n ≤ 15)
-    
-  // Remplir le tableau t de valeurs aléatoires
-  Pour i de 0 à n-1 faire
-    t[i] ← aléa(1, 40)
+    Ecrire("Nombre d'élèves ? ") ; Lire(ne)
+  Jusqu'à 4 &le; ne &le; 40
+
+  // Séquence 2 : Saisie des noms et des notes
+  Pour i de 0 à ne-1 Faire
+    Ecrire("Elève n°", i+1)
+    // Nom de l'élève
+    Répéter
+      Ecrire("Nom ? "); Lire(tn[i])
+    Jusqu'à tn[i] &ne; ""
+    // Moyenne de l'élève
+    Répéter
+      Ecrire("Moyenne ? ") ; Lire(tm[i])
+    Jusqu'à 0 &le; tm[i] &le; 20
   Fin Pour
 
-  // Afficher les valeurs du tableau
-  Ecrire("Classer les nombres : pairs/impairs")
-  Pour i de 0 à n-1 faire
-    Ecrire(t[i])
+  // Séquence 3 : Calcul de la moyenne
+  mc &larr; 0
+  Pour i de 0 à ne - 1 Faire
+    mc &larr; mc + tm[i]
   Fin Pour
+  mc &larr; mc / ne
+  Ecrire("Moyenne de la classe :", mc)
 
-  // Classer les valeurs
-  np ← 0
-  Pour i de 0 à n-1 Faire
-    Si t[i] mod 2 = 0 Alors
-      tp[np] ← t[i]
-      np ← np + 1
+  // Séquence 4 : Affichage des élèves qui ont au dessus de la moyenne
+  Pour i de 0 à ne - 1 Faire
+    Si tm[i] &ge; mc Alors
+      Ecrire(tn[i], tm[i])
     Fin Si
-  Fin Pour
-
-  // Afficher les nombres pairs
-  Ecrire("Liste des nombres pairs")
-  Pour i de 0 à np-1 Faire
-    Ecrire(tp[i])
   Fin Pour
 Fin</code></pre>
           </div>
-          <div class="col-3">
+          <div class="col-sm-3">
+            <table class="table table-sm table-hover table-bordered table-striped border-dark">
+              <thead>
+                <tr>
+                  <th>TDNT</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>tab1 = tableau de 40 chaine<br>
+                    tab2 = tableau de 40 réel</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <p class="text-center"><strong>TDO</strong></p>
             <table class="table table-sm table-hover table-bordered table-striped border-dark">
               <thead>
                 <tr>
@@ -278,16 +151,20 @@ Fin</code></pre>
               </thead>
               <tbody>
                 <tr>
-                  <td>par</td>
-                  <td>chaîne</td>
+                  <td>ne</td>
+                  <td>entier</td>
                 </tr>
                 <tr>
-                  <td>i, indice</td>
-                  <td>Entier</td>
+                  <td>mc</td>
+                  <td>réel</td>
                 </tr>
                 <tr>
-                  <td>cpt</td>
-                  <td>Tableau de 26 entier</td>
+                  <td>tn</td>
+                  <td>tab1</td>
+                </tr>
+                <tr>
+                  <td>tm</td>
+                  <td>tab2</td>
                 </tr>
               </tbody>
             </table>
@@ -296,46 +173,66 @@ Fin</code></pre>
       </section>
 
       <section>
-        <h3 class="p-break">Solution : Python</h3>
+        <h3>Solution : Python</h3>
 
-        <pre><code class="language-python">from random import randint
-from numpy import array
+        <pre><code class="language-python">from numpy import array
+tn = array([str]*20)
+tm = array([float()]*20)
 
-# Saisie de n (5 ≤ n ≤ 15)
-n = int(input("Donner n [5, 15] ? "))
-while not (5 <= n <= 15):
-    n = int(input("Donner n [5, 15] ? "))
+# Saisie des données
+ne = int(input("Nombre d'élèves ? "))
+while ne < 4 or ne > 40:
+    ne = int(input("Nombre d'élèves ? "))
 
-# Déclaration des tableaux
-t = array([0]*15)
-tp = array([0]*15)
+for i in range(ne):
+    print("Elève n°", i+1)
 
-# Remplir le tableau t de valeurs aléatoires
-for i in range(n):
-    t[i] = randint(1, 40)
+    tn[i] = input("Nom ? ")
+    while tn[i] == "":
+        tn[i] = input("Nom ? ")
 
-# Afficher les valeurs du tableau
-print("Classer les nombres : pairs/impairs")
-for i in range(n):
-    print(t[i])
+    tm[i] = float(input("Moyenne ? "))
+    while tm[i] < 0 or tm[i] > 20:
+        tm[i] = float(input("Moyenne ? "))
 
-# Classer les valeurs
-np = 0
-for i in range(n):
-    if t[i] % 2 == 0:
-        tp[np] = t[i]
-        np = np + 1
+# Calcul de la meilleure moyenne
+mc = 0
+for i in range(ne):
+    mc = mc + tm[i]
+mc = mc / ne
+print("Moyenne de la classe : ", round(mc, 2))
 
-# Afficher les nombres pairs
-print("Liste des nombres pairs")
-for i in range(np):
-    print(tp[i])</code></pre>
+# Affichage des meilleurs élèves
+print("Les élèves qui ont obtenu du dessus de la moyenne sont :")
+for i in range(ne):
+    if tm[i] >= mc:
+        print(tn[i], tm[i])</code></pre>
+
+        <div class="d-print-none">
+          <p><strong>Données de test</strong></p>
+          <pre><code class="nohighlight shell python" data-text="Données de test">8
+Asma
+17.5
+Akram
+18.5
+Chiraz
+19.5
+Salim
+18.5
+Bassem
+19.5
+Salma
+15.5
+Dania
+16.5
+Youssef
+17.25</code></pre>
       </section>
 
       <section>
         <h3>Anniversaire de Yassine</h3>
 
-        <p>A l'occasion de son anniversaire le petit Yassine va distribuer des petites boîtes surprises contenant des
+        <p>A l'occasion de son anniversaire, le petit Yassine va distribuer des petites boîtes surprises contenant des
           bonbons à ses amis.</p>
         <figure>
           <img src="images/module06/bonbon-box.webp" alt="Boîtes surprises bonbons" class="h3cm">
@@ -343,12 +240,12 @@ for i in range(np):
         </figure>
         <p>Les boîtes ne contiennent pas un nombre équitable de bonbons car le petit Yassine a imaginé la méthode de
           distribution suivante de bonbons.</p>
-        <p>Les boîtes sont numérotées de 0 à na-1, avec <code>na</code> étant le nombre d'amis de Yassine qui sont
-          invités à l'anniversaire.</p>
-        <p>Pour chaque bonbon l'enfant :</p>
+        <p>Les boîtes sont numérotées de <code>0</code> à <code>na-1</code>, avec <code>na</code> étant le nombre d'amis
+          de Yassine qui sont invités à l'anniversaire.</p>
+        <p>Initialement l'enfant dispose de <code>nb</code> bonbons, et pour chaque bonbon l'enfant :</p>
         <ul>
           <li>tire un nombre au hazard, <code>nbh</code>, compris entre 0 et <code>na-1</code></li>
-          <li>met le bonbon dans la boîte numéro <code>nbh</code></li>
+          <li>met un bonbon dans la boîte d'indice <code>nbh</code></li>
         </ul>
         <div class="d-print-none">
           <div id="anniv" class="my-3">
@@ -382,8 +279,8 @@ for i in range(np):
         <p>Observant son petit frère, Youssef, un lycéen en 2TI a décidé de l'aider. Pour celà, il a pensé à écrire un
           programme qui :</p>
         <ul>
-          <li>Lit le nombre total de bonbons à distribuer, 10 &le; nb &le; 200</li>
-          <li>Lit le nombre d'amis invités, 3 &le; na &le; 10</li>
+          <li>Lit le nombre total de bonbons à distribuer, <code>10 &le; nb &le; 200</code></li>
+          <li>Lit le nombre d'amis invités, <code>3 &le; na &le; 10</code></li>
           <li>Calcule, puis affiche le nombre de bonbons à mettre dans chacune des boîtes.</li>
         </ul>
         <pre><code class="nohighlight shell python" data-text="Exemple">Nombre de bonbons [10, 200] ? 30
@@ -402,16 +299,19 @@ Boîte 4 contient 7 bonbons.</code></pre>
           <div class="col-9">
             <pre><code class="language-algorithm">Algorithme bonbons
 Début
+  // Séquence 1 : Saisie du nombre de bonbons
   Répéter
     Ecrire("Nombre de bonbons [10, 200] ? ")
     Lire(nb)
   Jusqu'à 10 &le; nb &le; 200
 
+  // Séquence 2 : Saisie du nombre d'amis
   Répéter
     Ecrire("Nombre d'amis [3, 10] ? ")
     Lire(na)
   Jusqu'à 3 &le; nb &le; 10
 
+  // Séquence 3 : Distribution des bonbons
   Pour i de 0 à na-1 Faire
     boite[i] &larr; 0
   Fin Pour
@@ -421,12 +321,27 @@ Début
     boite[nbh] &larr; boite[nbh] + 1
   Fin Pour
 
+  // Séquence 4 : Affichage du contenu des boîtes
   Pour i de 0 à na-1 Faire
     Ecrire("Boîte", i, "contient", boite[i], "bonbons.")
   Fin Pour
 Fin</code></pre>
           </div>
           <div class="col-3">
+            <table class="table table-sm table-hover table-bordered table-striped border-dark">
+              <thead>
+                <tr>
+                  <th>TDNT</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>tab = tableau de 10 entier</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <p><strong>TDO</strong></p>
             <table class="table table-sm table-hover table-bordered table-striped border-dark">
               <thead>
                 <tr>
@@ -441,7 +356,7 @@ Fin</code></pre>
                 </tr>
                 <tr>
                   <td>boite</td>
-                  <td>Tableau de 10 entier</td>
+                  <td>tab</td>
                 </tr>
               </tbody>
             </table>

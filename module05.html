@@ -252,8 +252,48 @@ Fin</code></pre>
             </table>
           </div>
         </div>
+      </section>
 
+      <section>
+        <h3>Scramble</h3>
 
+        <p>Soit l'algorithme suivant :</p>
+        <pre><code class="language-algorithm">Algorithme Quoi
+Début
+  // Séquence 1
+  Ecrire("n ? ") ; Lire(n)
+  Ecrire("p ? ") ; Lire(p)
+
+  // Séquence 2
+  ch1 &larr; ""
+  Pour i de 1 à n Faire
+    ch1 &larr; ch1 + ConvCh(i div 10) + ConvCh(i mod 10)
+  Fin Pour
+
+  // Séquence 3
+  ch2 &larr; ""
+  Pour i de 1 à p Faire
+    p1 &larr; (aléa(0, Long(ch1) - 1) div 2) * 2
+    ch2 &larr; ch2 + sous_chaine(ch1, p1, p1 + 2)
+    ch1 &larr; effacer(ch1, p1, p1 + 2)
+  Fin Pour
+
+  // Séquence 4
+  Pour i de 0 à Long(ch2) - 1 Faire [pas=2]
+    v &larr; valeur(sous_chaine(ch2, i, i + 2))
+    Ecrire(v)
+  Fin Pour
+Fin</code></pre>
+        <ol>
+          <li>Dresser le TDO relatif à l'algorithme ci-dessus.</li>
+          <li>Quel est le résultat de la séquence n°2 pour n = 5 ?</li>
+          <li>Quel est le résultat de la séquence n°3 pour n = 5 et p = 3. Sachant que la valeur de
+            <code>p1 = [2, 0, 4]</code> pour chacune des itérations.
+          </li>
+          <li>Quel est l'affichage de la séquence n°4 pour la valeur de <code>ch2</code> retrouvée dans la question
+            précédente ?</li>
+          <li>Implémenter l'algorithme en Python.</li>
+        </ol>
       </section>
 
       <section>
@@ -357,6 +397,21 @@ Fin</code></pre>
           </div>
         </div>
       </section>
+
+      <section>
+        <h3>Saisie contrôlée</h3>
+
+        <p>Proposer les algorithmes et les implémentations en Python, en utilisant les boucles Répéter … Jusqu'à, puis
+          en utilisant la boucle Tant Que, des situations suivantes :</p>
+        <ol type="a">
+          <li>Saisir un nombre <code>n</code> strictement positif.</li>
+          <li>Saisir un nombre <code>n</code> entre 10 et 50.</li>
+          <li>Saisir un nombre <code>n</code> <strong>impair</strong> contenant au moins une fois le chiffre 6.</li>
+          <li>Saisir une chaîne de caractère <code>ch</code> d'une longueur comprise entre 5 et 10 caractères et qui
+            contient au moins une fois la lettre "A".</li>
+          <li>Saisir une chaîne de caractère numérique non vide <code>ch</code>.</li>
+        </ol>
+      </section>
     </article>
 
     <article>
@@ -420,7 +475,8 @@ Fin TantQue</code></pre>
     </article>
 
     <article>
-      <h2 class="p-break">Renforcement</h2>
+      <h2 class="p-break">Pour</h2>
+
       <section>
         <h3>FizzBuzz ★</h3>
 
@@ -478,6 +534,36 @@ Fin TantQue</code></pre>
           </li>
         </ol>
         <p></p>
+      </section>
+
+      <section>
+        <h3>Triangles ★</h3>
+        <p>Ecrire l'algorithme d'un programme qui permet de générer les triangles suivants pour une hauteur
+          <code>n</code> donnée :
+        </p>
+        <ul>
+          <li>Triangle rectangle à gauche
+            <pre><code>1
+22
+333
+4444
+55555</code></pre>
+          </li>
+          <li>Triangle rectangle à droite
+            <pre><code>    1
+   22
+  333
+ 4444
+55555</code></pre>
+          </li>
+          <li>Triangle isocèle
+            <pre><code>    1
+   222
+  33333
+ 4444444
+555555555</code></pre>
+          </li>
+        </ul>
       </section>
 
       <section>
@@ -621,6 +707,82 @@ b ? 9999
         <p>Ecrire l'algorithme d'un programme qui calcule le nombre de mots dans une phrase saisie par
           l'utilisateur.
         </p>
+      </section>
+    </article>
+
+    <article>
+      <h2>Tant Que et Répéter</h2>
+      <section>
+        <h3>Lancées de dés ★</h3>
+
+        <p>Ecrire l'algorithme d'un programme qui calcule le nombre de lancées de dé 🎲 pour :</p>
+        <ol type="a">
+          <li>obtenir deux fois successives le nombre six.<br>
+            <span style="font-size: 3rem;">⚅</span> puis <span style="font-size: 3rem;">⚅</span>
+          </li>
+          <li>obtenir deux nombre successifs : l'ordre n'est pas important.
+            <table class="text-center">
+              <tr>
+                <td><span style="font-size: 3rem;">&#9856;</span> puis <span style="font-size: 3rem;">&#9857;</span>
+                </td>
+                <td><span style="font-size: 3rem;">&#9857;</span> puis <span style="font-size: 3rem;">&#9858;</span>
+                </td>
+                <td><span style="font-size: 3rem;">&#9858;</span> puis <span style="font-size: 3rem;">&#9859;</span>
+                </td>
+                <td><span style="font-size: 3rem;">&#9859;</span> puis <span style="font-size: 3rem;">&#9860;</span>
+                </td>
+                <td><span style="font-size: 3rem;">&#9860;</span> puis <span style="font-size: 3rem;">&#9861;</span>
+                </td>
+              </tr>
+            </table>
+          </li>
+          <li>que la somme des valeurs obtenues dans deux lancées successives soit égal à 7.
+            <table class="text-center">
+              <tr>
+                <td><span style="font-size: 3rem;">&#9856;</span> + <span style="font-size: 3rem;">&#9861;</span></td>
+                <td><span style="font-size: 3rem;">&#9857;</span> + <span style="font-size: 3rem;">&#9860;</span></td>
+                <td><span style="font-size: 3rem;">&#9858;</span> + <span style="font-size: 3rem;">&#9859;</span></td>
+                <td><span style="font-size: 3rem;">&#9859;</span> + <span style="font-size: 3rem;">&#9858;</span></td>
+                <td><span style="font-size: 3rem;">&#9860;</span> + <span style="font-size: 3rem;">&#9857;</span></td>
+                <td><span style="font-size: 3rem;">&#9861;</span> + <span style="font-size: 3rem;">&#9856;</span></td>
+              </tr>
+            </table>
+          </li>
+        </ol>
+      </section>
+
+      <section>
+        <h3>Exécution manuelle ★</h3>
+        <p>Soit la séquence algorithmique suivante, avec <code>n</code> est un entier naturel positif :</p>
+        <pre><code class="language-algorithm">nb ← 0
+Tant Que n ≠ 0 Faire
+  nb ← nb+1
+  n ← n div 10
+Fin Tant Que</code></pre>
+
+        <h4>Travail demandé</h4>
+        <ol>
+          <li>Calculer la valeur finale de <code>nb</code> pour les valeurs suivantes de <code>n</code> :
+            <table class="table table-sm table-bordered border-dark col-5 text-center">
+              <tr>
+                <th>n</th>
+                <td>3</td>
+                <td>98</td>
+                <td>216</td>
+                <td>9547</td>
+              </tr>
+              <tr>
+                <th>nb</th>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+            </table>
+          </li>
+          <li>Quel est le rôle de la séquence précédente.</li>
+          <li>Ecrire une séquence algorithmique équivalente sans utiliser une boucle.</li>
+        </ol>
       </section>
 
       <section>
