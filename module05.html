@@ -9,7 +9,7 @@
   <link rel="stylesheet" href="assets/css/default.css">
   <link rel="stylesheet" href="assets/css/style.css">
   <link rel="stylesheet" href="assets/css/module06.css">
-  <title>Structures itératives</title>
+  <title>Structure itérative complète</title>
 </head>
 
 <body>
@@ -24,7 +24,7 @@
   </aside>
 
   <main class="container my-3">
-    <h1>Module 5 : Structures itératives</h1>
+    <h1>Module 5 : Structure Itérative Complète</h1>
 
     <article>
       <h2>Situations</h2>
@@ -295,132 +295,13 @@ Fin</code></pre>
           <li>Implémenter l'algorithme en Python.</li>
         </ol>
       </section>
-
-      <section>
-        <h3>Fast-food</h3>
-
-        <figure>
-          <img src="images/module05/preparer_plat.png" alt="Prépartion de plats dans un fast-food">
-          <figcaption>Prépartion de plats dans un fast-food</figcaption>
-        </figure>
-
-        <ol>
-          <li>Combien de plats cet employé doit-il préparer durant les horaires de travail ?
-            <p class="text-danger">Le nombre de plats est inconnu à l'avance. Il dépend du nombre de clients et de les
-              horaires du travail de l'employé.</p>
-          </li>
-          <li>Exprimer cette situation algorithmiquement sachant que l'on dispose d'une opération nommée
-            <code>PréparerCommande(client)</code> pour préparer la commande du client <code>client</code>.
-            <figure>
-              <img src="images/module05/algo_preparer_plat.png" alt="Préparer Commandes Clients">
-            </figure>
-          </li>
-        </ol>
-      </section>
-
-      <section>
-        <h3>Nombre de lancées de dé</h3>
-
-        <p>Choisir un nombre de 1 à 6. Lancer un dé 🎲 autant de fois qu'il faut pour obtenir ce nombre. Enfin, afficher
-          le nombre de lancée nécessaires.</p>
-        <p>Ecrire l'algorithme d'un programme qui simule cette situation.</p>
-
-        <h4>Version 1</h4>
-
-        <div class="row">
-          <div class="col-9">
-            <pre><code class="language-algorithm">Algorithme Nombre_Lancées
-Début
-  Ecrire("Un nombre [1, 6] ? ") ; Lire (nb)
-  nbl &larr; 0
-  Répéter
-    nbl &larr; nbl + 1
-    de &larr; aléa(1, 6)
-    Ecrire("Lancée", nbl, ":", de)
-  Jusqu'à de = nb
-  Ecrire("Nombre de lancée :", nbl)
-Fin</code></pre>
-          </div>
-          <div class="col-3">
-            <p class="text-center"><strong>TDO</strong></p>
-            <table class="table table-sm table-hover table-bordered table-striped border-dark">
-              <thead>
-                <tr>
-                  <th width="50%">Objet</th>
-                  <th width="50%">Type</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>nb, nbl, de</td>
-                  <td>entier</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-
-        <h4 class="p-break">Version 2</h4>
-
-        <div class="row">
-          <div class="col-9">
-            <pre><code class="language-algorithm">Algorithme Nombre_Lancées2
-Début
-  Ecrire("Un nombre [1, 6] ? ") ; Lire (nb)
-  nbl &larr; 1
-  de &larr; aléa(1, 6)
-  Ecrire("Lancée", nbl, ":", de)
-  TantQue de &ne; nb Faire
-    nbl &larr; nbl + 1
-    de &larr; aléa(1, 6)
-    Ecrire("Lancée", nbl, ":", de)
-  Fin TantQue
-  Ecrire("Nombre de lancée :", nbl)
-Fin</code></pre>
-          </div>
-          <div class="col-3">
-            <p class="text-center"><strong>TDO</strong></p>
-            <table class="table table-sm table-hover table-bordered table-striped border-dark">
-              <thead>
-                <tr>
-                  <th width="50%">Objet</th>
-                  <th width="50%">Type</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>nb, nbl, de</td>
-                  <td>entier</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </section>
-
-      <section>
-        <h3>Saisie contrôlée</h3>
-
-        <p>Proposer les algorithmes et les implémentations en Python, en utilisant les boucles Répéter … Jusqu'à, puis
-          en utilisant la boucle Tant Que, des situations suivantes :</p>
-        <ol type="a">
-          <li>Saisir un nombre <code>n</code> strictement positif.</li>
-          <li>Saisir un nombre <code>n</code> entre 10 et 50.</li>
-          <li>Saisir un nombre <code>n</code> <strong>impair</strong> contenant au moins une fois le chiffre 6.</li>
-          <li>Saisir une chaîne de caractère <code>ch</code> d'une longueur comprise entre 5 et 10 caractères et qui
-            contient au moins une fois la lettre "A".</li>
-          <li>Saisir une chaîne de caractère numérique non vide <code>ch</code>.</li>
-        </ol>
-      </section>
     </article>
 
     <article>
       <h2>Résumé</h2>
 
       <section>
-        <h3>Structure itératives</h3>
-
-        <h4>Structure itérative complète</h4>
+        <h3>Structure itérative complète</h3>
 
         <p><code>cpt</code> est la variable compteur / <code>V<sub>i</sub></code> est la valeur initiale /
           <code>V<sub>f</sub></code> est la valeur finale / <code>V<sub>p</sub></code> est la valeur du pas.
@@ -442,40 +323,11 @@ for cpt in range(Vi, Vf-1, Vp):
   </code></pre>
           </div>
         </div>
-
-        <h4>Structures itératives à condition d'arrêt</h4>
-        <div class="row">
-          <div class="col-6">
-            <pre><code class="language-algorithm">
-Répéter
-  // Traitements
-Jusqu'à condition</code></pre>
-          </div>
-          <div class="col-6">
-            <pre><code class="language-python">flag = False
-while not flag:
-  # Traitements
-  flag = condition</code></pre>
-          </div>
-        </div>
-
-        <div class="row">
-          <div class="col-6">
-            <pre><code class="language-algorithm">TantQue condition Faire
-  // Traitements
-Fin TantQue</code></pre>
-          </div>
-          <div class="col-6">
-            <pre><code class="language-python">while condition:
-  # Traitements
-  </code></pre>
-          </div>
-        </div>
       </section>
     </article>
 
     <article>
-      <h2 class="p-break">Pour</h2>
+      <h2 class="p-break">Renforcement</h2>
 
       <section>
         <h3>FizzBuzz ★</h3>
@@ -707,226 +559,6 @@ b ? 9999
         <p>Ecrire l'algorithme d'un programme qui calcule le nombre de mots dans une phrase saisie par
           l'utilisateur.
         </p>
-      </section>
-    </article>
-
-    <article>
-      <h2>Tant Que et Répéter</h2>
-      <section>
-        <h3>Lancées de dés ★</h3>
-
-        <p>Ecrire l'algorithme d'un programme qui calcule le nombre de lancées de dé 🎲 pour :</p>
-        <ol type="a">
-          <li>obtenir deux fois successives le nombre six.<br>
-            <span style="font-size: 3rem;">⚅</span> puis <span style="font-size: 3rem;">⚅</span>
-          </li>
-          <li>obtenir deux nombre successifs : l'ordre n'est pas important.
-            <table class="text-center">
-              <tr>
-                <td><span style="font-size: 3rem;">&#9856;</span> puis <span style="font-size: 3rem;">&#9857;</span>
-                </td>
-                <td><span style="font-size: 3rem;">&#9857;</span> puis <span style="font-size: 3rem;">&#9858;</span>
-                </td>
-                <td><span style="font-size: 3rem;">&#9858;</span> puis <span style="font-size: 3rem;">&#9859;</span>
-                </td>
-                <td><span style="font-size: 3rem;">&#9859;</span> puis <span style="font-size: 3rem;">&#9860;</span>
-                </td>
-                <td><span style="font-size: 3rem;">&#9860;</span> puis <span style="font-size: 3rem;">&#9861;</span>
-                </td>
-              </tr>
-            </table>
-          </li>
-          <li>que la somme des valeurs obtenues dans deux lancées successives soit égal à 7.
-            <table class="text-center">
-              <tr>
-                <td><span style="font-size: 3rem;">&#9856;</span> + <span style="font-size: 3rem;">&#9861;</span></td>
-                <td><span style="font-size: 3rem;">&#9857;</span> + <span style="font-size: 3rem;">&#9860;</span></td>
-                <td><span style="font-size: 3rem;">&#9858;</span> + <span style="font-size: 3rem;">&#9859;</span></td>
-                <td><span style="font-size: 3rem;">&#9859;</span> + <span style="font-size: 3rem;">&#9858;</span></td>
-                <td><span style="font-size: 3rem;">&#9860;</span> + <span style="font-size: 3rem;">&#9857;</span></td>
-                <td><span style="font-size: 3rem;">&#9861;</span> + <span style="font-size: 3rem;">&#9856;</span></td>
-              </tr>
-            </table>
-          </li>
-        </ol>
-      </section>
-
-      <section>
-        <h3>Exécution manuelle ★</h3>
-        <p>Soit la séquence algorithmique suivante, avec <code>n</code> est un entier naturel positif :</p>
-        <pre><code class="language-algorithm">nb ← 0
-Tant Que n ≠ 0 Faire
-  nb ← nb+1
-  n ← n div 10
-Fin Tant Que</code></pre>
-
-        <h4>Travail demandé</h4>
-        <ol>
-          <li>Calculer la valeur finale de <code>nb</code> pour les valeurs suivantes de <code>n</code> :
-            <table class="table table-sm table-bordered border-dark col-5 text-center">
-              <tr>
-                <th>n</th>
-                <td>3</td>
-                <td>98</td>
-                <td>216</td>
-                <td>9547</td>
-              </tr>
-              <tr>
-                <th>nb</th>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-              </tr>
-            </table>
-          </li>
-          <li>Quel est le rôle de la séquence précédente.</li>
-          <li>Ecrire une séquence algorithmique équivalente sans utiliser une boucle.</li>
-        </ol>
-      </section>
-
-      <section>
-        <h3>Le lièvre et la tortue ★★</h3>
-
-        <h4>Règles du jeu</h4>
-        <ul>
-          <li>On lance un dé :
-            <ul>
-              <li>Si on obtient 6, le lièvre gagne</li>
-              <li>Si on obtient une autre valeur, la tortue avance d'un pas</li>
-            </ul>
-          </li>
-          <li>Si la tortue a avancé de six cases elle gagne, sinon on rejoue une autre fois.</li>
-        </ul>
-        <div class="row">
-          <div class="col-4">
-            <figure>
-              <img src="images/module05/lievre.jpg" alt="Le lièvre" class="h2cm">
-              <figcaption>Lièvre</figcaption>
-            </figure>
-          </div>
-          <div class="col-4">
-            <figure>
-              <img src="images/module05/tortue.jpg" alt="La tortue" class="h2cm">
-              <figcaption>Tortue</figcaption>
-            </figure>
-          </div>
-          <div class="col-4">
-            <figure>
-              <img src="images/module05/de.jpg" alt="Un dé" class="h2cm">
-              <figcaption>Dé</figcaption>
-            </figure>
-          </div>
-        </div>
-
-        <h4>Simulation</h4>
-        <div id="turtle_rabbit_game" class="d-print-none">
-          <div class="chemin">
-            <div class="case-depart" v-bind:class="{'lievre': rabbit_pos === 0}"></div>
-            <div class="case" v-bind:class="{'lievre': rabbit_pos === 1}"></div>
-            <div class="case" v-bind:class="{'lievre': rabbit_pos === 2}"></div>
-            <div class="case" v-bind:class="{'lievre': rabbit_pos === 3}"></div>
-            <div class="case" v-bind:class="{'lievre': rabbit_pos === 4}"></div>
-            <div class="case" v-bind:class="{'lievre': rabbit_pos === 5}"></div>
-            <div class="case-arrivee" v-bind:class="{'lievre': rabbit_pos === 6}"></div>
-          </div>
-          <div class="chemin">
-            <div class="case-depart" v-bind:class="{'tortue': turtle_pos === 0}"></div>
-            <div class="case" v-bind:class="{'tortue': turtle_pos === 1}"></div>
-            <div class="case" v-bind:class="{'tortue': turtle_pos === 2}"></div>
-            <div class="case" v-bind:class="{'tortue': turtle_pos === 3}"></div>
-            <div class="case" v-bind:class="{'tortue': turtle_pos === 4}"></div>
-            <div class="case" v-bind:class="{'tortue': turtle_pos === 5}"></div>
-            <div class="case-arrivee" v-bind:class="{'tortue': turtle_pos === 6}"></div>
-          </div>
-          <div class="dice-roll">
-            <div class="de" v-on:click="clicked()">
-              <div v-bind:class="current_dice"></div>
-            </div>
-            <div class="text-center text-white">Cliquer &uArr;</div>
-          </div>
-          <div v-if="game_ended()" class="game-control">
-            <div class="message">
-              <div class="text">
-                <p>{{winner_message}}</p>
-                <button v-on:click="reset()">Rejouer</button>
-              </div>
-            </div>
-          </div>
-          <table class="dice-table">
-            <tbody>
-              <tr>
-                <td v-for="de in dice_arr" width="16.67%">
-                  <div class="de">
-                    <div v-bind:class="{[`de${de}`]: true}"></div>
-                  </div>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-
-        <div class="d-none d-print-block">
-          <figure>
-            <img src="images/module05/simulation-jeu.png" alt="Simulation jeu lièvre et tortue" class="h5cm">
-            <figcaption>Simulation du jeu lièvre et tortue</figcaption>
-          </figure>
-        </div>
-
-        <h4>Travail demandé</h4>
-        <p>Ecrire l'algorithme du programme permettant de simuler ce jeu.</p>
-      </section>
-
-      <section>
-        <h3>Jeu de l'oie ★★</h3>
-
-        <h4>Principe de jeu</h4>
-        <p>Le jeu de l'oie est un jeu classique qui se joue à 2, 3 ou 4 joueurs.</p>
-        <p>Chaque joueur, à son tour, lance un dé à six faces et avance son pion du nombre tiré.</p>
-        <p>Le gagnant est celui qui atteint la case d'arrivée (case 63).</p>
-        <p>On désire implémenter une version simplifiée, sans pièges, de ce jeu où un joueur humain joue tout seul.
-          <strong>La case d'arrivée est la case 32.</strong>
-        </p>
-        <p><strong>Remarque :</strong> Si la nouvelle position du joueur dépasse la case finale il recule au lieu
-          d'avancer.</p>
-        <p><strong>Exemple :</strong> Je suis dans la position 27 et j'obtiens 6, je recule à la position 21.</p>
-
-        <div id="jeu-oie" class="d-print-none">
-          <div v-if="gameEnded()" class="game-control">
-            <div class="message">
-              <div class="text">
-                <p>{{winner_message}}</p>
-                <button v-on:click="reset()">Rejouer</button>
-              </div>
-            </div>
-          </div>
-          <div class="game">
-            <table>
-              <tr v-for="line in positions">
-                <td v-for="pos in line"
-                  v-bind:class="{'start-cell': pos==0, 'end-cell': pos==32, 'game-cell': pos > 0 && pos < 32}">
-                  <div v-if="pos >= 0 && pos <= 32" class="cell">
-                    <img v-if="pos_oie == pos" src="images/module05/oie.png" alt="">
-                  </div>
-                  <div v-if="pos == 33" class="de" v-on:click="clicked()">
-                    <div v-bind:class="first_dice"></div>
-                  </div>
-                  <div v-if="pos == 34" class="text-drak fs-3">
-                    &lArr; Click
-                  </div>
-                </td>
-              </tr>
-            </table>
-            <div class="movements">
-              <ol>
-                <li v-for="movement in movements">{{movement}}</li>
-              </ol>
-            </div>
-          </div>
-        </div>
-
-        <p><strong>Travail demandé</strong></p>
-        <p>Ecrire l'algorithme du programme permettant de simuler ce jeu.</p>
       </section>
     </article>
   </main>
