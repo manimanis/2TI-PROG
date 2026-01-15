@@ -10,6 +10,7 @@
   <link rel="stylesheet" href="assets/css/style.css">
   <link rel="stylesheet" href="assets/css/module07.css">
   <title>Tableaux</title>
+  <script src="assets/js/utilities.js"></script>
 </head>
 
 <body>
@@ -557,6 +558,254 @@ Fin Pour</code></pre>
       <h2 class="p-break">Renforcement</h2>
 
       <section>
+        <h3>QCM n°1 ★</h3>
+        <p><b>Cocher les bonnes réponses.</b></p>
+
+        <div class="qcm-exercise no-page-break-inside" data-correct="2" data-scrambled="false" data-tries="2">
+          <h5 class="question-title">Question 1</h5>
+          <div class="question">
+            <p>Qu'est-ce qu'un tableau en programmation ?</p>
+          </div>
+          <ul class="propositions">
+            <li>Une variable qui ne peut stocker qu'une seule valeur</li>
+            <li>Une structure permettant de stocker plusieurs valeurs du même type</li>
+            <li>Une fonction mathématique</li>
+            <li>Un fichier de données</li>
+          </ul>
+        </div>
+
+        <div class="qcm-exercise no-page-break-inside" data-correct="3" data-scrambled="false" data-tries="2">
+          <h5 class="question-title">Question 2</h5>
+          <div class="question">
+            <p>Comment accède-t-on au premier élément d'un tableau T en Python ?</p>
+          </div>
+          <ul class="propositions">
+            <li>T(1)</li>
+            <li>T[1]</li>
+            <li>T[0]</li>
+            <li>T[-1]</li>
+          </ul>
+        </div>
+
+        <div class="qcm-exercise no-page-break-inside" data-correct="4" data-scrambled="false" data-tries="2">
+          <h5 class="question-title">Question 3</h5>
+          <div class="question">
+            <p>Quel tableau est correctement déclaré en Python ?</p>
+          </div>
+          <ul class="propositions">
+            <li>T = &lt;1,2,3&gt;</li>
+            <li>T = tableau(1, 2, 3)</li>
+            <li>T = array(1, 2, 3)</li>
+            <li>T = array([1, 2, 3])</li>
+          </ul>
+        </div>
+
+        <div class="qcm-exercise no-page-break-inside" data-correct="3" data-scrambled="false" data-tries="2">
+          <h5 class="question-title">Question 4</h5>
+          <div class="question">
+            <p> Soit le tableau T suivant :</p>
+            <script>draw_table('T', [10, 20, 30, 40], 0);</script>
+            <p><strong>Que vaut T[2] ?</strong></p>
+          </div>
+          <ul class="propositions">
+            <li>10</li>
+            <li>20</li>
+            <li>30</li>
+            <li>40</li>
+          </ul>
+        </div>
+
+        <div class="qcm-exercise no-page-break-inside" data-correct="4" data-scrambled="false" data-tries="2">
+          <h5 class="question-title">Question</h5>
+          <div class="question 5">
+            <p>Soit le tableau T suivant :</p>
+            <script>draw_table('T', [5, 8, 2, 9, 4, 3], 0);</script>
+            <p><strong>Quelle est la taille du tableau T ?</strong></p>
+          </div>
+          <ul class="propositions">
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+            <li>6</li>
+          </ul>
+        </div>
+
+        <div class="qcm-exercise no-page-break-inside" data-correct="2" data-scrambled="false" data-tries="2">
+          <h5 class="question-title">Question 6</h5>
+          <div class="question">
+            <p>Quel est l'indice du dernier élément d'un tableau de taille <code>n</code>, en Python ?</p>
+          </div>
+          <ul class="propositions">
+            <li>0</li>
+            <li>n-1</li>
+            <li>n</li>
+            <li>n+1</li>
+          </ul>
+        </div>
+
+        <div class="qcm-exercise no-page-break-inside" data-correct="4" data-scrambled="false" data-tries="2">
+          <h5 class="question-title">Question 7</h5>
+          <div class="question">
+            <p>Soit le tableau T suivant :</p>
+            <script>draw_table('T', [5, 8, 2, 9, 4, 3], 0);</script>
+            <p><strong>Que fait la séquence suivante ?</strong></p>
+            <pre><code class="language-algorithm">Pour i de 0 à n div 2 Faire
+  T[i] ← T[i] + 1
+Fin Pour</code></pre>
+          </div>
+          <ul class="propositions">
+            <li>Incrémente tous les éléments du tableau</li>
+            <li>Incrémente les éléments de la 1e moitié du tableau (indices 0 → 2)</li>
+            <li>Incrémente les éléments de la 2n moitié du tableau (indices 3 → 5)</li>
+            <li>Incrémente les 4 premiers éléments du tableau</li>
+          </ul>
+        </div>
+
+        <div class="qcm-exercise no-page-break-inside" data-correct="4" data-scrambled="false" data-tries="2">
+          <h5 class="question-title">Question 8</h5>
+          <div class="question">
+            <p>Soit le tableau T suivant :</p>
+            <script>draw_table('T', [5, 8, 2, 3, 4, 9], 0);</script>
+            <p><strong>Quelle est la valeur finale de <code>m</code> après l'exécution de la séquence suivante
+                ?</strong></p>
+            <pre><code class="language-algorithm">m ← T[0]
+Pour i de 2 à n - 2 faire
+  Si T[i] > m alors
+    m ← T[i]
+  Fin Si
+Fin Pour</code></pre>
+          </div>
+          <ul class="propositions">
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+            <li>8</li>
+            <li>9</li>
+          </ul>
+        </div>
+
+        <div class="qcm-exercise no-page-break-inside" data-correct="4" data-scrambled="false" data-tries="2">
+          <h5 class="question-title">Question 9</h5>
+          <div class="question">
+            <p>Quelle est la boucle correcte pour retrouver la valeur maximale du tableau <code>T</code> précédent ?</p>
+          </div>
+          <ul class="propositions">
+            <li>Pour i de 0 à n Faire</li>
+            <li>Pour i de 1 à n Faire</li>
+            <li>Pour i de 1 à n-2 Faire</li>
+            <li>Pour i de 0 à n-1 Faire</li>
+          </ul>
+        </div>
+
+        <div class="qcm-exercise no-page-break-inside" data-correct="3" data-scrambled="false" data-tries="2">
+          <h5 class="question-title">Question 10</h5>
+          <div class="question">
+            <p>Soit le tableau <code>T</code> suivant :</p>
+            <script>draw_table('T', [3, 6, 9, 12, 15], 0);</script>
+            <p><strong> Après l'exécution de la séquence suivante, que contient le tableau <code>T</code> ?</strong></p>
+            <pre><code class="language-algorithm">Pour i de 0 à 3 faire
+  T[i] ← T[i] + T[i+1]
+Fin Pour</code></pre>
+          </div>
+          <ul class="propositions">
+            <li>
+              <!-- <script>draw_table('T', [3, 6, 9, 12, 15], 0);</script> -->
+              <table class="draw-table" style="margin: 0;">
+                <tbody>
+                  <tr>
+                    <td style="width: 60px; text-align: center;">T</td>
+                    <td style="width: 60px; text-align: center; border: #333 solid 1px;">3</td>
+                    <td style="width: 60px; text-align: center; border: #333 solid 1px;">6</td>
+                    <td style="width: 60px; text-align: center; border: #333 solid 1px;">9</td>
+                    <td style="width: 60px; text-align: center; border: #333 solid 1px;">12</td>
+                    <td style="width: 60px; text-align: center; border: #333 solid 1px;">15</td>
+                  </tr>
+                  <tr>
+                    <td><small>&nbsp;</small></td>
+                    <td style="text-align: center;"><small>0</small></td>
+                    <td style="text-align: center;"><small>1</small></td>
+                    <td style="text-align: center;"><small>2</small></td>
+                    <td style="text-align: center;"><small>3</small></td>
+                    <td style="text-align: center;"><small>4</small></td>
+                  </tr>
+                </tbody>
+              </table>
+            </li>
+            <li>
+              <!-- <script>draw_table('T', [3, 9, 15, 21, 27], 0);</script> -->
+              <table class="draw-table" style="margin: 0;">
+                <tbody>
+                  <tr>
+                    <td style="width: 60px; text-align: center;">T</td>
+                    <td style="width: 60px; text-align: center; border: #333 solid 1px;">3</td>
+                    <td style="width: 60px; text-align: center; border: #333 solid 1px;">9</td>
+                    <td style="width: 60px; text-align: center; border: #333 solid 1px;">15</td>
+                    <td style="width: 60px; text-align: center; border: #333 solid 1px;">21</td>
+                    <td style="width: 60px; text-align: center; border: #333 solid 1px;">27</td>
+                  </tr>
+                  <tr>
+                    <td><small>&nbsp;</small></td>
+                    <td style="text-align: center;"><small>0</small></td>
+                    <td style="text-align: center;"><small>1</small></td>
+                    <td style="text-align: center;"><small>2</small></td>
+                    <td style="text-align: center;"><small>3</small></td>
+                    <td style="text-align: center;"><small>4</small></td>
+                  </tr>
+                </tbody>
+              </table>
+            </li>
+            <li>
+              <!-- <script>draw_table('T', [9, 15, 21, 27, 15], 0);</script> -->
+              <table class="draw-table" style="margin: 0;">
+                <tbody>
+                  <tr>
+                    <td style="width: 60px; text-align: center;">T</td>
+                    <td style="width: 60px; text-align: center; border: #333 solid 1px;">9</td>
+                    <td style="width: 60px; text-align: center; border: #333 solid 1px;">15</td>
+                    <td style="width: 60px; text-align: center; border: #333 solid 1px;">21</td>
+                    <td style="width: 60px; text-align: center; border: #333 solid 1px;">27</td>
+                    <td style="width: 60px; text-align: center; border: #333 solid 1px;">15</td>
+                  </tr>
+                  <tr>
+                    <td><small>&nbsp;</small></td>
+                    <td style="text-align: center;"><small>0</small></td>
+                    <td style="text-align: center;"><small>1</small></td>
+                    <td style="text-align: center;"><small>2</small></td>
+                    <td style="text-align: center;"><small>3</small></td>
+                    <td style="text-align: center;"><small>4</small></td>
+                  </tr>
+                </tbody>
+              </table>
+            </li>
+            <li>
+              <!-- <script>draw_table('T', [9, 15, 21, 27, 30], 0);</script> -->
+              <table class="draw-table" style="margin: 0;">
+                <tbody>
+                  <tr>
+                    <td style="width: 60px; text-align: center;">T</td>
+                    <td style="width: 60px; text-align: center; border: #333 solid 1px;">9</td>
+                    <td style="width: 60px; text-align: center; border: #333 solid 1px;">15</td>
+                    <td style="width: 60px; text-align: center; border: #333 solid 1px;">21</td>
+                    <td style="width: 60px; text-align: center; border: #333 solid 1px;">27</td>
+                    <td style="width: 60px; text-align: center; border: #333 solid 1px;">30</td>
+                  </tr>
+                  <tr>
+                    <td><small>&nbsp;</small></td>
+                    <td style="text-align: center;"><small>0</small></td>
+                    <td style="text-align: center;"><small>1</small></td>
+                    <td style="text-align: center;"><small>2</small></td>
+                    <td style="text-align: center;"><small>3</small></td>
+                    <td style="text-align: center;"><small>4</small></td>
+                  </tr>
+                </tbody>
+              </table>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section>
         <h3>Inversion des éléments d'un tableau ★</h3>
         <p>Ecrire un programme qui permet d'inverser les éléments d’un tableau t de n entiers (n≥2).</p>
         <p><strong>Exemple :</strong></p>
@@ -710,6 +959,37 @@ t3 : 7, 9, 3, 2, 2, 4, 1, 7</code></pre>
       </section>
 
       <section>
+        <h3>Vols de drône ★★</h3>
+
+        <p>Un drone effectue plusieurs vols. Pour chaque vol, on enregistre son altitude maximale atteinte (en mètres).
+        </p>
+        <figure>
+          <img src="images/module06/drone.png" alt="Drone">
+          <figcaption>Drône</figcaption>
+        </figure>
+        <p>On demande d'écrire un algorithme qui :</p>
+        <ul>
+          <li>Saisit <code>n</code> le nombre de vols (1 ≤ n ≤ 30).</li>
+          <li>Remplit un tableau nommé <code>alt</code> par l'altitude maximale atteinte par le drone dans chacun des
+            vols, <code>alt[i] >= 0</code>.</li>
+          <li>Calcule et affiche l'altitude moyenne <code>am</code> de tous les vols.</li>
+          <li>Affiche les numéros des vols où l'altitude moyenne est dépassée.</li>
+        </ul>
+        <p><strong>Exemple :</strong></p>
+        <pre><code class="nohighlight shell python" data-text="Exemple">Nombre de vols ? 5
+Vol 1 ? 50
+Vol 2 ? 120
+Vol 3 ? 80
+Vol 4 ? 100
+Vol 5 ? 95
+Altitude moyenne : 89 m
+Numéro des vols qui ont dépassé la moyenne :
+- Vol 2 – 120 m
+- Vol 4 – 100 m
+- Vol 5 – 95 m</code></pre>
+
+      </section>
+      <section>
         <h3>Première occurence ★★</h3>
         <p>Ecrire un programme qui permet de remplir un tableau t par n entiers non nuls (n≥2), de garder la
           première occurrence de chaque élément.</p>
@@ -833,6 +1113,102 @@ un sac de 16 pommes</code></pre>
       </section>
 
       <section>
+        <h3>Classement de foot ★★</h3>
+
+        <p>Soit le programme Python suivant :</p>
+
+        <div class="row">
+          <div class="col-6">
+            <pre><code class="language-python">from numpy import array
+
+# Séquence 1
+n = int(input("Nbre équipes ? "))
+while n <= 0 or n > 20:
+    n = int(input("Nbre équipes ? "))
+
+# Séquence 2
+teq = array([str]*20)
+tnbp = array([int()]*20)
+for i in range(n):
+    # Séquence 2.1
+    teq[i] = input("Equipe ? ")
+
+    # Séquence 2.2
+    tnbp[i] = int(input("Pts ? "))
+    while i != 0 and tnbp[i] > tnbp[i-1]:
+        tnbp[i] = int(input("Pts ? "))
+
+# Séquence 3
+rang = 1
+print("Classement des équipes")
+for i in range(n):
+    # Séquence 3.1
+    if i > 0 and tnbp[i] != tnbp[i-1]:
+            rang = i+1
+    print(rang, teq[i], tnbp[i])</code></pre>
+          </div>
+          <div class="col-6">
+            <p><strong>Exemple d'exécution :</strong></p>
+            <pre><code class="nohighlight shell python" data-text="Exemple">Nbre équipes ? 25
+Nbre équipes ? 7
+Equipe ? ESS
+Pts ? 13
+Equipe ? OB
+Pts ? 15
+Pts ? 12
+Equipe ? CA
+Pts ? 13
+Pts ? 12
+Equipe ? ST
+Pts ? 8
+Equipe ? USBG
+Pts ? 7
+Equipe ? EGSG
+Pts ? 6
+Equipe ? ASS
+Pts ? 0
+1 ESS 13
+2 OB 12
+2 CA 12
+4 ST 8
+5 USBG 7
+6 EGSG 6
+7 ASS 0</code></pre>
+          </div>
+<ol>
+  <li>Indiquer le rôle de chaque séquence :
+    <div class="row">
+      <div class="col-4">
+        <ol type="1">
+          <li>Séquence 1</li>
+          <li>Séquence 2</li>
+          <li>Séquence 2.1</li>
+          <li>Séquence 2.2</li>
+          <li>Séquence 3</li>
+          <li>Séquence 3.1</li>
+        </ol>
+      </div>
+      <div class="col-8">
+        <ol type="a">
+          <li>Calculer le rang d'une équipe selon son nombre de points.</li>
+          <li>Remplir la case n°(i) de teq avec le nom d'une équipe.</li>
+          <li>Saisir le nombre d'équipes.</li>
+          <li>Afficher le classement des équipes.</li>
+          <li>Remplir la case d'indice i de tnbp avec un nombre de points inférieur ou égal à celui de l'équipe d'indice i-1, tnpb[i] ≤ tnpb[i - 1]</li>
+          <li>Remplir les tableaux teq et tnbp.</li>
+        </ol>
+      </div>
+    </div>
+    <p class="my-4 text-center">1 → ……… 	- 2 → ……… 	- 3 → ……… 	- 4 → ……… 	- 5 → ……… 	- 6 → ………</p>
+  </li>
+  <li>Proposer un algorithme correspondant à ce programme, son TDNT et TDO.</li>
+</ol>
+        </div>
+
+
+      </section>
+
+      <section>
         <h3>Segmentation d'un tableau ★★★</h3>
 
         <p>Ecrire un programme qui segmente un tableau t de n entiers de la façon suivante :</p>
@@ -911,6 +1287,7 @@ Le candidat est n° 2 sa caractéristique est 79</code></pre>
   <script src="assets/js/hljs.algorithm.js"></script>
   <script src="assets/js/clipboard.min.js"></script>
   <script src="assets/js/pages.js"></script>
+  <script src="assets/js/draggable.js"></script>
   <script src="assets/js/vue.min.js"></script>
   <script src="assets/apps/module06.js"></script>
   <script>
