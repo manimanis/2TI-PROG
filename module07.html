@@ -30,7 +30,313 @@
       <h2>Situations</h2>
 
       <section>
-        <h3>Distance entre deux points</h3>
+        <h3>Tirage de boules</h3>
+
+        <p>On dispose de 5 boules numérotées comme suit :</p>
+
+        <figure>
+          <img src="images/module07/tirage-boules.png" alt="Tirage de boules">
+          <figcaption>Tirage de boules</figcaption>
+        </figure>
+
+        <p>On veut faire le tirage (au hasard) de trois boules parmi les boules existantes, sans remise et l'ordre n'est
+          pas important.</p>
+
+        <h5>Travail demandé</h5>
+        <ol>
+          <li>Quels sont les tirages possibles ?
+          </li>
+          <li>Ecrire l'algorithme d'un programme qui :
+            <ul>
+              <li>Saisit le nombre total de boules <code>n</code>, avec <code>1 &le; n &le; 20</code></li>
+              <li>Saisit le nombre de boules à tirer <code>p</code>, avec <code>0 &le; p &le; n</code></li>
+              <li>Calcule le nombre de combinaisons possibles : <p class="text-center"><img
+                    src="images/module07/combinaisons-calcul.svg" alt="c(n,p) = n! / (p!*(n-p)!)"></p>
+              </li>
+              <li>Affiche le nombre de combinaisons.</li>
+            </ul>
+          </li>
+          <li>Utiliser une <strong>approche modulaire</strong> pour résoudre le problème.</li>
+          <li>Quels sont les avantages de l'approche modulaire ?</li>
+          <li>Proposer une implémentation en Python de la solution modulaire.</li>
+        </ol>
+
+        <h5>Réponses</h5>
+        <ol>
+          <li>
+            <p>Il existe 10 combinaisons possibles, comme suit.</p>
+            <figure>
+              <img src="images/module07/combinaisons-boules.png" alt="Combinaisons boules">
+              <figcaption>Les combinaisons de trois boules parmi cinq</figcaption>
+            </figure>
+          </li>
+          <li>
+            <p><strong>Solution n°1 :</strong> approche non modulaire</p>
+            <div class="row">
+              <div class="col-9">
+                <pre><code class="language-algorithm">Algorithme Combinaisons
+Début
+  // Saisie des données
+  Répéter
+    Ecrire("Donner n ? ") ; Lire(n)
+  Jusqu'à (1 &le; n &le; 20)
+  Répéter
+    Ecrire("Donner p ? ") ; Lire(p)
+  Jusqu'à (0 &le; p &le; n)
+  
+  // Calcul du nombre de combinaisons
+  fn &larr; 1
+  Pour i de 2 à n Faire
+    fn &larr; fn * i
+  Fin Pour
+  fp &larr; 1
+  Pour i de 2 à p Faire
+    fp &larr; fp * i
+  Fin Pour
+  fnp &larr; 1
+  Pour i de 2 à n-p Faire
+    fnp &larr; fnp * i
+  Fin Pour
+  cnp &larr; fn div (fp * fnp)
+
+  // Affichage du résultat
+  Ecrire("Le nombre de combinaisons possibles est :", cnp)
+Fin</code></pre>
+              </div>
+              <div class="col-3">
+                <p class="text-center">TDO</p>
+                <table class="table table-sm table-bordered border-dark table-striped table-hover col-2">
+                  <thead>
+                    <tr>
+                      <th>Objet</th>
+                      <th>Type/Nature</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>n, p, i, fn, fp, fnp, cnp</td>
+                      <td>entier</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </li>
+          <li>
+            <p><strong>Solution n°2 :</strong> approche modulaire</p>
+            <p><strong>Programme Principal</strong></p>
+            <div class="row">
+              <div class="col-9">
+                <pre><code class="language-algorithm">Algorithme Combinaisons
+Début
+  // Saisie des données
+  Saisie(n, 1, 20)
+  Saisie(p, 0, n)
+
+  // Calcul
+  cnp &larr; comb(n, p)
+
+  // Affichage
+  Ecrire("Le nombre de combinaisons possibles est :", cnp)
+Fin</code></pre>
+              </div>
+              <div class="col-3">
+                <p class="text-center">TDOG</p>
+                <table class="table table-sm table-bordered border-dark table-striped table-hover col-2">
+                  <thead>
+                    <tr>
+                      <th>Objet</th>
+                      <th>Type/Nature</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>n, p, cnp</td>
+                      <td>entier</td>
+                    </tr>
+                    <tr>
+                      <td>Saisie</td>
+                      <td>Procédure</td>
+                    </tr>
+                    <tr>
+                      <td>comb</td>
+                      <td>Fonction</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <p><strong>Procédure Saisie</strong></p>
+            <div class="row">
+              <div class="col-9">
+                <pre><code class="language-algorithm">Procédure Saisie(@n: entier, a, b: entier)
+Début
+  Répéter
+    Ecrire("Donner un entier [", a, ",", b, "] ? ")
+    Lire(n)
+  Jusqu'à (a &le; n &le; b)
+Fin</code></pre>
+              </div>
+              <div class="col-3">
+                <p class="text-center">TDOL</p>
+                <table class="table table-sm table-bordered border-dark table-striped table-hover col-2">
+                  <thead>
+                    <tr>
+                      <th>Objet</th>
+                      <th>Type/Nature</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>-</td>
+                      <td>-</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <p><strong>Fonction comb</strong></p>
+            <div class="row">
+              <div class="col-9">
+                <pre><code class="language-algorithm">Fonction comb(n, p: entier):entier
+Début
+  Retourner fact(n) div (fact(p) * fact(n-p))
+Fin</code></pre>
+              </div>
+              <div class="col-3">
+                <p class="text-center">TDOL</p>
+                <table class="table table-sm table-bordered border-dark table-striped table-hover col-2">
+                  <thead>
+                    <tr>
+                      <th>Objet</th>
+                      <th>Type/Nature</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>fact</td>
+                      <td>Fonction</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <p><strong>Fonction fact</strong></p>
+            <div class="row">
+              <div class="col-9">
+                <pre><code class="language-algorithm">Fonction fact(n: entier):entier
+Début
+  fn ← 1
+  Pour i de 2 à n Faire
+    fn ← fn * i
+  Fin Pour
+  Retourner fn
+Fin</code></pre>
+              </div>
+              <div class="col-3">
+                <p class="text-center">TDOL</p>
+                <table class="table table-sm table-bordered border-dark table-striped table-hover col-2">
+                  <thead>
+                    <tr>
+                      <th>Objet</th>
+                      <th>Type/Nature</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>i, fn</td>
+                      <td>entier</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </li>
+          <li>
+            <p>L'approche modulaire apporte <strong>cinq avantages majeurs</strong> :</p>
+            <ol>
+              <li>
+                <strong>Réutilisabilité du code</strong>
+                <ul>
+                  <li>La fonction <code>fact()</code> est définie <strong>une seule fois</strong> mais <strong>utilisée
+                      plusieurs fois</strong>.</li>
+                  <li>La procédure <code>Saisie()</code> peut servir pour <strong>toute</strong> saisie avec intervalle.
+                  </li>
+                  <li>Aucune duplication de code identique.</li>
+                </ul>
+              </li>
+              <li>
+                <strong>Lisibilité exceptionnelle</strong>
+                <p>Le programme principal se lit comme une recette de cuisine. On comprend
+                  <strong>instantanément</strong> ce que fait l'algorithme sans se noyer dans les détails.
+                </p>
+              </li>
+              <li>
+                <strong>Maintenance simplifiée</strong>
+                <ul>
+                  <li>En cas de <strong>bug dans la factorielle</strong>, on corrige <strong>une seule</strong> fonction
+                    <code>fact()</code>.
+                  </li>
+                  <li>En cas de <strong>changement de la saisie</strong>, une seule modification dans
+                    <code>Saisie()</code> suffit.
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <strong>Testabilité indépendante</strong>
+                <p>Chaque fonction peut être testée indépendamment des autres.</p>
+              </li>
+              <li>
+                <strong>Abstraction et simplicité</strong>
+                <p>Quand on utilise <code>comb(n,p)</code>, on n'a <strong>pas besoin de savoir</strong> comment elle
+                  fonctionne en détail. On se concentre sur le <strong>quoi</strong> et non plus sur le
+                  <strong>comment</strong>.
+                </p>
+              </li>
+            </ol>
+
+            <p><strong>Résumé :</strong> La solution modulaire transforme un algorithme de 30 lignes
+              répétitives et difficiles à relire en <strong>3 petits blocs simples</strong> + un programme principal
+              de 5 lignes ultra-claires. C'est comme passer d'une recette où on répète 3 fois comment fouetter
+              des œufs à une recette qui dit simplement "fouetter les œufs" quand c'est nécessaire.</p>
+          </li>
+          <li>
+            <p><strong>Programme en Python</strong></p>
+            <pre><code class="language-python">def saisie(a, b):
+    n = int(input("Donner un entier ["+str(a)+", "+str(b)+"] ? "))
+    while n < a or n > b:
+        n = int(input("Donner un entier ["+str(a)+", "+str(b)+"] ? "))
+    return n
+
+
+def fact(n):
+    fn = 1
+    for i in range(2, n + 1):
+        fn = fn * i
+    return fn
+
+
+def comb(n, p):
+    return fact(n) // (fact(p) * fact(n - p))
+
+
+# Programme principal
+n = saisie(1, 20)
+p = saisie(0, n)
+
+cnp = comb(n, p)
+
+print(f"Le nombre de combinaisons possibles est :", cnp)</code></pre>
+          </li>
+        </ol>
+
+      </section>
+
+      <section>
+        <h3>Distance de Points</h3>
 
         <figure>
           <img src="images/module07/maths-numbers-times-divide.png" alt="Calcul d'une somme" class="h4cm">
@@ -41,22 +347,14 @@
         <div class="row">
           <div class="col-6">
             <h5>Version 1</h5>
-            <pre><code class="python"># Saisie des coordonnées des points*
-x1 = int(input("x1 > 0 ? "))
-while x1 &lt;= 0:
-    x1 = int(input("x1 > 0 ? ")) 
+            <pre><code class="python"># Saisie des coordonnées des points
+print("Point 1")
+x1 = int(input("x ? "))
+y1 = int(input("y ? "))
 
-y1 = int(input("y1 > 0 ? "))
-while y1 &lt;= 0:
-    y1 = int(input("y1 > 0 ? "))
-
-x2 = int(input("x2 > 0 ? "))
-while x2 &lt;= 0:
-    x2 = int(input("x2 > 0 ? ")) 
-
-y2 = int(input("y2 > 0 ? "))
-while y2 &lt;= 0:
-    y2 = int(input("y2 > 0 ? ")) 
+print("Point 2")
+x2 = int(input("x ? "))
+y2 = int(input("y ? "))
 
 # calcul des distances
 d1 = (x1 * x1 + y1 * y1)**0.5
@@ -64,19 +362,19 @@ d2 = (x2 * x2 + y2 * y2)**0.5
 
 # affichage
 if d1 &lt; d2:
-    print("P1 est plus proche de l'origine")
+  print("P1 est plus proche de l'origine")
 elif d1 &gt; d2:
-    print("P2 est plus proche de l'origine")
+  print("P2 est plus proche de l'origine")
 else:
-    print("P1 et P2 sont équidistants")</code></pre>
+  print("P1 et P2 sont équidistants")</code></pre>
           </div>
           <div class="col-6">
             <h5>Version 2</h5>
-            <pre><code class="python">def saisie(msg):
-    n = int(input(msg))
-    while n &lt;= 0:
-        n = int(input(msg)) 
-    return n
+            <pre><code class="python">def saisie_point(msg):
+  print(msg)
+  x = int(input("x ? "))
+  y = int(input("y ? ")) 
+  return x, y
 
 def dist(x, y):
     return (x * x + y * y)**0.5
@@ -91,10 +389,8 @@ def afficher(d1, d2):
 
 
 # PP
-x1 = saisie("x1 ? ")
-y1 = saisie("y1 ? ")
-x2 = saisie("x2 ? ")
-y2 = saisie("y2 ? ")
+x1, y1 = saisie_point("Point 1")
+x2, y2 = saisie_point("Point 2")
 
 d1 = dist(x1, y1)
 d2 = dist(x2, y2)

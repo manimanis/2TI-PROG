@@ -1,4 +1,4 @@
-const defaulStyle = {
+const defaultStyle = {
     table: "margin: 0;",
     firstCol: {
         width: '60px',
@@ -12,7 +12,7 @@ const defaulStyle = {
     styles: []
 };
 
-function draw_table(tablename, values, startindex, styles = defaulStyle) {
+function draw_table(tablename, values, startindex, styles = defaultStyle) {
     document.writeln("<table class=\"draw-table\"",
         (styles.table) ? ("style=\"" + styles.table + "\"") : "", ">");
     document.writeln("<tr>");

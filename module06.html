@@ -807,7 +807,7 @@ Fin Pour</code></pre>
 
       <section>
         <h3>Inversion des éléments d'un tableau ★</h3>
-        <p>Ecrire un programme qui permet d'inverser les éléments d’un tableau t de n entiers (n≥2).</p>
+        <p>Ecrire un programme qui permet d'inverser les éléments d'un tableau t de n entiers (n≥2).</p>
         <p><strong>Exemple :</strong></p>
         <pre><code class="nohighlight shell python" data-text="Exemple">Donner la taille du tableau (>=2) : 7
 t [ 0 ]= 11
@@ -822,7 +822,7 @@ Tableau inversé : 1, 7, 6, 5, 33, 2, 11,</code></pre>
 
       <section>
         <h3>Extrêmums d'un tableau ★</h3>
-        <p>Ecrire un programme qui permet d’afficher le maximum et le minimum dans un tableau t de n entiers (n≥2).</p>
+        <p>Ecrire un programme qui permet d'afficher le maximum et le minimum dans un tableau t de n entiers (n≥2).</p>
         <p><strong>Exemple :</strong></p>
         <pre><code class="nohighlight shell python" data-text="Exemple">Donner la taille du tableau (>=2) : 5
 t [ 0 ]= 11
@@ -959,9 +959,56 @@ t3 : 7, 9, 3, 2, 2, 4, 1, 7</code></pre>
       </section>
 
       <section>
+        <h3>Chaînes / Chiffres ★★</h3>
+
+        <ol>
+          <li>Écrire l'algorithme d'un programme qui permet de remplir un tableau <code>t1</code> par <code>n</code>
+            chaînes non vides <code>(2 ≤ n ≤ 100)</code>, de classer les chiffres dans le tableau <code>t2</code> et les
+            lettres dans le tableau <code>t3</code>, puis d'afficher le
+            contenu des deux tableaux <code>t2</code> et <code>t3</code>.
+            <p><strong>Exemple :</strong> Pour <code>n = 6</code> et <code>t1</code> :</p>
+            <div class="chchStyle">
+              <script>
+                const chchStyle = {
+                  ...defaultStyle,
+                  col: {
+                    width: '150px',
+                    'text-align': 'center',
+                    border: '#333 solid 1px'
+                  },
+                };
+                draw_table('t1', ['"<b>12</b><u>FG</u><b>68</b>"', '"<b>456</b>"', '"<u>TEST</u>"', '"<b>55</b>#"', '"<u>ILTN</u>"', '"<b>9654</b>"', '"<u>G</u><b>00</b><u>D</u> <u>LUCK</u>"'], 0, chchStyle);</script>
+              <p>Le tableau <code>t2</code> contient les chiffres de <code>t1</code> comme suit :</p>
+              <script>
+                draw_table('t2', [1268, 456, 55, 9654], 0);
+              </script>
+              <p>Et le tableau <code>t3</code> contient les lettres de <code>t1</code>, comme suit :</p>
+              <script>
+                draw_table('t6', ['"FG"', '"TEST"', '"ILTN"', '"GDLUCK"'], 0);
+              </script>
+            </div>
+
+            <style>
+              .chchStyle u {
+                color: blue;
+                font-weight: bold;
+              }
+
+              .chchStyle b {
+                color: red;
+                font-weight: bold;
+              }
+            </style>
+          </li>
+          <li>Implémenter votre solution en python.</li>
+        </ol>
+      </section>
+
+      <section>
         <h3>Vols de drône ★★</h3>
 
-        <p>Un drone effectue plusieurs vols. Pour chaque vol, on enregistre son altitude maximale atteinte (en mètres).
+        <p>Un drone effectue plusieurs vols. Pour chaque vol, on enregistre son altitude maximale atteinte (en
+          mètres).
         </p>
         <figure>
           <img src="images/module06/drone.png" alt="Drone">
@@ -970,7 +1017,8 @@ t3 : 7, 9, 3, 2, 2, 4, 1, 7</code></pre>
         <p>On demande d'écrire un algorithme qui :</p>
         <ul>
           <li>Saisit <code>n</code> le nombre de vols (1 ≤ n ≤ 30).</li>
-          <li>Remplit un tableau nommé <code>alt</code> par l'altitude maximale atteinte par le drone dans chacun des
+          <li>Remplit un tableau nommé <code>alt</code> par l'altitude maximale atteinte par le drone dans chacun
+            des
             vols, <code>alt[i] >= 0</code>.</li>
           <li>Calcule et affiche l'altitude moyenne <code>am</code> de tous les vols.</li>
           <li>Affiche les numéros des vols où l'altitude moyenne est dépassée.</li>
@@ -1010,7 +1058,7 @@ Le résultat est : 10, 7, 9, 8,</code></pre>
 
       <section>
         <h3>Intersection de deux tableaux ★★</h3>
-        <p>Ecrire un programme qui permet de ranger et d’afficher les éléments qui figurent dans les deux
+        <p>Ecrire un programme qui permet de ranger et d'afficher les éléments qui figurent dans les deux
           tableaux de n entiers a et b (n≥2).</p>
         <p><strong>Exemple :</strong></p>
         <pre><code class="nohighlight shell python" data-text="Exemple">Donner la taille du tableau (>=2) : 4
@@ -1038,7 +1086,8 @@ Les éléments communs sont : 1, 2, 7,</code></pre>
 
       <section>
         <h3>Fusion de tableaux selon leurs parités ★★</h3>
-        <p>Ecrire un programme qui fusionne deux tableaux t1 et t2, de longueur n1 et n2 différentes, dans un troisième
+        <p>Ecrire un programme qui fusionne deux tableaux t1 et t2, de longueur n1 et n2 différentes, dans un
+          troisième
           tableau t3 de longueur n3 = n1 + n2.</p>
         <p>La fusion se fera de la façon suivante :</p>
         <ul>
@@ -1060,56 +1109,6 @@ t2[ 4 ]= 5
 t2[ 5 ]= 8
 t2[ 6 ]= 4
 t3 : 2, 4, 2, 8, 4, 9, 7, 7, 3, 1, 5</code></pre>
-      </section>
-
-      <section>
-        <h3>Vas et viens ★★★</h3>
-        <p>Soient t1 et t2 deux tableaux d’entiers de taille n (n≥2).
-          Ecrire un programme qui permet de transférer les éléments de t1 et t2 selon le principe suivant :
-          Les éléments de rang impair de t1 seront rangés dans t2 en ordre inverse (de droite à gauche) et
-          les éléments de rang pair de t1 seront rangés dans t2 (de gauche à droite).</p>
-        <p><strong>Exemple :</strong></p>
-        <pre><code class="nohighlight shell python" data-text="Exemple">Donner la taille du tableau (>=2) : 9
-t1 [ 0 ]= 12
-t1 [ 1 ]= 13
-t1 [ 2 ]= 41
-t1 [ 3 ]= 5
-t1 [ 4 ]= 19
-t1 [ 5 ]= 13
-t1 [ 6 ]= 4
-t1 [ 7 ]= 8
-t1 [ 8 ]= 15
-t2 : 12, 41, 19, 4, 15, 8, 13, 5, 13,</code></pre>
-      </section>
-
-      <section>
-        <h3 class="p-break">Le marchand de légumes ★★★</h3>
-        <p>Le marchand de légumes vend les pommes dans des sacs de la façon suivante :</p>
-        <ul>
-          <li>Des sacs d'une seule pomme,</li>
-          <li>Des sacs de deux pommes,</li>
-          <li>Des sacs de quatre pommes,</li>
-          <li>Des sacs de huit pommes,</li>
-          <li>Des sacs de seize pommes,</li>
-        </ul>
-        <p>Le marchand refuse de vendre deux sacs qui contiennent le même nombre de pommes à un seul client.</p>
-        <ol>
-          <li>Calculer le nombre minimal de sacs achetés par les clients suivants :
-            <ul>
-              <li>Islem veut 14 pommes,</li>
-              <li>Ayoub veut 3 pommes,</li>
-              <li>Alaa veut 8 pommes,</li>
-              <li>Amine veut 10 pommes.</li>
-            </ul>
-          </li>
-          <li>Ecrire le programme qui calcule le nombre de sacs nécessaires pour satisfaire la commande d'un client
-            donné.</li>
-        </ol>
-        <p><strong>Exemple :</strong></p>
-        <pre><code class="nohighlight shell python" data-text="Exemple">Nombre de pommes : 25
-un sac de 1 pommes
-un sac de 8 pommes
-un sac de 16 pommes</code></pre>
       </section>
 
       <section>
@@ -1175,37 +1174,137 @@ Pts ? 0
 6 EGSG 6
 7 ASS 0</code></pre>
           </div>
-<ol>
-  <li>Indiquer le rôle de chaque séquence :
-    <div class="row">
-      <div class="col-4">
-        <ol type="1">
-          <li>Séquence 1</li>
-          <li>Séquence 2</li>
-          <li>Séquence 2.1</li>
-          <li>Séquence 2.2</li>
-          <li>Séquence 3</li>
-          <li>Séquence 3.1</li>
-        </ol>
-      </div>
-      <div class="col-8">
-        <ol type="a">
-          <li>Calculer le rang d'une équipe selon son nombre de points.</li>
-          <li>Remplir la case n°(i) de teq avec le nom d'une équipe.</li>
-          <li>Saisir le nombre d'équipes.</li>
-          <li>Afficher le classement des équipes.</li>
-          <li>Remplir la case d'indice i de tnbp avec un nombre de points inférieur ou égal à celui de l'équipe d'indice i-1, tnpb[i] ≤ tnpb[i - 1]</li>
-          <li>Remplir les tableaux teq et tnbp.</li>
-        </ol>
-      </div>
-    </div>
-    <p class="my-4 text-center">1 → ……… 	- 2 → ……… 	- 3 → ……… 	- 4 → ……… 	- 5 → ……… 	- 6 → ………</p>
-  </li>
-  <li>Proposer un algorithme correspondant à ce programme, son TDNT et TDO.</li>
-</ol>
+          <ol>
+            <li>Indiquer le rôle de chaque séquence :
+              <div class="row">
+                <div class="col-4">
+                  <ol type="1">
+                    <li>Séquence 1</li>
+                    <li>Séquence 2</li>
+                    <li>Séquence 2.1</li>
+                    <li>Séquence 2.2</li>
+                    <li>Séquence 3</li>
+                    <li>Séquence 3.1</li>
+                  </ol>
+                </div>
+                <div class="col-8">
+                  <ol type="a">
+                    <li>Calculer le rang d'une équipe selon son nombre de points.</li>
+                    <li>Remplir la case n°(i) de teq avec le nom d'une équipe.</li>
+                    <li>Saisir le nombre d'équipes.</li>
+                    <li>Afficher le classement des équipes.</li>
+                    <li>Remplir la case d'indice i de tnbp avec un nombre de points inférieur ou égal à celui de
+                      l'équipe d'indice i-1, tnpb[i] ≤ tnpb[i - 1]</li>
+                    <li>Remplir les tableaux teq et tnbp.</li>
+                  </ol>
+                </div>
+              </div>
+              <p class="my-4 text-center">1 → ……… - 2 → ……… - 3 → ……… - 4 → ……… - 5 → ……… - 6 → ………</p>
+            </li>
+            <li>Proposer un algorithme correspondant à ce programme, son TDNT et TDO.</li>
+          </ol>
         </div>
+      </section>
 
+      <section>
+        <h3>Quadruplet ★★</h3>
 
+        <ol>
+          <li>
+            <p>Écrire l'algorithme d'un programme qui permet de :</p>
+            <ul>
+              <li>Saisir une chaîne de caractère <code>ch</code> d'une longueur comprise entre 4 et 100 caractères.
+              </li>
+              <li>Remplir le tableau <code>t</code> par les lettres trouvées dans <code>ch</code>. Compléter par le
+                caractère "." pour obtenir un tableau <code>t</code> de taille <code>n</code> multiple de 4.</li>
+              <li>Inverser les caractères de chaque bloc de longueur 4.</li>
+              <li>Afficher le tableau résultat.</li>
+            </ul>
+            <p><strong>Exemple :</strong> Pour ch = "2e Informatique"</p>
+            <p>Le tableau t contient alors</p>
+            <script>
+              const quadrupletStyle = {
+                ...defaultStyle,
+                table: "margin: 0;",
+                firstCol: {
+                  width: '40px',
+                  'text-align': 'center',
+                },
+                col: {
+                  width: '40px',
+                  'text-align': 'center',
+                  border: '#333 solid 1px'
+                },
+                styles: []
+              };
+              const qt = ['"E"', '"I"', '"N"', '"F"', '"O"', '"R"', '"M"', '"A"', '"T"', '"I"', '"Q"', '"U"', '"E"', '"."', '"."', '"."'];
+              for (let i = 0; i < qt.length; i++) {
+                if (Math.floor(i / 4) % 2 == 0) {
+                  quadrupletStyle.styles.push({
+                    'background-color': 'rgb(255, 204, 204)'
+                  });
+                } else {
+                  quadrupletStyle.styles.push({
+                    'background-color': 'rgb(204, 255, 204)'
+                  });
+                }
+              }
+              draw_table('t', qt, 0, quadrupletStyle);</script>
+            <p>Le programme affichera :</p>
+            <script>draw_table('t', ['"F"', '"N"', '"I"', '"E"', '"A"', '"M"', '"R"', '"O"', '"U"', '"Q"', '"I"', '"T"', '"."', '"."', '"."', '"E"'], 0, quadrupletStyle);</script>
+          </li>
+          <li>Implémenter votre solution en python.</li>
+        </ol>
+      </section>
+
+      <section>
+        <h3>Vas et viens ★★★</h3>
+        <p>Soient t1 et t2 deux tableaux d'entiers de taille n (n≥2).
+          Ecrire un programme qui permet de transférer les éléments de t1 et t2 selon le principe suivant :
+          Les éléments de rang impair de t1 seront rangés dans t2 en ordre inverse (de droite à gauche) et
+          les éléments de rang pair de t1 seront rangés dans t2 (de gauche à droite).</p>
+        <p><strong>Exemple :</strong></p>
+        <pre><code class="nohighlight shell python" data-text="Exemple">Donner la taille du tableau (>=2) : 9
+t1 [ 0 ]= 12
+t1 [ 1 ]= 13
+t1 [ 2 ]= 41
+t1 [ 3 ]= 5
+t1 [ 4 ]= 19
+t1 [ 5 ]= 13
+t1 [ 6 ]= 4
+t1 [ 7 ]= 8
+t1 [ 8 ]= 15
+t2 : 12, 41, 19, 4, 15, 8, 13, 5, 13,</code></pre>
+      </section>
+
+      <section>
+        <h3 class="p-break">Le marchand de légumes ★★★</h3>
+        <p>Le marchand de légumes vend les pommes dans des sacs de la façon suivante :</p>
+        <ul>
+          <li>Des sacs d'une seule pomme,</li>
+          <li>Des sacs de deux pommes,</li>
+          <li>Des sacs de quatre pommes,</li>
+          <li>Des sacs de huit pommes,</li>
+          <li>Des sacs de seize pommes,</li>
+        </ul>
+        <p>Le marchand refuse de vendre deux sacs qui contiennent le même nombre de pommes à un seul client.</p>
+        <ol>
+          <li>Calculer le nombre minimal de sacs achetés par les clients suivants :
+            <ul>
+              <li>Islem veut 14 pommes,</li>
+              <li>Ayoub veut 3 pommes,</li>
+              <li>Alaa veut 8 pommes,</li>
+              <li>Amine veut 10 pommes.</li>
+            </ul>
+          </li>
+          <li>Ecrire le programme qui calcule le nombre de sacs nécessaires pour satisfaire la commande d'un client
+            donné.</li>
+        </ol>
+        <p><strong>Exemple :</strong></p>
+        <pre><code class="nohighlight shell python" data-text="Exemple">Nombre de pommes : 25
+un sac de 1 pommes
+un sac de 8 pommes
+un sac de 16 pommes</code></pre>
       </section>
 
       <section>
@@ -1249,6 +1348,83 @@ Après segmentation :  [19, 32, 157, 203, 762, 884, 762, 459, 337, 515]</code></
           <li>Remplit un tableau <code>dist</code> par les distances des stations de services</li>
           <li>Affiche le numéro de station de la plus proche ainsi que sa distance.</li>
         </ul>
+      </section>
+
+      <section>
+        <h3>Nombre d'apparitions ★★★</h3>
+        <ol>
+          <li>
+            <p>Écrire l'algorithme d'un programme qui permet de :</p>
+            <ul>
+              <li>Remplir aléatoirement le tableau <code>t1</code> par <code>n</code> entiers aléatoires entre 1 et 6
+                <code>(2 ≤ n ≤ 100)</code>.
+              </li>
+              <li>Compter la fréquence (nombre d'apparition) des nombres de <code>t1</code> dans le tableau
+                <code>t2</code>. L'élément d'indice <code>i (1 ≤ i ≤ 6)</code> de <code>t2</code> doit correspondre à la
+                fréquence du nombre <code>i</code> dans le tableau <code>t1</code>.
+              </li>
+              <li>Afficher le nombre d'apparition de chaque nombre.</li>
+            </ul>
+            <p><strong>Exemple :</strong> Pour <code>n = 20</code> et le tableau <code>t1</code> contenant les 20
+              nombres aléatoires suivants :</p>
+
+            <script>
+              const nbat1 = "6	3	3	5	1	1	2	5	6	1	4	2	4	4	6	6	6	1	1	6".split('\t').map(v => +v);
+              const nbaColors = ['', 'rgb(255, 204, 204)', 'rgb(255, 235, 204)', 'rgb(245, 255, 204)', 'rgb(214, 255, 204)', ' rgb(204, 255, 255)', 'rgb(204, 224, 255)'];
+              const nbastyles = {
+                ...defaultStyle,
+                col: {
+                  ...defaultStyle.col,
+                  width: '40px'
+                }
+              };
+              nbastyles.styles = nbat1.map(v => {
+                return { 'background-color': nbaColors[v] };
+              });
+              draw_table('t1', nbat1, 0, nbastyles);
+            </script>
+
+            <p>Le tableau <code>t2</code> contient le nombre du tableau initial sans redondances :</p>
+            <script>
+              const nbat2 = "0 5 2 2 3 2 6".split(/\s+/).map(v => +v);
+              console.log(nbat2);
+              const nbastyles1 = {
+                ...nbastyles
+              };
+              nbastyles1.styles = nbat2.map((v, i) => {
+                return { 'background-color': nbaColors[i] };
+              });
+              draw_table('t2', nbat2, 0, nbastyles1);
+            </script>
+            <p>Le programme affiche :</p>
+            <pre><code class="nohighlight shell python" data-text="Exemple">1 apparaît 5 fois
+2 apparaît 2 fois
+3 apparaît 2 fois
+4 apparaît 3 fois
+5 apparaît 2 fois
+6 apparaît 6 fois</code></pre>
+          </li>
+          <li>Implémenter votre solution en python.</li>
+          <li>
+            <p>Ajouter la séquence suivante qui permet d'afficher les nombres de t1 du plus fréquent au moins fréquent.
+            </p>
+            <pre><code class="language-algorithm">mx1 ← 101 ; mx2 ← 1
+TantQue (mx2 > 0) Faire
+  mx2 ← 0
+  Pour j de 1 à 6 Faire
+    Si t2[j] < mx1 et t2[j]> t2[mx2] Alors
+      mx2 ← j
+    Fin Si
+  Fin Pour
+  Pour j de 1 à 6 Faire
+    Si t2[j] = t2[mx2] Alors
+      Ecrire(j, "apparaît", t2[j], "fois")
+    Fin Si
+  Fin Pour
+  mx1 ← t2[mx2]
+Fin TantQue</code></pre>
+          </li>
+        </ol>
       </section>
 
       <section>
